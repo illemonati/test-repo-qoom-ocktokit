@@ -1,0 +1,65 @@
+const authenticater = require('../authenticater/api.js')
+	, administrater = require('../administrater/app.js')
+	, helper = require('../helper/app.js')
+	, fs = require('fs')
+	, async = require('async')
+	, express = require('express')
+	, path = require('path')
+	// , applet = require('./app.js')
+;
+
+const appName = '[APPNAME]' //applet.appName
+	, appDir = path.parse(__dirname).name
+;
+
+let cache = {}
+	, sectionContents
+	, widgetContents
+;
+
+function isValidPerson(req) {
+	return !!(req.person && req.passcodeInCookieMatched && req.person.ship && req.person.ship.name && req.person.services.find(s => s.app === appDir));
+}
+
+function getRole(req) {
+	return req.person.services.find(s => s.app === appDir).role || 'any';
+}
+
+function addRoutes(app) {
+
+	app.get(`/${[APPNAME]}/test`, (req, res, next) => {
+		res.send('OK')
+	});
+
+}
+
+function addMiddleWare(app) {
+
+}
+
+function addSockets(io) {
+	
+	/*
+		var appletIo = io.of(`/${appName}`);
+		appletIo.on('connection', function(socket) {
+			const referer = socket.handshake.headers.referer.split('/'),
+				domain = referer
+			;
+			socket.emit('pushDataToClient', data);
+			
+			socket.on('receiveDataFromClient', function(data) {
+			
+			});
+	
+		});	
+	*/
+	
+}
+
+module.exports = {
+	addRoutes
+	/*
+		, addMiddleWare
+		, addSockets
+	*/
+}
