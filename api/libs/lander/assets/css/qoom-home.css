@@ -1,0 +1,443 @@
+/*===========================
+    Qoom Landing Page
+===========================*/
+
+/*===== All Section Title ======*/
+.section-title .title {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 55px;
+  color: #121212; }
+  @media (max-width: 767px) {
+    .section-title .title {
+      font-size: 30px;
+      line-height: 40px; } }
+.section-title .text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #6c6c6c;
+  margin-top: 24px; }
+
+/*===== HEADER =====*/
+.header-content-area {
+  background-color: #005ad5;
+  height: 750px;
+  position: relative;
+  overflow: hidden; }
+  @media only screen and (min-width: 1400px) {
+    .header-content-area {
+      height: 900px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .header-content-area {
+      height: 650px; } }
+  @media (max-width: 767px) {
+    .header-content-area {
+      height: 550px; } }
+  .header-content-area .header-shape {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 100%; }
+    .header-content-area .header-shape img {
+      width: 100%; }
+
+.header-wrapper {
+  position: relative; }
+
+.header-image {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 5; }
+  .header-image .image {
+    max-width: 730px; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .header-image .image {
+        max-width: 550px; } }
+    .header-image .image img {
+      width: 100%; }
+
+.header-content {
+  padding-top: 95px;
+  max-width: 540px;
+  position: relative;
+  z-index: 5; }
+  .header-content .header-title {
+    font-size: 44px;
+    line-height: 55px;
+    font-weight: 600;
+    color: #fff; }
+    @media (max-width: 767px) {
+      .header-content .header-title {
+        font-size: 30px;
+        line-height: 35px; } }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .header-content .header-title {
+        font-size: 36px;
+        line-height: 45px; } }
+  .header-content .text {
+    font-size: 20px;
+    line-height: 32px;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 16px; }
+    @media (max-width: 767px) {
+      .header-content .text {
+        font-size: 16px;
+        line-height: 24px; } }
+  .header-content .header-btn {
+    margin-top: 40px; }
+    .header-content .header-btn .main-btn {
+      background-color: #fff;
+      color: #0067f4;
+      border-color: #fff; }
+      .header-content .header-btn .main-btn:hover {
+        background-color: transparent;
+        color: #fff; }
+        
+/*===========================
+        What is Qoom css
+===========================*/
+.features-area {
+  background-color: #f4f6f7; }
+
+.single-features {
+  background-color: #fff;
+  padding: 40px 20px; }
+  .single-features .features-icon {
+    position: relative;
+    display: inline-block; }
+    .single-features .features-icon i {
+      font-size: 88px;
+      line-height: 70px;
+      color: #0067f4;
+      position: relative;
+      z-index: 5; }
+    .single-features .features-icon .shape {
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .single-features .features-content {
+    margin-top: 24px; }
+    .single-features .features-content .features-title a {
+      font-size: 28px;
+      line-height: 35px;
+      font-weight: 500;
+      color: #121212;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -ms-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .single-features .features-content .features-title a {
+          font-size: 22px; } }
+      @media (max-width: 767px) {
+        .single-features .features-content .features-title a {
+          font-size: 22px; } }
+      .single-features .features-content .features-title a:hover {
+        color: #0067f4; }
+    .single-features .features-content .text {
+      font-size: 14px;
+      line-height: 20px;
+      color: #121212;
+      margin-top: 16px; }
+    .single-features .features-content .features-btn {
+      margin-top: 32px; }
+      
+ /*===========================
+      FEATURED APPS css 
+===========================*/
+.portfolio-area {
+  background-color: #f4f6f7; }
+
+.portfolio-menu ul li {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6c6c6c;
+  line-height: 48px;
+  padding: 0 30px;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  display: inline-block;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  cursor: pointer;
+  margin: 0 2px; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .portfolio-menu ul li {
+      font-size: 14px;
+      padding: 0 26px; } }
+  @media (max-width: 767px) {
+    .portfolio-menu ul li {
+      font-size: 14px;
+      padding: 0 22px;
+      line-height: 42px; } }
+  .portfolio-menu ul li.active, .portfolio-menu ul li:hover {
+    color: #fff;
+    background-color: #0067f4; }
+
+.single-portfolio {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; }
+  .single-portfolio .portfolio-image img {
+    width: 100%;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s; }
+  .single-portfolio .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
+    border-radius: 8px; }
+    .single-portfolio .portfolio-overlay .portfolio-content {
+      padding: 16px; }
+      .single-portfolio .portfolio-overlay .portfolio-content .portfolio-icon {
+        position: relative;
+        display: inline-block;
+        margin: 0 20px; }
+        .single-portfolio .portfolio-overlay .portfolio-content .portfolio-icon a {
+          font-size: 40px;
+          color: #0067f4;
+          position: relative;
+          z-index: 5;
+          line-height: 50px;
+          width: 50px; }
+        .single-portfolio .portfolio-overlay .portfolio-content .portfolio-icon .shape {
+          position: absolute;
+          top: 7px;
+          left: 0; }
+      .single-portfolio .portfolio-overlay .portfolio-content .portfolio-text {
+        padding-top: 24px; }
+        @media (max-width: 767px) {
+          .single-portfolio .portfolio-overlay .portfolio-content .portfolio-text {
+            padding-top: 10px; } }
+        .single-portfolio .portfolio-overlay .portfolio-content .portfolio-text .portfolio-title a {
+          color: #121212;
+          font-size: 24px;
+          line-height: 30px; }
+          @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            .single-portfolio .portfolio-overlay .portfolio-content .portfolio-text .portfolio-title a {
+              font-size: 20px; } }
+          @media (max-width: 767px) {
+            .single-portfolio .portfolio-overlay .portfolio-content .portfolio-text .portfolio-title a {
+              font-size: 20px; } }
+        .single-portfolio .portfolio-overlay .portfolio-content .portfolio-text .text {
+          color: #121212;
+          font-size: 14px;
+          line-height: 20px;
+          margin-top: 8px; }
+  .single-portfolio:hover .portfolio-overlay {
+    opacity: 1;
+    visibility: visible; }
+
+/*===========================
+      PRICING css 
+===========================*/
+.pricing {
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  padding: 24px 20px 50px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff; }
+  .pricing .pricing-header .sub-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    color: #121212;
+    position: relative;
+    padding-bottom: 8px; }
+    .pricing .pricing-header .sub-title::before {
+      position: absolute;
+      content: '';
+      width: 72px;
+      height: 4px;
+      bottom: 0;
+      left: 0;
+      background-color: #0067f4;
+      margin: 0 auto; }
+  .pricing .pricing-header .price {
+    display: block;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 80px;
+    margin-top: 32px;
+    color: #121212; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .pricing .pricing-header .price {
+        font-size: 50px;
+        margin-top: 16px; } }
+    @media (max-width: 767px) {
+      .pricing .pricing-header .price {
+        font-size: 50px;
+        margin-top: 16px; } }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .pricing .pricing-header .price {
+        font-size: 64px;
+        margin-top: 32px; } }
+  .pricing .pricing-header .year {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    color: #6c6c6c;
+    margin-top: 3px; }
+  .pricing .pricing-baloon {
+    position: absolute;
+    top: 0;
+    right: -78px;
+    width: 156px; }
+  .pricing .pricing-list {
+    margin-top: 40px; }
+    .pricing .pricing-list ul li {
+      font-size: 16px;
+      line-height: 24px;
+      color: #121212;
+      margin-top: 16px; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .pricing .pricing-list ul li {
+          font-size: 14px;
+          margin-top: 12px; } }
+      @media (max-width: 767px) {
+        .pricing .pricing-list ul li {
+          font-size: 14px;
+          margin-top: 12px; } }
+      @media only screen and (min-width: 576px) and (max-width: 767px) {
+        .pricing .pricing-list ul li {
+          font-size: 16px;
+          margin-top: 16px; } }
+      .pricing .pricing-list ul li i {
+        color: #0067f4;
+        margin-right: 8px; }
+  .pricing .pricing-btn {
+    margin-top: 42px; }
+    .pricing .pricing-btn .main-btn {
+      background-color: #0067f4;
+      color: #fff;
+      border-color: #0067f4; }
+      .pricing .pricing-btn .main-btn:hover {
+        background-color: #005ad5;
+        border-color: #005ad5; }
+  .pricing .bottom-shape {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 101%; }
+
+/*===========================
+      12.FOOTER css 
+===========================*/
+.footer-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #6c6c6c; }
+
+.footer-support {
+  padding-top: 21px; }
+  .footer-support span {
+    font-size: 16px;
+    line-height: 24px;
+    color: #121212;
+    font-weight: 600;
+    margin-top: 9px;
+    display: block; }
+    @media (max-width: 767px) {
+      .footer-support span {
+        display: block; } }
+
+.social {
+  padding-top: 27px; }
+  .social li {
+    display: inline-block;
+    margin-right: 10px; }
+    .social li:last-child {
+      margin-right: 0; }
+    .social li a {
+      font-size: 24px;
+      color: #6c6c6c;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -ms-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s; }
+      .social li a:hover {
+        color: #0067f4; }
+
+.footer-link {
+  margin-top: 32px; }
+  .footer-link ul {
+    margin-top: 8px; }
+    .footer-link ul li a {
+      font-size: 16px;
+      line-height: 24px;
+      color: #121212;
+      margin-top: 16px;
+      font-weight: 500;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -ms-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s; }
+      .footer-link ul li a:hover {
+        color: #0067f4; }
+
+.footer-copyright {
+  background-color: #0067f4; }
+  .footer-copyright .copyright {
+    padding-bottom: 23px;
+    padding-top: 13px; }
+    .footer-copyright .copyright .text {
+      color: #fff;
+      margin-top: 10px; }
+
+/*===== BACK TO TOP =====*/
+.back-to-top {
+  font-size: 20px;
+  color: #fff;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  background-color: #0067f4;
+  text-align: center;
+  z-index: 99;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  display: none; }
+  .back-to-top:hover {
+    color: #fff;
+    background-color: #005ad5; }
+.copyright a{color: #8ec5f1;}
