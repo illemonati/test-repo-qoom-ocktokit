@@ -1,0 +1,89 @@
+
+
+
+
+/*===========================
+       25.CLIENTS CSS 
+===========================*/
+
+.client-logo-area{
+    & .client-title{
+        & .title{
+            font-size: 44px;
+            line-height: 55px;
+            color: $text-color-one;
+
+            @media #{$xs}{
+                font-size: 28px;
+                line-height: 35px
+            }
+        }
+    }
+}
+
+
+/*===== Client Logo One =====*/
+
+.client-logo-one{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+    & .single-client{
+        & img{
+            
+        }
+    }
+}
+
+
+
+/*===== Client Logo Two =====*/
+
+.client-logo-two{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+    & .single-client{
+        & img{
+            
+        }
+    }
+}
+
+
+
+/*===== Client Logo Three =====*/
+
+.client-logo-three{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+    & .single-client{
+        & img{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            @include transition(0.3s);
+        }
+        
+        &:hover{
+            & img{
+                -webkit-filter: grayscale(0);
+                filter: grayscale(0);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

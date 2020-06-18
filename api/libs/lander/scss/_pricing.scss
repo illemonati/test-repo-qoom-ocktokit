@@ -1,0 +1,1390 @@
+/*===========================
+      PRICING TABLES 
+===========================*/
+
+
+/*===== PRICING STYLE ONE =====*/
+
+.pricing-style-one {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 50px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+            position: relative;
+            padding-bottom: 8px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 72px;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $Extra1-color-three;
+                margin: 0 auto;
+            }
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            margin-top: 32px;
+            color: $text-color-one;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $text-color-three;
+            margin-top: 3px;
+        }
+    }
+
+    & .pricing-list {
+        margin-top: 40px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 42px;
+
+        & .main-btn {
+            background-color: $primary-one;
+            color: $white;
+            border-color: $primary-one;
+
+            &:hover {
+                background-color: $primary-three;
+                border-color: $primary-three;
+            }
+        }
+    }
+
+    & .bottom-shape {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 101%;
+    }
+}
+
+
+/*===== PRICING STYLE TWO =====*/
+
+.pricing-style-two {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 50px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+            position: relative;
+            padding-bottom: 8px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 72px;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                background-color: $primary-one;
+                margin: 0 auto;
+            }
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            margin-top: 32px;
+            color: $text-color-one;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $text-color-three;
+            margin-top: 3px;
+        }
+    }
+    
+    & .pricing-baloon {
+        position: absolute;
+        top: 0;
+        right: -78px;
+        width: 156px;
+    }
+
+    & .pricing-list {
+        margin-top: 40px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 42px;
+
+        & .main-btn {
+            background-color: $primary-one;
+            color: $white;
+            border-color: $primary-one;
+
+            &:hover {
+                background-color: $primary-three;
+                border-color: $primary-three;
+            }
+        }
+    }
+
+    & .bottom-shape {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 101%;
+    }
+}
+
+
+/*===== PRICING STYLE THREE =====*/
+
+.pricing-style-three {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 50px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+            position: relative;
+            padding-bottom: 8px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 72px;
+                height: 4px;
+                bottom: 0;
+                right: 0;
+                background-color: $primary-one;
+                margin: 0 auto;
+            }
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            margin-top: 32px;
+            color: $text-color-one;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $text-color-three;
+            margin-top: 3px;
+        }
+    }
+    
+    & .pricing-flower {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 144px;
+
+        @media #{$lg} {
+            width: 110px;
+        }
+
+        @media #{$xs} {
+            width: 110px;
+        }
+
+        @media #{$sm} {
+            width: 144px;
+        }
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    & .pricing-list {
+        margin-top: 40px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 42px;
+
+        & .main-btn {
+            background-color: $primary-one;
+            color: $white;
+            border-color: $primary-one;
+
+            &:hover {
+                background-color: $primary-three;
+                border-color: $primary-three;
+            }
+        }
+    }
+
+    & .bottom-shape {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 101%;
+    }
+}
+
+
+/*===== PRICING FOUR =====*/
+
+.pricing-style-four {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 50px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $primary-one;
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $white;
+            position: relative;
+            padding-bottom: 8px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 72px;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $Extra1-color-three;
+                margin: 0 auto;
+            }
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            margin-top: 32px;
+            color: $white;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $white;
+            margin-top: 3px;
+        }
+    }
+
+    & .pricing-list {
+        margin-top: 40px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $white;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $white;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 42px;
+
+        & .main-btn {
+            background-color: $white;
+            border-color: $white;
+
+            &:hover {
+                color: $primary-one;
+                @include box-shadow (0 3px 16px 0 rgba(0, 0, 0, 0.16));
+            }
+        }
+    }
+
+    & .bottom-shape {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 101%;
+    }
+}
+
+
+/*===== PRICING FIVE =====*/
+
+.pricing-style-five {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 50px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background: -webkit-linear-gradient(#1067ff, #8544eb);
+    background: -o-linear-gradient(#1067ff, #8544eb);
+    background: linear-gradient(#1067ff, #8544eb);
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $white;
+            position: relative;
+            padding-bottom: 8px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 72px;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                background-color: $Extra1-color-three;
+                margin: 0 auto;
+            }
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            margin-top: 32px;
+            color: $white;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $white;
+            margin-top: 3px;
+        }
+    }
+    
+    & .pricing-baloon {
+        position: absolute;
+        top: 0;
+        right: -78px;
+        width: 156px;
+    }
+
+    & .pricing-list {
+        margin-top: 40px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $white;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $white;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 42px;
+
+        & .main-btn {
+            background-color: $white;
+            border-color: $white;
+
+            &:hover {
+                color: $primary-one;
+                @include box-shadow (0 3px 16px 0 rgba(0, 0, 0, 0.16));
+            }
+        }
+    }
+
+    & .bottom-shape {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 101%;
+    }
+}
+
+
+/*===== PRICING SIX =====*/
+
+.pricing-style-six {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 50px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background: -webkit-linear-gradient(#0067f4, #2bdbdc);
+    background: -o-linear-gradient(#0067f4, #2bdbdc);
+    background: linear-gradient(#0067f4, #2bdbdc);
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $white;
+            position: relative;
+            padding-bottom: 8px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 72px;
+                height: 4px;
+                bottom: 0;
+                right: 0;
+                background-color: $Extra1-color-three;
+                margin: 0 auto;
+            }
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            margin-top: 32px;
+            color: $white;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $white;
+            margin-top: 3px;
+        }
+    }
+    
+    & .pricing-baloon-two {
+        position: absolute;
+        top: 0;
+        left: -45px;
+        width: 140px;
+        opacity: 0.5;
+    }
+
+    & .pricing-list {
+        margin-top: 40px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $white;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $white;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 42px;
+
+        & .main-btn {
+            background-color: $white;
+            border-color: $white;
+
+            &:hover {
+                color: $primary-one;
+                @include box-shadow (0 3px 16px 0 rgba(0, 0, 0, 0.16));
+            }
+        }
+    }
+
+    & .bottom-shape {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 101%;
+    }
+}
+
+
+/*===== PRICING STYLE SEVEN =====*/
+
+.pricing-style-seven {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 112px 20px 38px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+
+    & .top-shape {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 101%;
+        @include transform(rotate(180deg));
+    }
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+            position: relative;
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            color: $text-color-one;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $text-color-three;
+            margin-top: 3px;
+        }
+    }
+
+    & .pricing-list {
+        margin-top: 24px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 26px;
+
+        & .main-btn {
+            
+        }
+    }
+}
+
+
+/*===== PRICING STYLE TWO =====*/
+
+.pricing-style-eight {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 38px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+
+    & .pricing-icon {
+        & img {
+            width: 200px;
+        }
+    }
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+            position: relative;
+            margin-top: 24px;
+        }
+
+        & .month {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 25px;
+            color: $text-color-three;
+            margin-top: 3px;
+
+            & .price {
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 45px;
+                color: $text-color-one;
+                margin-top: 8px;
+
+                @media #{$sm} {
+                    font-size: 24px;
+                    margin-top: 32px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    & .pricing-list {
+        margin-top: 24px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 31px;
+
+        & .main-btn {
+            
+        }
+    }
+}
+
+
+/*===== PRICING STYLE THREE =====*/
+
+.pricing-style-nine {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px 38px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background: -webkit-linear-gradient(rgba(43, 219, 220, 1) 0%, rgba(0, 103, 244, 1) 100%);
+    background: -o-linear-gradient(rgba(43, 219, 220, 1) 0%, rgba(0, 103, 244, 1) 100%);
+    background: linear-gradient(rgba(43, 219, 220, 1) 0%, rgba(0, 103, 244, 1) 100%);
+
+    & .pricing-icon {
+        & img {
+            width: 190px;
+        }
+    }
+
+    & .pricing-header {
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $white;
+            position: relative;
+            margin-top: 24px;
+        }
+
+        & .month {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 25px;
+            color: $white;
+            margin-top: 3px;
+
+            & .price {
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 45px;
+                color: $white;
+                margin-top: 8px;
+
+                @media #{$sm} {
+                    font-size: 24px;
+                    margin-top: 32px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    & .pricing-list {
+        margin-top: 24px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $white;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $white;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 31px;
+
+        & .main-btn {
+            background-color: $white;
+            border-color: $white;
+
+            &:hover {
+                color: $primary-one;
+                @include box-shadow (0 3px 16px 0 rgba(0, 0, 0, 0.16));
+            }
+        }
+    }
+}
+
+
+/*===== PRICING FOUR =====*/
+
+.pricing-style-ten {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+
+    & .pricing-header {
+        background: -webkit-linear-gradient(left, rgba(16,103,255,1) 0%, rgba(133,68,235,1) 100%);
+        background: -o-linear-gradient(left, rgba(16,103,255,1) 0%, rgba(133,68,235,1) 100%);
+        background: linear-gradient(to right, rgba(16,103,255,1) 0%, rgba(133,68,235,1) 100%);
+        padding: 20px;
+        
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $white;
+            position: relative;
+        }
+
+        & .pricing-year {
+            & .price {
+                font-size: 64px;
+                font-weight: 600;
+                line-height: 80px;
+                color: $white;
+
+                @media #{$lg} {
+                    font-size: 50px;
+                }
+
+                @media #{$xs} {
+                    font-size: 50px;
+                }
+
+                @media #{$sm} {
+                    font-size: 64px;
+                }
+            }
+            
+            & .year {
+                font-size: 20px;
+                font-weight: 300;
+                line-height: 25px;
+                color: $white;
+                margin-top: -10px;
+            }
+        }
+    }
+
+    & .pricing-list {
+        padding: 16px 20px 20px;
+        height: 348px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        & .main-btn {
+            color: $white;
+            border: 0;
+            line-height: 50px;
+            background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            width: 100%;
+
+            &:hover {}
+        }
+    }
+}
+
+
+/*===== PRICING FIVE =====*/
+
+.pricing-style-eleven {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+
+    & .pricing-header {
+        background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        padding: 8px 20px;
+        
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $white;
+            position: relative;
+        }
+    }
+
+    & .pricing-list {
+        padding: 32px 20px 20px;
+        height: 448px;
+        
+        & .pricing-year {
+            & .price {
+                font-size: 64px;
+                font-weight: 600;
+                line-height: 80px;
+                color: $text-color-one;
+
+                @media #{$lg} {
+                    font-size: 50px;
+                    margin-top: 16px;
+                }
+
+                @media #{$xs} {
+                    font-size: 50px;
+                    margin-top: 16px;
+                }
+
+                @media #{$sm} {
+                    font-size: 64px;
+                    margin-top: 32px;
+                }
+            }
+            
+            & .year {
+                font-size: 20px;
+                font-weight: 300;
+                line-height: 25px;
+                color: $text-color-three;
+                margin-top: -10px;
+            }
+        }
+
+        & ul {
+            margin-top: 40px;
+            
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        & .main-btn {
+            color: $white;
+            border: 0;
+            line-height: 50px;
+            background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            width: 100%;
+
+            &:hover {}
+        }
+    }
+}
+
+/*===== PRICING SIX =====*/
+
+.pricing-style-twelve {
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    padding: 24px 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+    
+    & .pricing-icon{
+        & img{
+            width: 112px;
+        }
+    }
+
+    & .pricing-header {
+        margin-top: 24px;
+        
+        & .sub-title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+        }
+
+        & .price {
+            display: block;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 80px;
+            color: $text-color-one;
+
+            @media #{$lg} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 50px;
+                margin-top: 16px;
+            }
+
+            @media #{$sm} {
+                font-size: 64px;
+                margin-top: 32px;
+            }
+        }
+
+        & .year {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: $text-color-three;
+            margin-top: -10px;
+        }
+    }
+
+    & .pricing-list {
+        margin-top: 33px;
+
+        & ul {
+            & li {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                margin-top: 16px;
+
+                @media #{$lg} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$xs} {
+                    font-size: 14px;
+                    margin-top: 12px;
+                }
+
+                @media #{$sm} {
+                    font-size: 16px;
+                    margin-top: 16px;
+                }
+
+                & i {
+                    color: $primary-one;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    & .pricing-btn {
+        margin-top: 26px;
+
+        & .main-btn {
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+

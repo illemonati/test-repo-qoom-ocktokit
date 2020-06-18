@@ -1,0 +1,191 @@
+
+/*===========================
+        SIGN-IN/UP FORMS
+===========================*/
+
+
+.signin-area{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: $light-color-two;
+}
+
+
+.signin-one,
+.signin-two{
+    & .form-input{
+        & .main-btn{
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        & .text{
+            font-size: 16px;
+            line-height: 24px;    
+            color: $text-color-two;
+
+            & a{
+                color: $primary-one;
+            }
+        }
+    }
+}
+
+
+.signin-content{
+    & .signin-title{
+        font-size: 24px;
+        line-height: 30px;
+        color: $text-color-one;
+    }
+    & .text{
+        font-size: 16px;
+        line-height: 24px;
+        color: $text-color-two;
+        margin-top: 8px;
+    }
+}
+
+    
+.signin-checkbox{
+    & label{
+        color: $text-color-one;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    & input[type="checkbox"]{
+        display: none;
+
+        &+label {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: -1px 8px 0 0;
+            vertical-align: middle;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+            @include transition(0.3s);
+            background-color: $light-color-three;
+
+            &::before{
+                color: $white;
+                content: "";
+                font-size: 11px;
+                position: absolute;
+                text-align: center;
+                left: 3px;
+                top: -4px;
+                @include transform(scale(0));
+                @include transition(0.3s);
+            }
+        }
+
+        &:checked+label{
+            background-color: $primary-one;
+            @include transition(0.3s);
+
+            &::before{
+                @include transform(scale(1));
+            }
+        }
+    }
+    
+    & span{
+        & a{
+            color: $primary-one;
+        }
+    }
+} 
+
+
+
+.signin-three{
+    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+    background-color: $light-color-two;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    & .signin-header{
+        background-color: $white;
+        padding: 70px 30px;
+        
+        @media #{$xs}{
+            padding: 50px 15px;
+        }
+        
+        & p{
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-two;
+        }
+        
+        .social-signin{            
+            & li{
+                display: inline-block;
+                margin: 16px 8px 0;
+                
+                & a{
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    line-height: 48px;
+                    padding: 0 32px;
+                    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+                    border-radius: 5px;
+                    color: $primary-one;
+                    background-color: $white;
+                    @include transition(0.3s);
+                    
+                    & i{
+                        padding-right: 8px;
+                    }
+                    
+                    &:hover{
+                        color: $white;
+                        background-color: $primary-one;
+                    }
+                }
+            }
+        }
+    }
+    
+    & .signin-form{
+        padding: 70px 30px;
+        background-color: $light-color-two;
+        
+        @media #{$xs}{
+            padding: 50px 15px;
+        }
+        
+        & .text{
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-two;
+        }
+        & .password{
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-two;
+            font-style: italic;
+            margin-top: 24px;
+            
+            & span{
+                color: $success-color-one;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,263 @@
+
+
+
+/*===========================
+    LIST STYLES 
+===========================*/
+
+
+.list-style-area{
+    
+}
+
+.list-title{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    color: $text-color-three;
+    
+    @media #{$xs}{
+        font-size: 20px;
+        line-height: 30px
+    }
+}
+
+.list-style{
+    
+    & .list-style-one{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & span{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $text-color-one;
+                    line-height: 25px;
+                    margin-right: 13px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-two{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $primary-one;
+                    line-height: 25px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-three{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $info-color-one;
+                    line-height: 25px;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-four{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $warning-color-one;
+                    line-height: 25px;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-five{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $success-color-one;
+                    line-height: 25px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-six{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $danger-color-one;
+                    line-height: 25px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-seven{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $success-color-one;
+                    line-height: 25px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-eight{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $info-color-one;
+                    line-height: 25px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-nine{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $primary-one;
+                    line-height: 25px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-ten{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $primary-one;
+                    line-height: 25px;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-eleven{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & i{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $primary-one;
+                    line-height: 25px;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+    
+    & .list-style-twenty{
+        & ul{
+            & li{
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 13px;
+                color: $text-color-one;
+                
+                & span{
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background-color: $text-color-one;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

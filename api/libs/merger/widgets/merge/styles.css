@@ -1,0 +1,111 @@
+.merge svg {
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+.merge-modal-container {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+    background-color: #23232350;
+    z-index: 999;
+}
+
+.merge-modal-close {
+	background-color: white;
+    position: fixed;
+    border-radius: 50%;
+    color: #23232350;
+    top: 20px;
+    left: 20px;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 75px;
+    mix-blend-mode: screen;
+    max-height: 50px;
+    line-height: 33px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 3px 25px 4px;
+}
+
+.merge-modal {
+	background-color: white;
+	width: 1200px;
+    display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
+    z-index: 999;
+}
+
+.merge-modal h1 {
+	font-size: 2.5rem;
+	margin-top: 0;
+}
+
+.merge-modal form select {
+	width: 100%;
+	padding: 5px;
+	font-size: 0.75rem;
+	min-height: 200px;
+}
+
+.merge-modal-controlls {
+	margin-top: 20px;
+}
+
+.merge-modal-controlls a:hover
+, .merge-modal-controlls > div:hover {
+	text-decoration: none;
+	box-shadow: none;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+
+.merge-modal-cancel {
+	position: absolute;
+	left: 30px;
+	padding: 10px 0;
+}
+
+
+.merge-modal-preview {
+	position: absolute;
+	right: 150px;
+	background-color: #FFF;
+	padding: 10px 15px;
+	color: #64107E;
+	border: 0.125rem solid #64107E;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px 0px rgba(46, 61, 73, 0.35)
+}
+
+.merge-modal-confirm {
+	position: absolute;
+	right: 30px;
+	margin-right: 0px;
+	padding: 10px 15px;
+	color: #fff;
+	background-color: #64107E;
+	border: 0.125rem solid transparent;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px 0px rgba(46, 61, 73, 0.35)
+
+}
+
+.merge-modal iframe {
+	width: 100%;
+	height: 80vh;
+}

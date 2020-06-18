@@ -1,0 +1,37 @@
+<progress id="uploadInfoDisplayProgress" style="display: none;"></progress>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Qoom Migration</title>
+		<script type="module" src="../../libs/migrater/qoom-migration/index.js"></script>
+	</head>
+	<body>
+		<h1>Qoom Migration</h1>
+		<div>
+			<h4>Download Qoom Files</h4>
+			<button id="qoomFileDownloadButton">Download</button>
+			<p id="downloadInfoDisplay"></p>
+		</div>
+		<div>
+			<h4>Upload To Qoom Via Zip</h4>
+			<label>Choose your zip file</label>
+			<input type="file" accept="application/zip" id="uploadZipFileInput"></input>
+			<button id="qoomFileUploadButton">Upload</button>
+			<div id="uploadInfoDisplay">
+				<p id="uploadInfoDisplayInfo"></p>
+				<progress id="uploadInfoDisplayProgress" style="display: none;"></progress>
+			</div>
+		</div>
+		<div>
+			<h4>Connect To Github</h4>
+			<label>Access Token</label>
+			<input type="text" id="githubAccessToken" />
+			<label>Repo Name</label>
+			<input type="text" id="githubRepoName" />
+			<label>Use Commandline</label>
+			<input type="checkbox" id="useCommandline" checked />
+			<button id="connectToGithubButton">Connect</button>
+		</div>
+	</body>
+</html>

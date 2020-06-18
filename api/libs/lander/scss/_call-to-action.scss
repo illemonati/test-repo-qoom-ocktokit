@@ -1,0 +1,348 @@
+
+
+
+
+/*===========================
+        25.CALL TO ACTION 
+===========================*/
+
+
+/*===== call action one =====*/
+
+.call-action-one {
+    background-color: $light-color-two;
+        
+    & .call-action-content{
+        & .call-action-text{
+            & .action-title{
+                font-size: 48px;
+                font-weight: 600;
+                line-height: 55px;
+                color: $text-color-one;
+                
+                @media #{$xs}{
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+            & .text{
+                font-size: 20px;
+                color: $text-color-one;
+                line-height: 30px;
+                margin-top: 16px;
+                
+                @media #{$xs}{
+                    font-size: 16px;
+                    line-height: 27px;
+                }
+            }
+        }
+        & .call-action-btn{}
+    }
+}
+
+
+/*===== call action two =====*/
+
+.call-action-two{
+    background-color: $light-color-two;
+    
+    & .call-action-content{
+        & .action-title{
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 40px;
+            color: $text-color-one;
+            
+            @media #{$xs}{
+                font-size: 24px;
+                line-height: 35px;
+            }
+        }
+        & .text{
+            font-size: 16px;
+            color: $text-color-one;
+            line-height: 27px;
+            margin-top: 16px;
+        }
+    }
+    & .call-action-form{
+        position: relative;
+                
+        & input{
+            width: 100%;
+            height: 60px;
+            border: 1px solid $light-color-three;
+            background: none;
+            padding: 0 25px;
+            border-radius: 50px;
+            
+            @media #{$xs}{
+                height: 50px;
+            }
+            @media #{$sm}{
+                height: 60px;
+            }
+            
+            @include placeholder{
+                opacity: 1;
+                color: $text-color-two;
+            }
+            
+            &:focus{
+                border-color: $primary-one;
+            }
+        }
+        & .action-btn{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            
+            & .main-btn{
+                @media #{$xs}{
+                    width: 100%;
+                }
+                @media #{$sm}{
+                    width: auto;
+                }
+            }
+            
+            @media #{$xs}{
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 10px;
+                
+            }
+            @media #{$sm}{
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+/*===== call action three =====*/
+
+.call-action-three{
+    background-color: $light-color-two;
+    
+    & .call-action-content{
+        & .action-title{
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 55px;
+            color: $text-color-one;
+            
+            @media #{$xs}{
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+        & .main-btn{
+            margin-top: 24px;
+        }
+    }
+    & .call-action-image{
+        
+    }
+}
+
+
+/*===== call action four =====*/
+
+.call-action-four{
+    background-color: $primary-one;
+    
+    & .call-action-content{
+        & .action-title{
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 55px;
+            color: $white;
+            
+            @media #{$xs}{
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+        & .text{
+            font-size: 16px;
+            color: $white;
+            line-height: 27px;
+            margin-top: 16px;
+        }
+    }
+    & .call-action-form{
+        position: relative;
+        max-width: 480px;
+        margin: 45px auto 0;
+                
+        & input{
+            width: 100%;
+            height: 60px;
+            border: 1px solid $white;
+            background: none;
+            padding: 0 25px;
+            border-radius: 50px;
+            color: #fff;
+            
+            @media #{$xs}{
+                height: 50px;
+            }
+            @media #{$sm}{
+                height: 60px;
+            }
+            
+            @include placeholder{
+                opacity: 1;
+                color: $white;
+            }
+        }
+        & .action-btn{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            
+            @media #{$xs}{
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 10px;
+                
+            }
+            @media #{$sm}{
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                margin-top: 0;
+            }
+            
+            & .main-btn{
+                background-color: $white;
+                color: $primary-one;
+                border-color: $white;
+                
+                @media #{$xs}{
+                    width: 100%;
+                }
+                @media #{$sm}{
+                    width: auto;
+                }
+                
+                &:hover{
+                    background-color: $white;
+                    border-color: $white;
+                    color: $primary-one;
+                    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*===== call action four =====*/
+
+.call-action-five{
+    background-color: $text-color-one;
+    
+    & .call-action-content{
+        & .action-title{
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+            color: $white;
+        }
+    }
+    & .call-action-form{
+        position: relative;
+        max-width: 480px;
+        margin: 45px auto 0;
+                
+        & input{
+            width: 100%;
+            height: 60px;
+            border: 1px solid $white;
+            background: none;
+            padding: 0 25px;
+            border-radius: 50px;
+            color: #fff;
+            
+            @media #{$xs}{
+                height: 50px;
+            }
+            @media #{$sm}{
+                height: 60px;
+            }
+            
+            @include placeholder{
+                opacity: 1;
+                color: $white;
+            }
+        }
+        & .action-btn{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            
+            @media #{$xs}{
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 10px;
+                
+            }
+            @media #{$sm}{
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                margin-top: 0;
+            }
+            
+            & .main-btn{
+                background-color: $white;
+                color: $primary-one;
+                border-color: $white;
+                
+                @media #{$xs}{
+                    width: 100%;
+                }
+                @media #{$sm}{
+                    width: auto;
+                }
+                
+                &:hover{
+                    background-color: $white;
+                    border-color: $white;
+                    color: $primary-one;
+                    @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

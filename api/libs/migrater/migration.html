@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width">
+		<link href='/lander/css/normalize.css' rel='stylesheet' type="text/css">
+		<link href='/administrater/css/qoom.css' rel='stylesheet' type="text/css">
+		<link href='/icons/icons.css' rel='stylesheet' type="text/css">
+		<style>
+			body > div {
+				display: grid;
+				min-height: 100%;
+				grid-template-rows: 135px auto 45px;
+			}
+			header {
+				background: linear-gradient( 135deg, #3c0646 0%, var(--color-primary) 100%);
+				color: #fff;
+				text-align: center;
+				padding: 40px 0;
+			}
+			h1 {
+				font-weight: 500;
+			}
+			main {
+				max-width: 960px;
+				margin: 0 auto;
+				display:flex;
+				justify-content: center;	
+				flex-wrap: wrap;
+				padding: 0 16px;
+			}
+			h3 {
+				line-height: 1.5;
+			}
+			section {
+				width:100%;
+				text-align: center;
+				padding: 40px 0;
+			}
+			form {
+				border-radius: 8px;
+				width: 45%;
+				min-width: 360px;
+				/*height: max-content;*/
+				border:solid 1px var(--color-gray-400);
+				margin:auto;
+				margin-top:10px;
+				box-sizing: border-box;
+				padding: 2rem;
+			}
+			form > div.title {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+			form > div.title > i {
+				margin: 0.5rem auto;
+				width: 5rem;
+				height: 5rem;
+			}
+			form > div.title > i.ic-transfer {
+				width: 7rem;
+			}
+			h6 {
+				margin-top: 0.5rem;
+				line-height: 1.25;
+				color: var(--text-dark-medium);
+			}
+			form > label {
+				width: 100%;
+				font-size: 14px;
+				margin: 1rem auto 0.5rem auto;
+				display: block;				
+			}
+			form > input {
+				width: 100%;
+				margin: 0.5rem auto 1rem auto;
+				padding: 0.75rem 0.5rem;
+				display: block;
+				border: 1px solid var(--color-gray-400);
+				background-color: #fff;
+			}
+			form > input:active, form > input:focus{
+				border-color: #3c0646;
+				background-color: #3c064610;
+			}
+			form > input:active.qoom, form > input:focus.qoom {
+				border-color: var(--color-primary);
+				background-color: var(--color-primary-10);
+			}
+			form .error {
+				color: red;
+				background-color: #ffffff;
+			}
+			form > hr {
+				margin: 2rem 0;
+				border: 1px dashed var(--color-gray-100);
+			}
+			#log > div {
+				height:60vh;
+				background-color:black;
+				padding:1em;
+				margin:2em;
+			}
+			#log > div > div {
+				text-align: left;
+				margin:0.5em 20px;
+				color: lightgreen;
+			}
+			.three-dots {
+				letter-spacing: 3px;
+			}
+			@keyframes blink {
+			    0% {
+			      opacity: .2;
+			    }
+			    20% {
+			      opacity: 1;
+			    }
+			    100% {
+			      opacity: .2;
+			    }
+			}
+			.three-dots span {
+    			animation-name: blink;
+    			animation-duration: 1.4s;
+    			animation-iteration-count: infinite;
+    			animation-fill-mode: both;
+			}
+			.three-dots span:nth-child(2) {
+			    animation-delay: .2s;
+			}
+			.three-dots span:nth-child(3) {
+			    animation-delay: .4s;
+			}
+			footer {
+				text-align: center;
+				color: var(--color-gray-400);
+				border-top: 1px solid var(--color-gray-400);
+				font-size: 14px;
+				padding: 1em 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<header>
+				<h1>Qoom File Migrater</h1>
+			</header>
+			<main>
+				<section>
+					<h3>Hi, Wisen Spacers! 🪐 <br>You have two options to access your content.</h3>
+				</section>
+				<form method='POST' action='/migrate/download' id='wisen' target='_self'>
+					<div class="title">
+						<i class="ic-download"></i>
+						<h3>Download Your Files</h3>
+					</div>
+					<label>Wisen Space Server Name:</label>
+					<input type='text' placeholder='YOURNAME.wisen.space' name='ws_server' required>
+					<label>Wisen Space Passcode:</label>
+					<input type='password' name='ws_passcode' required>
+					<input type='submit' value='Download' class="qoom-main-btn qoom-button-full">
+				</form>
+				<form method='POST' action='/migrate/qoom' id='qoom'>
+					<div class="title">
+						<i class="ic-transfer" style="display: inline-block"></i>&nbsp;&nbsp;<i class="ic-cloud-qoom primary" style="display:inline-block"></i>
+						<h3>Transfer to Qoom</h3>
+						<h6>Don't have a Qoom account yet? <a href="https://www.qoom.io/pricing" target="_blank">Sign up first</a></h6>
+					</div>
+					<label>Wisen Space Server Name:</label>
+					<input type='text' placeholder='YOURNAME.wisen.space' name='ws_server' required>
+					<label>Wisen Space Passcode:</label>
+					<input type='password' name='ws_passcode' required>
+					<hr>
+					<label>Qoom Server Name:</label>
+					<input type='text' placeholder='YOUR.QOOM.DOMAIN' name='qoom_server' class="qoom" required>
+					<label>Qoom Passcode:</label>
+					<input type='password' name='qoom_passcode' class="qoom" required>
+					<input type='submit' value='Copy Over' class="qoom-main-btn qoom-button-full">
+				</form>
+				<section>
+					<h6>Contact us at <a href="mailto:hello@qoom.io">hello@qoom.io</a> if you get stuck or have any questions</h6>
+				</section>
+				<section id='log' style='display:none'>
+					<h2>Please wait until the following process or download completes</h2>
+					<div>
+						<div>Started migration <span class="three-dots"><span>.</span><span>.</span><span>.</span></span></div>
+					</div>
+				</section>
+				<section id='downloadlog' style='display:none'>
+					<h2>Please wait for the zip file to finish downloading <span class="three-dots"><span>.</span><span>.</span><span>.</span></span></h2>
+				</section>
+			</main>
+			<footer>2020 © Qoom, Inc.</footer>
+		</div>
+		<script src='/libs/socketio.js'></script>
+		<script>
+			if(location.search.includes('error=')) {
+				alert(decodeURIComponent(location.search.substr(7)));
+				window.history.pushState("", "", location.pathname);
+			}
+			function validate(form) {
+				return Array.from(form.elements).reduce((a, $e) => {
+					switch($e.name) {
+						case 'ws_passcode':
+						case 'qoom_passcode':
+							if(!$e.value || $e.value.length < 3) {		
+								$e.classList.add('error');
+								a.push(`Please enter a valid passcode`);
+							}
+							return a;
+						case 'ws_server':
+							if(!/[a-z0-9_-]+\.wisen\.space/i.test($e.value)) {		
+								$e.classList.add('error');
+								a.push(`Please enter a valid wisen space server name`);
+							}
+							return a;
+						case 'qoom_server':
+							if(!/[a-z0-9_-]+\.[a-z0-9_-]+\.[a-z0-9_-]+/i.test($e.value)) {		
+								$e.classList.add('error');
+								a.push(`Please enter a valid qoom server name`);
+							}
+							return a;
+						default:
+							return a;
+					}
+				}, []);
+			}
+		
+			function getFormData(form) {
+				return Array.from(form.elements).reduce((o, $e) => {
+					$e.classList.remove('error');
+					if(!$e.name) return o;
+					o[$e.name] = $e.getAttribute('type') === 'text' ? $e.value.toLowerCase() : $e.value;
+					return o;
+				}, {});
+			}
+			
+			document.querySelector('#wisen').onsubmit = function(e) {
+				const form = this
+					, errors = validate(form)
+				;
+				if(errors && errors.length) {
+					e.preventDefault();
+					alert(errors.join('\n'));
+					return false;
+				}
+				document.querySelectorAll('main > *').forEach($el => $el.style.display = $el.id === 'downloadlog' ? 'block' : 'none' );
+			}
+			
+			document.querySelector('#qoom').onsubmit = async function(e) {
+				e.preventDefault();
+				const form = this
+					, errors = validate(form)
+				;
+				if(errors && errors.length) {
+					alert(errors.join('\n'));
+					return;
+				}
+				document.querySelectorAll('main > *').forEach($el => $el.style.display = $el.id === 'log' ? 'block' : 'none' );
+				const data = getFormData(form)
+					, result = await fetch(form.action, {method: form.method, headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
+					, response = await result.json()
+				;
+				if(!response || !response.socketId) {
+					alert(JSON.stringify(response, null, 2));
+					return false;
+				}
+				// do socket stuff
+				
+				const $log = document.querySelector('#log > div');
+				let socket = io(`/migrate/${response.socketId}`);
+				socket.on('migrateupdate', function(data) {
+					let logmessage = '';
+					if(data.error) logmessage = data.error;
+					if(data.data && data.data.stepName) logmessage = `${data.message}: ${data.data.stepName}`;
+					if(data.message) logmessage = data.message;
+					
+					const $logitem = document.createElement('div');
+					$logitem.innerHTML = typeof(logmessage) === 'object' ? JSON.stringify(logmessage, null, '\t') : logmessage + '';
+					$log.appendChild($logitem)
+					$log.scrollTo(0,$log.scrollHeight);
+				});
+
+				return false;
+			}
+		</script>
+	</body>
+</html>

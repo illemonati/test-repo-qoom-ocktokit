@@ -1,0 +1,777 @@
+/*===========================
+  TABS AND ACCORDIONS 
+===========================*/
+
+
+.tabs {}
+
+.tabs-title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 45px;
+    color: $text-color-three;
+
+    @media #{$xs} {
+        font-size: 24px;
+        line-height: 35px
+    }
+}
+
+
+.tebs-one {
+    border: 1px solid $light-color-three;
+
+    & .nav {
+        border-bottom: 1px solid $light-color-three;
+        
+        @media #{$xs}{
+            display: block;
+        }
+        @media #{$sm}{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+        }
+
+        & .nav-item {
+            & a {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-two;
+                font-weight: 700;
+                padding: 13px;
+                @include transition(0.3s);
+                display: block;
+
+                &.active {
+                    color: $white;
+                    background: rgb(0, 103, 244);
+                    background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                }
+            }
+        }
+    }
+
+    & .tab-content {
+        & .tab-text {
+            padding: 15px;
+
+            & .text {
+                font-size: 14px;
+                color: $text-color-one;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.tebs-two {
+    border: 1px solid $light-color-three;
+
+    & .nav {
+        
+        @media #{$xs}{
+            display: block;
+        }
+        @media #{$sm}{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+        }
+        
+        & .nav-item {
+            & a {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-two;
+                font-weight: 700;
+                padding: 13px;
+                @include transition(0.3s);
+                display: block;
+                border-bottom: 1px solid $light-color-three;
+                position: relative;
+
+                &.active {
+                    color: $primary-one;
+                    border: 1px solid $light-color-three;
+                    border-bottom: 0;
+                    border-top: 0;
+                    
+                    @media #{$xs}{
+                        border: 1px solid $light-color-three;
+                        border-top: 0;
+                        border-left: 0;
+                        border-right: 0;
+                    }
+                    @media #{$sm}{
+                        border: 1px solid $light-color-three;
+                        border-bottom: 0;
+                        border-top: 0;
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        width: 100%;
+                        height: 4px;
+                        left: 0;
+                        background: rgb(0, 103, 244);
+                        background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    }
+                }
+            }
+
+            &:first-child {
+                & a {
+                    &.active {
+                        border-left: 0;
+                    }
+                }
+
+            }
+
+            &:last-child {
+                & a {
+                    &.active {
+                        border-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    & .tab-content {
+        & .tab-text {
+            padding: 15px;
+
+            & .text {
+                font-size: 14px;
+                color: $text-color-one;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+.tebs-three {
+
+    & .nav {
+        
+        @media #{$xs}{
+            display: block;
+        }
+        @media #{$sm}{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+        }
+
+        & .nav-item {
+            & a {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-two;
+                font-weight: 700;
+                padding: 13px;
+                @include transition(0.3s);
+                display: block;
+                position: relative;
+
+                & i {
+                    margin-right: 5px;
+                    font-size: 18px;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    background-color: $text-color-two;
+                    width: 100%;
+                    height: 4px;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                &.active {
+                    color: $primary-one;
+
+                    &::before {
+                        background: rgb(0, 103, 244);
+                        background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    }
+                }
+            }
+        }
+    }
+
+    & .tab-content {
+        & .tab-text {
+            padding: 15px;
+
+            & .text {
+                font-size: 14px;
+                color: $text-color-one;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+.tebs-four {
+    & .nav {
+        @media #{$xs}{
+            display: block;
+        }
+        @media #{$sm}{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+        }
+        
+        & .nav-item {
+            & a {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-two;
+                font-weight: 700;
+                padding: 13px;
+                @include transition(0.3s);
+                display: block;
+                position: relative;
+                
+                @media #{$xs}{
+                    margin-top: -4px;
+                }
+                @media #{$sm}{
+                    margin-top: 0;
+                }
+
+                & i {
+                    margin-right: 5px;
+                    font-size: 18px;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    background-color: $text-color-two;
+                    width: 100%;
+                    height: 4px;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                &.active {
+                    color: $white;
+                    background: rgb(0, 103, 244);
+                    background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+
+                    &::before {
+                        background: rgb(0, 103, 244);
+                        background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    }
+                }
+            }
+        }
+    }
+
+    & .tab-content {
+        & .tab-text {
+            padding: 15px;
+
+            & .text {
+                font-size: 14px;
+                color: $text-color-one;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+
+.tebs-four {
+    & .nav {
+        & .nav-item {
+            & a {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-two;
+                font-weight: 700;
+                padding: 13px;
+                @include transition(0.3s);
+                display: block;
+                position: relative;
+
+                & i {
+                    margin-right: 5px;
+                    font-size: 18px;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    background-color: $text-color-two;
+                    width: 100%;
+                    height: 4px;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                &.active {
+                    color: $white;
+                    background: rgb(0, 103, 244);
+                    background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+
+                    &::before {
+                        background: rgb(0, 103, 244);
+                        background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                        background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                    }
+                }
+            }
+        }
+    }
+
+    & .tab-content {
+        & .tab-text {
+            padding: 15px;
+
+            & .text {
+                font-size: 14px;
+                color: $text-color-one;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+
+.tebs-five {
+    border: 1px solid $light-color-three;
+    
+    & .nav {
+        border-right: 1px solid $light-color-three;
+        height: 100%;
+        
+        & a {
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-two;
+            font-weight: 700;
+            padding: 13px;
+            @include transition(0.3s);
+            display: block;
+            position: relative;
+            text-align: center;
+
+            & i {
+                margin-right: 5px;
+                font-size: 18px;
+            }
+
+            &.active {
+                color: $white;
+                background: rgb(0, 103, 244);
+                background: -webkit-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                background: -o-linear-gradient(left, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+                background: linear-gradient(to right, rgba(0, 103, 244, 1) 0%, rgba(43, 219, 220, 1) 100%);
+            }
+        }
+    }
+
+    & .tab-content {
+        & .tab-text {
+            padding: 15px;
+
+            & .text {
+                font-size: 14px;
+                color: $text-color-one;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+
+.tebs-six {    
+    & .nav {
+        height: 100%;
+        position: relative;
+        
+        &::before{
+            position: absolute;
+            content: '';
+            width: 4px;
+            height: 100%;
+            background-color: $light-color-three;
+            top: 0;
+            right: 0;
+        }
+        
+        & a {
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-two;
+            font-weight: 700;
+            padding: 13px;
+            @include transition(0.3s);
+            display: block;
+            position: relative;
+            text-align: center;
+            
+            & i {
+                margin-right: 5px;
+                font-size: 18px;
+            }
+
+            &.active {
+                color: $primary-one;
+                
+                &::before{
+                    position: absolute;
+                    content: '';
+                    width: 4px;
+                    height: 100%;
+                    background: rgb(43,219,220);
+                    background: -webkit-linear-gradient(rgba(43,219,220,1) 0%, rgba(0,103,244,1) 100%);
+                    background: -o-linear-gradient(rgba(43,219,220,1) 0%, rgba(0,103,244,1) 100%);
+                    background: linear-gradient(rgba(43,219,220,1) 0%, rgba(0,103,244,1) 100%);
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    & .tab-content {
+        & .tab-text {
+            padding: 15px;
+
+            & .text {
+                font-size: 14px;
+                color: $text-color-one;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.accordion-area{}
+
+.single-accordion{}
+
+
+.accordion-style-one{
+    & .accordion{
+        & .card{
+            margin-top: 8px;
+            border: 1px solid $light-color-three !important;
+            border-radius: 0;
+            
+            & .card-header{
+                padding: 0;
+                background: none;
+                
+                & a{
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    position: relative;
+                    color: $primary-one;
+                    @include transition(0.3s);
+                    border: 1px solid $primary-one ;
+                    margin: -1px;
+                    border-radius: 0;
+                    padding: 13px 16px;
+                    z-index: 5;
+                    
+                    &::before{
+                        position: absolute;
+                        content: "\ea45";
+                        font-family: lineicons!important;
+                        right: 16px;
+                        top: 15px;
+                        font-size: 16px;
+                        @include transition(0.3s);
+                        @include transform(rotate(180deg));
+                    }
+                    
+                    &.collapsed{
+                        color: $text-color-one;
+                        border-color: $light-color-three;
+                        
+                        &::before{
+                            @include transform(rotate(0));
+                        }
+                    }
+                }
+            }
+            & .card-body{
+                padding: 16px;
+                
+                & .text{
+                    font-size: 14px;
+                    color: $text-color-one;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+
+.accordion-style-two{
+    & .accordion{
+        & .card{
+            margin-top: 8px;
+            border: 1px solid $light-color-three !important;
+            border-radius: 0;
+            
+            & .card-header{
+                padding: 0;
+                background: none;
+                
+                & a{
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    position: relative;
+                    color: $white;
+                    @include transition(0.3s);
+                    border: 1px solid $primary-one;
+                    margin: -1px;
+                    border-radius: 0;
+                    padding: 13px 16px;
+                    z-index: 5;
+                    background-color: $primary-one;
+                    
+                    &::before{
+                        position: absolute;
+                        content: "\ea45";
+                        font-family: lineicons!important;
+                        right: 16px;
+                        top: 15px;
+                        font-size: 16px;
+                        @include transition(0.3s);
+                        @include transform(rotate(180deg));
+                    }
+                    
+                    &.collapsed{
+                        color: $text-color-one;
+                        border-color: $light-color-three;
+                        background-color: transparent;
+                        
+                        &::before{
+                            @include transform(rotate(0));
+                        }
+                    }
+                }
+            }
+            & .card-body{
+                padding: 16px;
+                
+                & .text{
+                    font-size: 14px;
+                    color: $text-color-one;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+
+.accordion-style-three{
+    & .accordion{
+        & .card{
+            border-radius: 0;
+            border: 0;
+            overflow: visible;
+            
+            & .card-header{
+                padding: 0;
+                background: none;
+                
+                & a{
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    position: relative;
+                    color: $white;
+                    @include transition(0.3s);
+                    border: 2px solid linear-gradient(90deg, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+                    border-radius: 0;
+                    padding: 13px 16px;
+                    z-index: 5;
+                    border-left: 0;
+                    border-right: 0;
+                    background: rgb(0,103,244);
+                    background: linear-gradient(90deg, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+                    margin-top: -2px;
+                    
+                    
+                    &::before{
+                        position: absolute;
+                        content: "\ea45";
+                        font-family: lineicons!important;
+                        right: 16px;
+                        top: 15px;
+                        font-size: 16px;
+                        @include transition(0.3s);
+                        @include transform(rotate(180deg));
+                    }
+                    
+                    &.collapsed{
+                        color: $text-color-one;
+                        border: 2px solid $light-color-one;
+                        background: transparent;
+                        border-left: 0;
+                        border-right: 0;
+                        
+                        &::before{
+                            @include transform(rotate(0));
+                        }
+                    }
+                }
+            }
+            & .card-body{
+                padding: 16px;
+                
+                & .text{
+                    font-size: 14px;
+                    color: $text-color-one;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.accordion-style-four{
+    & .accordion{
+        & .card{
+            margin-top: 8px;
+            border-radius: 0;
+            border: 0;
+            
+            & .card-header{
+                padding: 0;
+                background: none;
+                
+                & a{
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    position: relative;
+                    color: $white;
+                    @include transition(0.3s);
+                    margin: -1px;
+                    border-radius: 0;
+                    padding: 13px 16px;
+                    z-index: 5;
+                    
+                    border: 0;
+                    background: rgb(0,103,244);
+                    background: linear-gradient(90deg, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+                    
+                    &::before{
+                        position: absolute;
+                        content: "\ea45";
+                        font-family: lineicons!important;
+                        right: 16px;
+                        top: 15px;
+                        font-size: 16px;
+                        @include transition(0.3s);
+                        @include transform(rotate(180deg));
+                    }
+                    
+                    &.collapsed{
+                        color: $text-color-one;
+                        border-color: $light-color-three;
+                        background: $light-color-two;
+                        
+                        &::before{
+                            @include transform(rotate(0));
+                        }
+                    }
+                }
+            }
+            & .card-body{
+                padding: 16px;
+                
+                & .text{
+                    font-size: 14px;
+                    color: $text-color-one;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
