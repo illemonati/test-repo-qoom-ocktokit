@@ -1,0 +1,236 @@
+i {
+	height: 48px;
+	width: 48px;
+	background-size:contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display:inline-block;	
+}
+
+/* color filter */
+/* color converter https://codepen.io/sosuke/pen/Pjoqqp */
+i.blue, i.primary {
+	/* color: #0067f4; */
+	-webkit-filter: invert(22%) sepia(72%) saturate(3462%) hue-rotate(205deg) brightness(100%) contrast(108%);
+	filter: invert(22%) sepia(72%) saturate(3462%) hue-rotate(205deg) brightness(100%) contrast(108%);
+}
+i.blue-100, i.primary-100 {
+	/* color: #99c2fa */
+	-webkit-filter: invert(75%) sepia(8%) saturate(2218%) hue-rotate(184deg) brightness(100%) contrast(97%);
+	filter: invert(75%) sepia(8%) saturate(2218%) hue-rotate(184deg) brightness(100%) contrast(97%);
+}
+i.purple {
+	/* color: #B175FF; */
+	-webkit-filter: invert(52%) sepia(15%) saturate(3671%) hue-rotate(225deg) brightness(101%) contrast(103%);
+	filter: invert(52%) sepia(15%) saturate(3671%) hue-rotate(225deg) brightness(101%) contrast(103%);
+}
+i.navy {
+	/* color: #111559; */
+	-webkit-filter: invert(12%) sepia(28%) saturate(4897%) hue-rotate(226deg) brightness(94%) contrast(111%);
+	filter: invert(12%) sepia(28%) saturate(4897%) hue-rotate(226deg) brightness(94%) contrast(111%);
+}
+i.white {
+	/* color: #FFFFFF; */
+	-webkit-filter: invert(1);
+	filter: invert(1);
+}
+i.gray-400 {
+	/* color-gray-400: #9e9e9e; */
+	-webkit-filter: invert(56%) sepia(94%) saturate(0%) hue-rotate(171deg) brightness(96%) contrast(78%);
+	filter: invert(56%) sepia(94%) saturate(0%) hue-rotate(171deg) brightness(96%) contrast(78%);
+}
+i.yellow {
+	/* color: FDCA40; */
+	-webkit-filter: invert(76%) sepia(40%) saturate(697%) hue-rotate(357deg) brightness(101%) contrast(98%);
+	filter: invert(76%) sepia(40%) saturate(697%) hue-rotate(357deg) brightness(101%) contrast(98%);
+}
+
+i.ic-qoom {
+	background-image: url(/libs/icons/qoom.svg);
+}
+i.ic-arrow-out {
+	background-image: url(/libs/icons/arrow-out.svg);
+}
+i.ic-settings {
+	background-image: url(/libs/icons/settings.svg);
+}
+i.ic-user {
+	background-image: url(/libs/icons/user.svg);
+}
+i.ic-mail {
+	background-image: url(/libs/icons/mail.svg);
+}
+i.ic-card {
+	background-image: url(/libs/icons/card.svg);
+}
+i.ic-coding {
+	background-image: url(/libs/icons/coding.svg);
+}
+i.ic-star {
+	background-image: url(/libs/icons/star.svg);
+}
+i.ic-trophy {
+	background-image: url(/libs/icons/trophy.svg);
+}
+i.ic-check-circle {
+	background-image: url(/libs/icons/check-circle.svg);
+}
+i.ic-menu {
+	background-image: url(/libs/icons/menu.svg);
+}
+i.ic-feedback {
+	background-image: url(/libs/icons/feedback.svg);
+}
+i.ic-group {
+	background-image: url(/libs/icons/group.svg);
+}
+i.ic-teacher {
+	background-image: url(/libs/icons/teacher.svg);
+}
+i.ic-school {
+	background-image: url(/libs/icons/school.svg);
+}
+i.ic-chevron-up {
+	background-image: url(/libs/icons/chevron-up.svg);
+}
+i.ic-chevron-down {
+	background-image: url(/libs/icons/chevron-down.svg);
+}
+i.ic-chevron-left {
+	background-image: url(/libs/icons/chevron-left.svg);
+}
+i.ic-chevron-right {
+	background-image: url(/libs/icons/chevron-right.svg);
+}
+i.ic-spinner {
+	background-image: url(/libs/icons/spinner.svg);
+}
+i.ic-folder {
+	background-image: url(/libs/icons/folder.svg);
+}
+i.ic-file {
+	background-image: url(/libs/icons/file.svg);
+}
+i.ic-file-html {
+	background-image: url(/libs/icons/html.svg);
+}
+i.ic-file-css {
+	background-image: url(/libs/icons/css.svg);
+}
+i.ic-file-js {
+	background-image: url(/libs/icons/javascript.svg);
+}
+i.ic-file-py {
+	background-image: url(/libs/icons/python.svg);
+}
+i.ic-back {
+	background-image: url(/libs/icons/back.svg);
+}
+i.ic-email-sent {
+	background-image: url(/libs/icons/email-sent.svg);
+}
+i.ic-error {
+	background-image: url(/libs/icons/error.svg);
+}
+i.ic-ghost {
+	background-image: url(/libs/icons/ghost.svg);
+}
+i.ic-maintenance {
+	background-image: url(/libs/icons/maintenance.svg);
+}
+i.ic-search {
+	background-image: url(/libs/icons/search.svg);
+}
+i.ic-add-circle {
+	background-image: url(/libs/icons/add-circle.svg);
+}
+i.ic-cancel {
+	background-image: url(/libs/icons/cancel.svg);
+}
+i.ic-lock {
+	background-image: url(/libs/icons/lock.svg);
+}
+i.ic-camera {
+	background-image: url(/libs/icons/camera.svg);
+}
+i.ic-add {
+	background-image: url(/libs/icons/add.svg);
+}
+i.ic-play {
+	background-image: url(/libs/icons/play.svg);
+}
+i.ic-home {
+	background-image: url(/libs/icons/home.svg);
+}
+i.ic-overflow {
+	background-image: url(/libs/icons/overflow.svg);
+}
+i.ic-overflow-v {
+	background-image: url(/libs/icons/overflow-v.svg);
+}
+i.ic-new-file {
+	background-image: url(/libs/icons/new-file.svg);
+}
+i.ic-new-folder {
+	background-image: url(/libs/icons/new-folder.svg);
+}
+i.ic-upload-file {
+	background-image: url(/libs/icons/upload-file.svg);
+}
+i.ic-rollback {
+	background-image: url(/libs/icons/rollback.svg);
+}
+i.ic-merge {
+	background-image: url(/libs/icons/merge.svg);
+}
+i.ic-preview-new {
+	background-image: url(/libs/icons/preview-new.svg);
+}
+i.ic-preview-right {
+	background-image: url(/libs/icons/preview-right.svg);
+}
+i.ic-preview-left {
+	background-image: url(/libs/icons/preview-left.svg);
+}
+i.ic-preview-bottom {
+	background-image: url(/libs/icons/preview-bottom.svg);
+}
+i.ic-github {
+	background-image: url(/libs/icons/github.svg);
+}
+i.ic-discord {
+	background-image: url(/libs/icons/discord.svg);
+}
+i.ic-download {
+	background-image: url(/libs/icons/download.svg);
+}
+i.ic-transfer {
+	background-image: url(/libs/icons/transfer.svg);
+}
+i.ic-cloud-qoom {
+	background-image: url(/libs/icons/qoom-cloud.svg);
+}
+i.ic-open-in-new {
+	background-image: url(/libs/icons/open-in-new.svg);
+}
+
+
+/* images */
+i.img-search {
+	background-image: url(/libs/icons/search-image.svg);
+}
+i.img-no-result {
+	background-image: url(/libs/icons/no-result-image.svg);
+}
+i.img-maintenance {
+	background-image: url(/libs/icons/maintenance.svg);
+}
+i.img-email-sent {
+	background-image: url(/libs/icons/email-sent.svg);
+}
+i.img-updating {
+	background-image: url(/libs/icons/updating-image.svg);
+}
+i.img-congrats {
+	background-image: url(/libs/icons/congrats-image.svg);
+}

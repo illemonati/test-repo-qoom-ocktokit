@@ -1,0 +1,10 @@
+<svg width="56px" height="50px" viewBox="0 0 56 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>folder</title>
+    <g id="File-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-384.000000, -126.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="folder" transform="translate(384.000000, 126.000000)">
+                <path d="M18.8482,0.35 C21.39935,0.35 23.73182,1.79102 24.86932,4.07148 C25.517366,5.3676 26.8408,6.1824 28.28455,6.1824 L51.27535,6.1824 C53.68979,6.1824 55.65035,8.14296 55.65035,10.5574 L55.65035,45.5574 C55.65035,47.97457 53.68979,49.9324 51.27535,49.9324 L4.60775,49.9324 C2.19331,49.9324 0.23275,47.97457 0.23275,45.5574 L0.23275,4.725 C0.23275,2.31056 2.19331,0.35 4.60775,0.35 L18.8482,0.35 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
