@@ -711,56 +711,60 @@ function addRoutes(app) {
 			}));
 			
 			for (const file of Object.keys(files)) {
-				groupFileNames.push(file);
-				if (groupFileNames.length < 70) {
-					continue;
+				try {
+						groupFileNames.push(file);
+					if (groupFileNames.length < 70) {
+						continue;
+					}
+					
+					const groupFiles = {};
+					for (const groupFileName of groupFileNames) {
+						groupFiles[groupFileName] = fs.readFileSync(path.join('/app/', groupFileName)).toString("utf-8");
+					}
+					// console.log(groupFiles);
+					
+					const pullRequest = await octokit.createPullRequest({
+						owner: currentUser.data.login,
+						repo: repoName,
+						title: `qoom-sync-${time.getTime()}-${counter}`,
+						body: `qoom-sync at ${time.toString()} Number: ${counter}`,
+					    base: "master",
+						head: `qoom-sync-${time.getTime()}-${counter}`,
+						changes: [
+						  {
+						    files: groupFiles,
+						    commit:
+						      `qoom-sync at ${time.toString()}-${counter}`,
+						  },
+						],
+					});
+					await octokit.pulls.merge({
+						owner: currentUser.data.login,
+						repo: repoName,
+						pull_number: pullRequest.data.number,
+					});
+					
+					const branch = await octokit.repos.getBranch({
+					    owner: currentUser.data.login,
+					    repo: repoName,
+					    branch: `qoom-sync-${time.getTime()}-${counter}`,
+					});
+					
+					// console.log(branch);
+					
+					await octokit.git.getCommit({
+						owner: currentUser.data.login,
+						repo: repoName,
+						commit_sha: branch.data.commit.sha,
+					});
+	
+	
+	
+					groupFileNames = [];
+					counter += 1;
+				} catch (e) {
+					console.log(e);
 				}
-				
-				const groupFiles = {};
-				for (const groupFileName of groupFileNames) {
-					groupFiles[groupFileName] = fs.readFileSync(path.join('/app/', groupFileName)).toString("utf-8");
-				}
-				// console.log(groupFiles);
-				
-				const pullRequest = await octokit.createPullRequest({
-					owner: currentUser.data.login,
-					repo: repoName,
-					title: `qoom-sync-${time.getTime()}-${counter}`,
-					body: `qoom-sync at ${time.toString()} Number: ${counter}`,
-				    base: "master",
-					head: `qoom-sync-${time.getTime()}-${counter}`,
-					changes: [
-					  {
-					    files: groupFiles,
-					    commit:
-					      `qoom-sync at ${time.toString()}-${counter}`,
-					  },
-					],
-				});
-				await octokit.pulls.merge({
-					owner: currentUser.data.login,
-					repo: repoName,
-					pull_number: pullRequest.data.number,
-				});
-				
-				const branch = await octokit.repos.getBranch({
-				    owner: currentUser.data.login,
-				    repo: repoName,
-				    branch: `qoom-sync-${time.getTime()}-${counter}`,
-				});
-				
-				// console.log(branch);
-				
-				await octokit.git.getCommit({
-					owner: currentUser.data.login,
-					repo: repoName,
-					commit_sha: branch.data.commit.sha,
-				});
-
-
-
-				groupFileNames = [];
-				counter += 1;
 				await sleep(10000);
 			}
 			
