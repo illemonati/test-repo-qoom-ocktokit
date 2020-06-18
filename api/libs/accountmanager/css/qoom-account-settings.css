@@ -1,0 +1,117 @@
+/* Account Settings CSS */
+
+.user-info-container {
+	display: flex;
+}
+
+.user-info-details-container {
+	width: 100%;
+}
+
+.user-info-details-container table {
+	margin-top: 16px;
+	width: 100%;
+}
+
+.user-info-details-container tr td:nth-child(1) {
+	color: var(--text-dark-medium);
+	font-weight: 300;
+	width: 128px;
+	text-transform: uppercase;
+}
+
+.user-info-details-container tr, td {
+	min-width: 70px;
+	min-height: 40px;
+	padding: 8px 0;
+}
+
+.user-info-details-container .user-name .change-name,
+.user-info-details-container .user-email .change-email,
+.user-info-details-container .user-password .change-password {
+	color: var(--color-primary);
+	font-size:12px;
+	cursor: pointer;
+	text-transform: uppercase;
+	padding: 8px;
+	border-radius: 2px;
+}
+
+.user-info-details-container .user-name .change-name,
+.user-info-details-container .user-email .change-email {
+	margin-left: 24px;
+}
+
+.user-info-details-container a:hover {
+	background-color: var(--color-gray-10);
+}
+
+/*STYLES FOR MODAL*/
+#updateNameModal {
+	display: none;
+}
+
+#updateEmailModal {
+	display: none;
+}
+
+#updateEmailModal #updateEmailModal-verify {
+	display: none;
+}
+
+#updateEmailModal #updateEmailModal-change {
+	display: none;
+}
+
+#changePasswordModal {
+	display: none;
+}
+
+#changePasswordModal #changePasswordModal-verify {
+	display: none;
+}
+
+#changePasswordModal #changePasswordModal-change {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	.main-container {
+		padding: 0;
+	}
+	.main-container .page-title h2 {
+		margin: 9px 0;
+	}
+	.user-info-container {
+		padding: 0 16px;
+	}
+	.user-info-container .user-info-details tr, td {
+		min-width: 100px;
+		padding: 10px;
+	}
+
+}
+
+@media (max-width: 767px) {
+	
+	.user-info-details-container {
+		flex-direction: column;
+		align-items: center;
+		padding: 0 16px;
+	}
+
+	.user-info-details-container tr, td {
+		min-width: 90px;
+		padding: 8px 0;
+	}
+	
+	.user-info-details-container tr td:nth-child(1) {
+		width: 104px;
+	}
+	
+	.user-info-details-container .user-name .change-name
+	,.user-info-details-container .user-email .change-email {
+		margin-left: 4px;
+		line-height: 1.5
+	}
+}

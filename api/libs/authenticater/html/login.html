@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+	<title>Enter your Space</title>
+	<style>{{BASECSS}}</style>
+	<style>
+
+		#enteringPasscode {
+			display:block;
+		}
+
+		h2 {
+			font-size:3vw;
+		}
+
+		.title {
+			padding-top: 8vmin;
+			padding-bottom: 3vmin;
+			font-size: 4.5vw;
+			text-align: center;
+			margin-bottom: 2vmin;
+			color: #5a5a5a;
+		}
+		.body {
+			position: relative;
+			left: 50%;
+			transform: translate(-50%);
+			padding: 8vmin;
+			text-align: center;
+			background-color: #F0F0F5;
+			border-style: solid;
+			border-radius: 7px;
+			box-shadow: 4px 4px 5px gray;
+			width: 55%;
+		}
+		
+		.buttonText:after {
+			content: ' \00bb';
+		}
+		
+	</style>
+<body>
+	<h1 class="title">Enter Your Space</h1>
+	
+	<section id="enteringPasscode">
+		<div id="login" class="body">
+			<h2>Email:</h2>
+			<input type="text">
+			<button id="enterBtn" class="button"><span class="buttonText">Enter</span></button>
+		</div>
+	</section>
+	<script>{{BASEJS}}</script>
+	<script>
+		(function() {
+			var $button = document.querySelector('button');
+			var $input = document.querySelector('input');
+
+			function enter() {
+				restfull.post({path: '/auth/enter', data: {email: $input.value}}, (err, data) => {
+					var errMessage = 'There is an error in our system. Please try again later';
+					if(err || !data) return alert(errMessage);
+					if(data.err === 'NO_SPACE') return alert('Could not find you in our system')
+					if(data.path) return location.href = data.path;
+					return alert(errMessage);
+				});
+			}
+
+			$button.addEventListener('click', enter);
+		})();
+	</script>
+</body>
+</html>

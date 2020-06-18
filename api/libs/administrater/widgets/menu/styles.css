@@ -1,0 +1,90 @@
+nav {
+	width: 64px;
+}
+nav .menuIcon {
+	padding: 9px 16px;
+}
+nav .menuIcon i {
+	width: 32px;
+	height: 32px;
+}
+nav .menuIcon:hover {
+	cursor: pointer;
+}
+
+nav .navMenu .navBackground {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left:0;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0,0,0,0.38);
+}
+
+nav .navMenu .navMenuContent {
+	background-color: #fff;
+	position: absolute;
+	display: block;
+	z-index: 99;
+	top: 0;
+	left: 0; 
+	height: 100vh;
+	min-width: 240px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0, .2);
+	transform: translate(-240px, 0);
+	transition: transform 0.3s ease;
+}
+nav .navMenu .navMenuContent.open {
+	transform: translate(0, 0);
+}
+
+nav .navMenu .navMenuContent .navMenuHeader {
+	color: var(--color-dark-navy);
+	display: block;
+	font-size: 16px;
+	font-weight: 600;
+	height: 54px;
+	padding: 16px 24px;
+	width: 100%;
+}
+
+nav div.navMenu ul {
+	display: block;
+}
+
+nav div.navMenu .navMenuContent a {
+	color: var(--text-dark-high);
+	float: none;
+	display: block;
+	font-size: 16px;
+	padding: 16px 24px;
+	text-decoration: none;
+	text-align: left;
+}
+
+nav div.navMenu .navMenuContent li:first-child a {
+	border-top: 1px solid var(--color-gray-200);
+}
+
+nav div.navMenu .navMenuContent li:last-child a {
+	border-top: 1px solid var(--color-gray-200);
+	bottom: 0;
+	display: block;
+	position: absolute;
+	width: 100%;
+} 
+
+nav div.navMenu .navMenuContent a:hover {
+	background-color: var(--color-gray-200);
+	text-decoration: none;
+}
+
+nav div.navMenu .navMenuContent a:visited {
+	color: var(--text-dark-high);
+}
+
+nav div.navMenu .navMenuContent a:active {
+	color: var(--text-dark-high);
+}

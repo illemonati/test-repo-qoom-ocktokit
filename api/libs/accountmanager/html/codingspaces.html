@@ -1,0 +1,158 @@
+<section class='main-container' id = 'coding-spaces-container'>
+	<div class="page-title">
+		<div class='hamburgerIconContainer'><div class="hamburgerIcon"><i class="ic-menu white"></i></div></div>
+		<h6>{{entity.name}}</h6>
+		<h2>Coding Spaces</h2>
+	</div>
+	<div class='page-section'>
+		<p class='description'>You are subscribing to our <span>{{planType}} plan</span> for this domain. You can have up to {{planSize}} active space{{plural}}.</p>
+		<table id='memberTable'>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>URL</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<a style='display:none' target='_blank' id='takeMeToAdminPageLink'></a>
+		<div style='display:{{groupShow}}'><button id="addNew" onclick="openAddNewModal()"><i class="ic-add-circle"></i><span class="actions add-new-text">Add New</span></button></div>
+	</div>
+</section>
+<section id="addNewModal">
+	<div class="modal-background" onclick="closeAddNewModal()"></div>
+	<div class="modal">
+		<div class="modal-title"><h1>Add New</h1></div>
+		<div class="container">
+			<div class="col-lg-6">
+                <div class="form-input">
+                    <label>First Name*</label>
+                    <div class="input-items default empty">
+                        <input type="text" placeholder="" class='firstName' required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-input">
+                    <label>Last Name</label>
+                    <div class="input-items-optional default">
+                        <input type="text" placeholder="" class='lastName'>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-input">
+                    <label>Email</label>
+                    <div class="input-items-optional default">
+                        <input type="email" placeholder="" class='subdomainEmail'>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-input url">
+                    <label>URL Address*</label>
+                    <div class="input-items url default empty">
+                        <input type="url" placeholder="" class='subdomainURL' required>
+                        <span class="domain-name">.{{entity.domain}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick='closeAddNewModal()' >Cancel</button>
+                <button id="submitBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick='addNewCodingSpaces()'>Add</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="editModal">
+	<div class="modal-background" onclick="closeEditModal()"></div>
+	<div class="modal">
+		<div class="modal-title"><h1>Edit</h1></div>
+		<div class="container">
+			<div class="col-lg-6">
+                <div class="form-input">
+                    <label>First Name</label>
+                    <div class="input-items default empty">
+                        <input type="text" placeholder="" id='firstName'>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-input">
+                    <label>Last Name</label>
+                    <div class="input-items default empty">
+                        <input type="text" placeholder="" id='lastName'>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-input">
+                    <label>Email</label>
+                    <div class="input-items-optional default empty">
+                        <input type="email" placeholder="" id='email'>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-input url">
+                    <label><span>URL Address</span><span class="description">URL change takes an hour to start working.</span></label>
+                    <div class="input-items url default empty">
+                        <input type="url" placeholder=""  id='subdomain'>
+                        <span class="domain-name" id="domainName">.{{entity.domain}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeEditModal()" >Cancel</button>
+                <button id="editBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick='editCodingSpaces()'>Update</button>
+            </div> 
+        </div>
+    </div>
+</section>
+<section id="deleteModal">
+	<div class="modal-background" onclick="closeDeleteModal()"></div>
+	<div class="modal">
+		<div class="modal-title"><h1>Delete Coding Spaces</h1></div>
+		<div class="container">
+			<div class="modal-description">
+				<p>Are you sure you want to delete <span class="subdomain-name"></span>?</p>
+				<p>Deleting this coding space will permanently delete all associated files and data. You cannot undo this operation.</p>
+				<p>To confirm, please enter the full URL of the coding space.</p>
+			</div>
+            <div class="col-lg-12">
+                <div class="form-input">
+                    <div class="input-items default empty">
+                        <input id="urlToDelete" type="text" placeholder="">
+                    </div>
+                </div> 
+            </div>
+            <div class="buttons-container">
+            	<input type='hidden' id='subdomainToDelete' value=''> 
+                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeDeleteModal()" >Cancel</button>
+                <button id="deleteBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick='deleteCodingSpace()' disabled>Delete Coding Space</button>
+            </div>
+        </div>
+    </div>
+</section>
+<script id='codingspacerow' type='text/html'>
+	<tr class="{{rowclass}}">
+		<td class="name">{{first}} {{last}}</td>
+		<td class="email">{{subdomainEmail}}</td>
+		<td class="url"><a href="https://{{subdomain}}" target="_blank">{{subdomain}}</a></td>
+		<td class="status {{statusclass}}">
+			{{status}}<span class="{{statusclass}}">{{statusAnimation}}</span>
+		</td>
+		<td class="actions-container">
+			<i class="ic-overflow {{statusclass}}" onclick="openOverflowActions(this)"></i>
+			<div class="actions-background"></div>
+			<ul class="actions-list">
+				<li class="actions {{actionclass1}}">{{action1}}</li>
+				<li class="actions {{actionclass2}}">{{action2}}</li>
+				<li class="actions {{actionclass3}}">{{action3}}</li>
+			</ul>
+		</td>
+	</tr>
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div {
+				margin:100px auto;
+				width:600px;
+				height:600px;
+				border-radius:10px;
+				background-color:rgb(64, 44, 38);
+			}
+			
+			button {
+				width:200px;
+				height:200px;
+				margin: 20px;
+				border-radius:5px;
+			}
+			
+			button:hover {
+				background-color:rgb(128, 218, 23);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button></button>
+		</div>
+		<script>
+			// variable = Noun
+			var button = document.querySelector('button');
+			
+			//function = verb
+			function changeColor(obj) {
+				obj.style.backgroundColor = 'red';
+			}
+			
+			button.addEventListener('click', function() {
+				changeColor(button)
+			});
+		</script>
+	</body>
+</html>

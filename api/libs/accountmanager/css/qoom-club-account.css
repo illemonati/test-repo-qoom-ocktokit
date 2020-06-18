@@ -1,0 +1,254 @@
+body {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	height: 100vh;
+	max-width: 1400px;
+	max-height: 100vh;
+	margin: auto;
+}
+
+/*RIGHT SIDE*/
+.main-container {
+	height: 100vh;
+	width: 75vw;
+	position: relative;
+	padding: 40px;
+	overflow: auto;
+}
+
+
+.main-container .page-title {
+	width: 100%;
+	height: 64px;
+	font-size: 2.75rem;
+	margin-bottom: 56px;
+}
+
+.main-container .club-details-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.main-container .club-details-container .club-details-title {
+	width: 100%;
+}
+
+.main-container .club-details-container .club-details,
+.main-container .club-details-container .club-image-container {
+	width: 50%;
+}
+
+.main-container .club-details-container .club-details table,
+.main-container .club-members-container table {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.main-container .club-details-container .club-details tr td,
+.main-container .club-members-container table tr td {
+	min-height: 40px;
+	padding: 16px 0;
+}
+
+.main-container .club-details-container .club-details .change-name,
+.main-container .club-details-container .club-details .change-plan {
+	color: #0067F4;
+	font-size: 0.75rem;
+}
+
+.main-container .club-details-container .club-details .change-name,
+.main-container .club-details-container .club-details .change-plan {
+	margin-left: 24px;
+	cursor: pointer;
+}
+
+.main-container .club-details-container .club-image-container {
+	display: flex;
+	flex-flow: wrap;
+	align-items: center;
+	justify-content: center;
+
+}
+.main-container .club-details-container .club-image-container .club-image:before {
+	content: 'Image';
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 24px;
+	position: absolute;
+	color: #121212;
+	width: 120px;
+	height: 40px;
+	left: -140px;
+	top: 0;
+}
+
+.main-container .club-details-container .club-image-container .club-image {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	background-color: #FD7E14;
+	color: #fff;
+	font-size: 3rem;
+	font-weight: 500;
+	text-align: center;
+	line-height: 96px;
+	position: relative;
+}
+
+.main-container .club-details-container .club-image-container .change-image {
+	color: #0067F4;
+	width: 100%;
+	text-align: center;
+	font-size: 0.75rem;
+	cursor: pointer;
+
+}
+
+.main-container .club-members-container table tr th {
+	font-size: 0.75rem;
+	font-weight: 400;
+	color: #666666;
+	padding: 20px 0 5px 0;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.main-container .club-members-container table td {
+	border-top: 1px solid #D8D8D8;
+
+}
+
+.main-container .club-members-container table .member-action,
+.main-container .club-members-container table .member-removal {
+	font-size: 0.75rem;
+	color: #0067F4;
+	cursor: pointer;
+}
+
+.main-container .club-members-container table .member-removal {
+	text-align: center;
+}
+
+@media (max-width: 1023px) {
+	.main-container {
+		padding: 20px;
+		width: 100vw;
+	}
+
+	.main-container .page-title {
+		height: 60px;
+		padding: 5px;
+		font-size: 1.25rem;
+		text-align: center;
+		font-weight: 400;
+		border-bottom: 1px solid #a4a4a4;
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.main-container {
+		padding: 10px;
+	}
+
+	.main-container .page-title {
+		margin-bottom: 20px;
+		padding: 17px 0;
+		line-height: 1rem;
+	}
+	
+	.main-container .club-details-container
+	,.main-container .club-members-container {
+		padding: 10px;
+	}
+	
+	.main-container .club-details-container .club-details-title 
+	,.main-container .club-members-container .club-members-title {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+	
+	.main-container .club-details-container {
+		flex-direction: column;
+	}
+	
+	.main-container .club-details-container .club-details
+	,.main-container .club-details-container .club-image-container {
+		width: 100%;
+	}
+	
+	.main-container .club-details-container .club-details {
+		order: 2;
+		margin: 10px 0;
+	}
+	
+	.main-container .club-details-container .club-details table {
+		margin-bottom: 10px;
+	}
+	
+	.main-container .club-details-container .club-details table tr td {
+		min-height: 25px;
+		min-width: 80px;
+		padding: 3px 0;
+	}
+	
+	.main-container .club-details-container .club-details table tr td:nth-child(3) {
+		text-align: right;
+	}
+	
+	.main-container .club-details-container .club-image-container {
+		order: 1;
+		margin: 10px 0;
+	}
+	
+	.main-container .club-details-container .club-image-container .club-image:before {
+		display: none;
+	}
+	
+	.main-container .club-details-container .club-image-container .change-image {
+		margin-top: 5px;
+	}
+	
+	.main-container .club-details-container .club-details tr:nth-child(3) {
+		display: none;
+	}
+	
+	.main-container .club-members-container .club-members-title {
+		margin-bottom: 10px;
+	}
+	
+	.main-container .club-members-container table tr {
+		display: flex;
+		flex-wrap: wrap;
+		/*flex-direction: column;*/
+		border-top: 1px solid #D8D8D8;
+		padding: 10px 0;
+	}
+	
+	.main-container .club-members-container table tr .member-name
+	,.main-container .club-members-container table tr .member-email {
+		width: 100%;
+	}
+	
+	.main-container .club-members-container table tr .member-role
+	,.main-container .club-members-container table tr .member-status
+	,.main-container .club-members-container table tr .member-action
+	,.main-container .club-members-container table tr .member-removal {
+		width: 50%;
+	}
+	
+	.main-container .club-members-container table tr:nth-child(1) {
+		display: none;
+	}
+	
+	.main-container .club-members-container table tr td {
+		border-top: none;
+		min-height: 25px;
+		padding: 3px 0;
+		overflow: auto;
+	}
+	
+	.main-container .club-members-container table .member-removal {
+		text-align: left;
+	}
+}

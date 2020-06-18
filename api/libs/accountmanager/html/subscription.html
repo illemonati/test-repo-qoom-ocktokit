@@ -1,0 +1,127 @@
+<script src="https://js.stripe.com/v3/"></script>
+<section class='main-container' id = 'subscription-container'>
+	<div class='page-title'>
+		<div class='hamburgerIconContainer'><div class="hamburgerIcon"><i class="ic-menu white"></i></div></div>
+		<h6>{{domain}}</h6>
+		<h2>Subscription</h2>
+	</div>
+	<div class='page-section'>
+		<h5>Plan Details</h5>
+		<div class="section-details">
+			<table>
+				<tbody>
+					<tr>
+						<td>Domain - <span class="domain-name">{{domain}}</span></td>
+					</tr>
+					<tr>
+						<td class="toggle-container">
+		        			<input id="toggleSwitch" type="checkbox" class="toggle-switch" name ='toggleSwitch' {{autorenewdomain}}>
+		        			<span class="domain-renew-info">Auto-Renew ON: Your domain will be automatically renewed on {{renewalDate}}</span>
+		        			<span class="domain-renew-cancel">Auto-Renew OFF: Your domain will expire on {{renewalDate}}</span>
+		        			<span class="domain-renew-cancel alarm-text text-alert">To avoid accidentally losing your domain name, please turn on auto-renew.</span>
+	        			</td>
+					</tr>				
+					<tr class="plan-item">
+						<td>
+		        			<div style='display:{{displayCancel}}'><span>{{paymentCycle}}</span></div>
+		        			<div style='display:{{displayKeep}}'><span>{{paymentCycle}}</span></div>
+		        			<input type='hidden' value='{{latestSubscriptionId}}' id='latestSubscriptionId'>
+		    			</td>
+					</tr>
+					<tr>
+						<td>
+		        			<div style='display:{{displayCancel}}'><span class="plan-renew-info">Your plan will be automatically renewed on {{planRenewalDate}}</span><span class="cancel-plan" onclick="openCancelPlanModal()">Cancel Plan</span></div>
+		        			<div style='display:{{displayKeep}}'><span class="plan-renew-info text-alert">Your plan will end on {{planRenewalDate}}</span><span class="cancel-plan" onclick="keepMyPlan()">Keep My Plan</span></div>	
+		    			</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class='page-section'>
+		<h5>Payment Method</h5>
+		<div class="section-details">
+			<table>
+				<tbody>
+					<tr>
+						<td class='payment-card-info'>{{creditCard}} <span><a class='update-payment-info' onclick="openUpdatePaymentModal()">Update</a></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class='page-section'>
+		<h5>Billing History</h5>
+		<table class="billing-history">
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Description</th>
+					<th>Payment method</th>
+					<th>Total</th>
+				</tr>
+				{{billinghistory}}
+			</tbody>
+		</table>
+	</div>
+</section>
+<section id="updatePaymentModal">
+	<div class="modal-background" onclick="closeUpdatePaymentModal()"></div>
+	<div class="modal">
+		<div class="modal-title"><h1>Update Payment Method</h1></div>
+		<div class="container">
+			<div class="col-lg-12 modal-description">
+				Enter a new credit/debit card info.
+			</div>
+			<div class="col-lg-12 credit-card-input-container">
+                <div class="form-input">
+					<div id="card-element">
+					<!-- A Stripe Element will be inserted here. -->
+					</div>
+                </div> <!-- form input -->
+            </div>
+            <div class="buttons-container">
+                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeUpdatePaymentModal()" >Cancel</button>
+                <button id="editBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick='updatePaymentMethod()' >Update</button>
+            </div> <!-- form input -->
+        </div>
+    </div>
+</section>
+<section id="cancelPlanModal">
+	<div class="modal-background" onclick="closeCancelPlanModal()"></div>
+	<div class="modal modal-step-one">
+		<div class="modal-title"><h1>Cancel My Plan</h1></div>
+		<div class="container">
+			<div class="col-lg-12 modal-highlight"> 🙀🤖😿<br>We Are Sad to See You Go</div>
+			<div class="col-lg-12 modal-description">
+				<p>But, it's not too late to change your mind. You can use your coding spaces and won't be charged until {{planRenewalDate}}.</p>
+            </div>
+            <div class="checkbox">
+		        <ul class="checkbox_common">
+		            <li>
+		                <input type="checkbox" id="cancelCheckbox">
+		                <label for="cancelCheckbox">I understand that by cancelling my plan I will not be 
+		                able to access my coding spaces including all the files and data at the end of my billing cycle.</label>
+		            </li>
+		        </ul>
+		    </div>
+            <div class="buttons-container">
+                <button id="cancellBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="" onclick="closeCancelPlanModal()" >No, I will Keep My Plan</button>
+                <button id="cancelSubmitButton" class="qoom-main-btn qoom-button-full qoom-button-small" type="" disabled>Cancel My Plan</button>
+            </div> <!-- form input -->
+        </div>
+    </div>
+	<div class="modal modal-step-two">
+		<div class="modal-title"><h1>Cancellation Request Received</h1></div>
+		<div class="container">
+			<div class="col-lg-12 modal-description cancellation-request-container">
+				<p>Your cancellation request has been received. We will handle your request immediately and notify you 
+				when the cancellation is completed.</p>
+                
+            </div>
+            <div class="buttons-container">
+                <button id="okayBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="" onclick="closeCancelPlanModal()" >OK</button>
+            </div> <!-- form input -->
+        </div>
+    </div>
+</section>
