@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<script src='/libs/tinymce/tinymce.min.js' referrerpolicy="origin"></script>
+  	<script src='/libs/restfull.js'></script>
+    <script>
+  	tinymce.init({
+        selector: '#mytextarea',
+        plugins: 'preview image imagetools link table lists emoticons code advcode spellchecker advtable',
+        menubar: 'edit view format insert',
+        toolbar: 'image link table numlist bullist emoticons code spellchecker',
+        file_picker_types: 'image',
+        file_picker_callback: function (cb, value, meta) {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            /*
+                Note: In modern browsers input[type="file"] is functional without
+                even adding it to the DOM, but that might not be the case in some older
+                or quirky browsers like IE, so you might want to add it to the DOM
+                just in case, and visually hide it. And do not forget do remove it
+                once you do not need it anymore.
+            */
+
+            input.onchange = function () {
+                var file = this.files[0];
+
+                var reader = new FileReader();
+                reader.onload = function () {
+                    /*
+                        Note: Now we need to register the blob in TinyMCEs image blob
+                        registry. In the next release this part hopefully won't be
+                        necessary, as we are looking to handle it internally.
+                    */
+                    var base64 = reader.result.split(',')[1];
+
+                    var img = new Image();
+                    img.onload = function() {
+                        var w = img.width;
+                        var h = img.height;
+
+                        var $canvas = document.createElement('canvas');
+                        // document.body.appendChild($canvas);
+                        // $canvas.style.display = 'none';
+                        $canvas.width = 600;
+                        $canvas.height = 600*h/w;
+
+                        var context = $canvas.getContext('2d');
+                        context.drawImage(img, 0, 0, $canvas.width, $canvas.height);
+                        var imageData = $canvas.toDataURL();
+                        
+                        restfull.post({
+                            path: '/capture/save/dataurl'
+                            , data: { image: imageData }
+                        }, function(err, resp) { 
+                            if(!resp && !resp.name) {
+                                return alert((resp && resp.error) || 'not good');
+                            }
+                            const dataUrl = location.origin + '/' + JSON.parse(resp).name;
+                            cb(dataUrl, { title: file.name });
+                        });
+
+                        // var id = 'blobid' + (new Date()).getTime();
+                        // var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                        // var base64 = imageData.split(',')[1];
+                        // var blobInfo = blobCache.create(id, file, base64);
+                        // blobCache.add(blobInfo);
+                        
+
+                    }
+                    console.log('reader.result is ' + reader.result);
+                    img.src = reader.result;
+
+                }
+                reader.readAsDataURL(file);
+            }
+            input.click();
+        },
+    	//menu: {
+    	//	file: { title: 'File', items: 'openFile newDoc delete publish' };
+		    //menubar: 'edit view format',
+		/*setup: (mytextarea) => {
+    		mytextarea.ui.registry.addMenuItem('openFile', {
+    			text: 'Open File', 
+    			onAction: () => alert('Open File item clicked')
+    		});
+    		mytextarea.ui.registry.addMenuItem('newDoc', {
+    			text: 'New Doc', 
+    			onAction: () => alert('New Doc item clicked')
+    		});
+    		mytextarea.ui.registry.addMenuItem('delete', {
+    			text: 'Delete', 
+    			onAction: () => alert('Delete item clicked')
+    		});*/
+       		
+       		// Menu items are recreated when the menu is closed and opened, so we need
+			// a variable to store the toggle menu item state.
+			
+      /*var toggleState = false;
+
+			mytextarea.ui.registry.addToggleMenuItem('publish', {
+				text: 'Publish',
+				onAction: () => {
+    				toggleState = !toggleState;
+    				alert('Publish Toggle menu item clicked');
+				 },
+				onSetup: (api) => {
+    				api.setActive(toggleState);
+    				api.setDisabled(toggleState);
+    				return () => {};
+				}
+			});*/
+    	//},
+        height: 800,
+		width: 1600,
+        branding: false
+  	});
+  	</script>	
+</head>
+
+<body>
+    <h1>WisenSpace Blogger</h1>
+    <form method="post">
+  	<label>
+		    <h2>Title :
+  			<input type="text" name="mytitle" id ="mytitle" size ="160" value='||FILETITLE||'></h2>
+		</label>
+    </form>
+    <form method="post">
+		    <div id="mytextarea"></div>
+    </form>   
+    <div id='content' style='display:none'>||DATA||</div>
+    
+    <script>
+    var $container = document.getElementsByTagName("body")[0];
+
+    var isEditing = false;
+    var isSaving = false;
+    var lastSaveTitle = ''; //Added 9/20
+    var lastSaveData = '';
+    var insertedContent = false;
+
+    function keyUpHandler(e) {
+        if (isEditing) return;
+        isEditing = true;
+        setTimeout(function() {
+            isEditing = false
+        }, 2000);
+        if (e.ctrlKey && e.keyCode === 83) return saveContents();
+    }
+
+    function saveContents() {
+        if(!tinymce) return;
+      
+        if(!insertedContent) {
+            var contentDiv = document.getElementById('content');
+            
+            tinymce.get('mytextarea').setContent(contentDiv.innerHTML);
+            
+            contentDiv.innerHTML = '';
+            insertedContent = true;
+        }
+
+        var valTitle = document.querySelector('#mytitle').value;
+        var val = tinymce.get('mytextarea').getContent().trim();
+        if(val === '' || valTitle === '') return;
+
+        var neitherChanged = val === lastSaveData && valTitle === lastSaveTitle;
+        if (isSaving || neitherChanged || isEditing) return; 
+        
+        isSaving = true;
+        post(valTitle, val, function() { // valTitle added 9/20
+            lastSaveTitle = valTitle; // Added 9/20
+            lastSaveData = val;
+            isSaving = false;
+        });
+        return false;
+    }
+
+    function post(titleData, data, callback) { //titleData added 9/20
+        var req = new XMLHttpRequest();
+        req.open("POST", "/save", true);
+        req.setRequestHeader("content-type", "application/json")
+        if(localStorage && localStorage.passcode) {
+            req.setRequestHeader("secret", localStorage.passcode)
+        }
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                if(req.status == 200) console.log("saved");
+                callback();
+            }
+        }
+        req.send(JSON.stringify({
+            title: titleData,
+            text: data,
+        }));
+    }
+   
+    $container.addEventListener('keyup', keyUpHandler);
+    setInterval(saveContents, 1000);
+
+    </script>
+	</body>
+</html>
