@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>||TITLE||</title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="/libs/lander/assets/images/favicon.png" type="image/png">
+    <link href='/libs/administrater/css/qoom.css' rel='stylesheet'>
+    <link href='/libs/icons/icons.css' rel='stylesheet'>
+    <style type="text/css" media="screen">
+    a, span {
+    	display: inline;
+    }
+    #editor {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .onRight .placeWithPreviewer {
+    	right: calc(40% + 48px);
+    }
+    .onLeft .placeWithPreviewer {
+    	right: 48px;
+    }
+    .onBottom .placeWithPreviewer {
+		right: 48px;
+		bottom: calc(40% + 24px);
+    }
+    </style>
+    <script>
+        if(!!window.performance && window.performance.navigation.type === 2) {
+            window.location.reload();
+        }
+    </script>
+</head>
+
+<body style="background-color:#141414;">
+	<script>
+		var isLoggedIn = ||ISLOGGEDIN||;
+	    var isSalty = ||ISSALTY||;
+	    var hasPerson = ||HASPERSON||;
+	    var renderFileTypes = ||renderFileTypes||;
+	    var dateUpdated = new Date('||DATEUPDATED||');
+	    var language = "||LANGUAGE||";
+	</script>
+    <div id="editor">||DATA||</div>
+
+	<!--<iframe></iframe>-->
+    <script src="/apps/editer/src/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    var savedEvent = new Event('saved');
+    var savedResponse;
+    
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/gruvbox");
+
+    editor.getSession().setOptions({ tabSize: 4, useSoftTabs: false, wrap: 'printMargin' });
+	editor.setFontSize(18);
+	
+    var storedOptions = localStorage.getItem('aceOptions');
+    try {
+        if(storedOptions) {
+            storedOptions = JSON.parse(storedOptions);
+            delete storedOptions.mode;
+            editor.setOptions(storedOptions);
+        }
+    } catch(ex) {
+
+    }
+    editor.getSession().setMode("ace/mode/" + language);
+
+    var $container = document.getElementsByTagName("body")[0];
+    $container.onkeyup = keyUpHandler;
+
+    var lastSaveData = editor.getValue().trim();
+    var isEditing = false;
+    var isSaving = false;
+
+    function keyUpHandler(e) {
+        if (isEditing) return;
+        isEditing = true;
+        setTimeout(function() {
+            isEditing = false
+        }, 2000);
+        if (e.ctrlKey && e.keyCode === 83) return saveContents();
+    }
+
+    function saveContents() {
+        var val = editor.getValue().trim();
+        if (isSaving || val === lastSaveData || isEditing) return;
+        isSaving = true;
+        post(val, function() {
+            lastSaveData = val;
+            isSaving = false;
+        });
+        return false;
+    }
+
+    function post(data, callback) {
+        var req = new XMLHttpRequest();
+        req.open("POST", "/save", true);
+        req.setRequestHeader("content-type", "application/json")
+        if(localStorage && localStorage.passcode) {
+            req.setRequestHeader("secret", localStorage.passcode)
+        }
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                if(req.status == 200) console.log("saved");
+                savedResponse = req.status;
+                document.dispatchEvent(savedEvent);
+                callback();
+            }
+        }
+        
+        let errors = [];
+        try {
+        	errors = editor.getSession().getAnnotations().filter(a => a.type === 'error') || [];
+        } catch(ex) {
+        	
+        }
+        req.send(JSON.stringify({
+            text: data, errors
+        }));
+    }
+
+    function saveSettings() {
+        localStorage.setItem('aceOptions', JSON.stringify(editor.getOptions()));
+    }
+
+    setInterval(saveSettings, 2000);
+   
+
+    window.onbeforeunload = function() {
+        var val = editor.getValue().trim();
+        saveSettings();
+        if (val === lastSaveData) return;
+    	return 'Are you sure you want to exit?';
+    }
+    
+    setInterval(saveContents, 1000);
+  
+    </script>
+    <script type='module'>
+    	import savingalert from '/libs/editer/extensions/savingalert.js';
+    	import preview from '/libs/editer/extensions/previewer/script.js';
+    	import notify from '/libs/notifier/script.js';
+		
+    	
+		if(renderFileTypes.some(ext => location.href.endsWith(ext))) {
+			preview();
+			savingalert();
+		} else {
+			savingalert();
+		}
+		
+		notify('{{NOTIFICATION}}');
+    </script>
+    
+	||trial||
+									
+    <script>
+	let g = function(e) {
+		if((e.metaKey || e.ctrlKey) && e.key === 's') {
+			e.preventDefault();
+			return false;
+		}
+	}
+
+	document.addEventListener('keydown', g);
+	
+    </script>
+    <script>
+
+    	define("ace/commands/qoom_commands"
+    		,["require","exports","module","ace/lib/lang","ace/config"], function(require, exports, module) {
+				"use strict";
+				
+				var lang = require("../lib/lang");
+				var config = require("../config");
+
+				editor.commands.addCommand({
+				    name: "showSettingsMenuAnotherBrowser",
+				    bindKey: { 
+				        mac: "Command-m", 
+				        win: "Ctrl-m" 
+				    },
+				    exec: function(e) { config.loadModule("ace/ext/settings_menu", function(t){t.init(e), e.showSettingsMenu()})},
+				    isAvailable: function(editor) {
+				        return true;
+				    }
+			    	, readOnly: false
+				});				
+
+        });
+        
+        require("ace/commands/qoom_commands");
+    </script>
+    <script src="/libs/editer/ext-language_tools.js"></script>
+    <script src='/libs/editer/ext-searchbox.js'></script>
+    <script src='/libs/editer/ext-settings_menu.js'></script>
+    <script>
+	  	editor.setOptions({
+		    enableLiveAutocompletion: true
+		});  	
+		editor.setOption("showPrintMargin", false);
+    </script>
+    <!--<script src='/libs/editer/jquery.js'></script>-->
+    <!--<script src='/libs/editer/typo.js'></script>-->
+    <!--<script src='/libs/editer/ace-spellcheck.js'></script>-->
+</body>
+
+</html>
