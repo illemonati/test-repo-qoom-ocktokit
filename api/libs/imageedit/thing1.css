@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body {
+    background-color: cadetblue;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+#panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30vw;
+    min-width: 200px;
+    max-width: 400px;
+    background-color: floralwhite;
+}
+#mainCanvas {
+}
+
+.hist {
+    width: 90%;
+    height: 30%;
+    background-color: transparent;
+    opacity: 0.5;
+    top: 2%;
+    left: 5%;
+    position: absolute;
+    /*position: fixed;*/
+    /*object-fit: cover;*/
+    /*transform: rotate(-90deg);*/
+}
+
+#controls {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.newColorInput {
+    width: 100%;
+    text-align: center;
+}
+
+
+#pixelSelected {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+}
+
+#pixelSelected > table {
+    width: 100%;
+}
+
+#pixelSelected > table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#pixelSelected > table > th, td {
+    padding: 5px;
+}
+
+
+#mostUsedColor {
+    position: absolute;
+    top: 34%;
+    left: 5%;
+}
+
+
+.hist:first-child {width: 90%;
+    height: 30%;
+    opacity: 0.5;
+    top: 2%;
+    left: 5%;
+    background-color: bisque;
+}

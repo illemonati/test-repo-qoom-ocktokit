@@ -1,0 +1,210 @@
+body {
+	font-family: 'Helvetica', sans-serif;
+	font-size: 16px;
+	color: #212121;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+header {
+	background-color: #fff;
+	border-bottom: 1px solid #ab0534;
+	flex-shrink: 0;
+	width: 100%;
+}
+header > div {
+	max-width: 1240px;
+	margin: 16px auto;
+	padding: 0 16px;
+}
+
+.container {
+	flex: 1 0 auto;
+	margin: 0 auto;
+	padding: 0 16px;
+	width: 100%;
+	max-width: 1240px;
+}
+h1 {
+	text-transform: uppercase;
+	font-size: 40px
+}
+h2 {
+	margin: 0;
+}
+h6 {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0;
+}
+p {
+	line-height: 1.5;
+}
+ul {
+	padding-inline-start: 0;
+}
+ul li {
+	list-style-type: none;
+}
+
+.logo {
+	background: url('https://kiae.qoom.io/libs/scratchpad/kacfsf-logo.jpg');
+	width: 200px;
+	height: 64px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.section-top {
+	max-width: 800px;
+	text-align: center;
+	margin: 64px auto 0;
+	width: 100%;
+}
+.section-middle {
+	display: flex;
+	flex-flow: row nowrap;
+	margin: 80px auto;
+}
+.section-middle nav {
+	background-color: #f4f6f7;
+	margin-right: 24px;
+	width: 25%;
+	height: fit-content;
+	position: sticky;
+	top: 24px;
+	flex: 0 0 auto;
+}
+.section-middle nav li {
+	padding: 16px 24px;
+}
+.section-middle nav li:first-child {
+	font-weight: 600;
+}
+.selected {
+	background-color: rgba(171, 5, 52);
+	color: #fff;
+}
+.section-middle nav li a {
+	text-decoration: none;
+	color: inherit;
+}
+.section-middle nav li a:hover {
+	text-decoration: underline;
+}
+
+.section-middle main {
+	flex: 1 0 auto;
+	padding: 16px;
+	width: calc(75% - 80px);
+}
+.section-middle main > div:first-child {
+	margin-bottom: 40px;
+	width: 100%;
+}
+.section-middle main details summary {
+	padding: 12px 0;
+}
+.section-middle main details img {
+	margin: 8px 0;
+}
+
+.list-item {
+	border: 1px solid #9e9e9e;
+	margin: 16px 0;
+	padding: 24px 16px;
+	width: calc(100% - 34px);
+}
+.list-item p {
+	margin: 8px 0;
+}
+footer {
+	background-color: #333;
+	flex-shrink: 0;
+	width: 100%;
+}
+footer > div {
+	color: rgba(255,255,255,0.9);
+	display: flex;
+	flex-direction: row;
+	font-size: 12px;
+	font-weight: 300;
+	max-width: 1240px;
+	margin: 16px auto;
+	padding: 0 16px;
+}
+footer > div > div:first-child {
+	flex: 1 0 auto;
+}
+footer > div > div:last-child {
+	font-size: 14px;
+	text-align: right;
+}
+footer a {
+	color: rgba(255,255,255,0.9);
+	text-decoration: none;
+}
+.qoom-logo {
+	display: inline-block;
+	background: url("https://kiae.qoom.io/libs/icons/qoom.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right center;
+	filter: invert(1);
+	height: 14px;
+	margin-left: 2px;
+	margin-top: -4px;
+	vertical-align: middle;
+	width: 56px
+}
+@media (max-width: 768px) {
+	body {
+		font-size: 14px;
+		overflow-x: hidden;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	.container {
+		width: initial;
+	}
+	.section-top {
+		margin-bottom: 40px;
+	}
+	.section-middle {
+		flex-flow: column nowrap;
+	}
+	.section-middle nav {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 16px;
+		position: static;
+		text-align: center;
+	}
+	.section-middle main {
+		margin-top: 24px;
+		padding: 16px 0;
+		width: 100%;
+	}
+	.list-item {
+		margin: 8px 0;
+		width: fit-content;
+	}
+	footer > div {
+		flex-direction: column-reverse;
+		text-align: center;
+	}
+	footer > div > div:last-child {
+		margin-bottom: 8px;
+		text-align: center;
+	}
+	footer > div > div:first-child {
+		font-size: 14px;
+		text-align: center;
+	}
+}

@@ -1,0 +1,73 @@
+<div>
+    <style>
+        .popup {
+            position: absolute;
+            text-align: center;
+            z-index: 1;
+            min-width: 25%;
+            height: auto;
+            padding: 3%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #configTable {
+            width: 90%;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <div id="popup" class="popup">
+        <p id="floodFillTitle">Flood Fill Configs</p>
+        <br />
+        <table id="configTable">
+            <tr>
+                <th>Config</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>
+                    <input type="number" id="floodFillR" />
+                </td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>
+                    <input type="number" id="floodFillG" />
+                </td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>
+                    <input type="number" id="floodFillB" />
+                </td>
+            </tr>
+            <tr>
+                <td>Tolarence</td>
+                <td>
+                    <input type="number" id="floodFillTolarence" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <button id="floodFillCloseButton">Close</button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "name": "flood-fill",
+  "collaborators": [
+    "illemonati <tonymiaotong@tioft.tech>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "flood_fill_bg.wasm",
+    "flood_fill.js",
+    "flood_fill.d.ts"
+  ],
+  "module": "flood_fill.js",
+  "types": "flood_fill.d.ts",
+  "sideEffects": false
+}
