@@ -1,0 +1,27 @@
+main {
+	max-width:640px;
+	margin:auto;
+}
+
+main > div {
+	width:100%;
+	margin:1em;
+	padding:1em;
+}
+
+textarea, label, button, input {
+	display:block;
+	font-size:2rem;
+	width:90%;
+	padding:0.5em;
+}
+
+textarea, input {
+	width: 90%;
+	margin:auto;
+}
+
+button {
+	width: 200px;
+	margin:1em auto;
+}

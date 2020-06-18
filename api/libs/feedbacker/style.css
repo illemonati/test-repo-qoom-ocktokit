@@ -1,0 +1,88 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #212121;
+}
+* {
+	box-sizing: border-box;
+}
+/* Button used to open the feedback form - fixed at the bottom of the page */
+.button-floating {
+	background-color: #0067f4;
+	border-radius: 100%;
+	bottom: 2rem;
+	cursor: pointer;
+	opacity: 0.87;
+	padding: 1rem;
+	position: fixed;
+	right: 2rem;
+	width: 5rem;
+}
+/* The popup form - hidden by default */
+.form-popup {
+	display: none;
+	position: fixed;
+	bottom: 1rem;
+	box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.3);
+	right: 1rem;
+	border: 1px solid #f4f6f7;
+	z-index: 9;
+}
+/* Add styles to the form container */
+.form-container {
+	max-width: 400px;
+	padding: 2rem;
+	background-color: white;
+}
+.form-container h1 {
+	font-size: 2rem;
+	font-weight: 300;
+	margin: 1rem 0;
+}
+.form-container input {
+	display: block;
+	width: 100%;
+	padding: 1rem;
+	margin: 0.5rem 0 1.5rem 0;
+	border: none;
+	background: #fff;
+	resize: none;
+	min-height: 48px;
+}
+/* Full-width textarea */
+.form-container textarea {
+	width: 100%;
+	padding: 1rem;
+	margin: 0.5rem 0 1.5rem 0;
+	border: none;
+	background: #fff;
+	resize: none;
+	min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+}

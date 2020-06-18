@@ -1,0 +1,469 @@
+
+<header>
+<!-- 	<h1></h1>
+ -->	<!--Search-->
+	<input type="text" id="searchInput" onkeyup="searchFile()" placeholder="Search for files">
+
+	<!--two toggle icons -->
+	<svg style="" class='toggle-grid' xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#494848" stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M21 12H3M12 3v18"/></svg>
+
+	<svg style="display:none" class='toggle-table' xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#494848" stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
+
+	<!--adminhome icon -->
+	<!-- <a class='adminhome' href='/admin/home'><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#494848" stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a> -->
+	
+
+
+</header>
+<main>
+	<div style='display:none;' class='scrollablecontainer'>
+		<div style="display:none" class="grid-file-container">
+ 		</div>
+
+		<table>
+			<thead>
+				<th>File</th>
+				<th>Thumbnail</th>
+				<th>Created</th>
+				<th>Modified</th>
+				<th>Controls</th>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>	
+	<div id='publishModal' class='modal'>
+		
+	</div>
+</main>
+<div id='templates' class='hide'>
+	<script template='publish' type='text/html'>
+		<div>
+			<label>Enter Project Name</label>
+			<input name='title' type='text' placeholder='ie: Flurry Fury'>
+		</div>
+		<div>
+			<label>Enter Project Route</label>
+			<input name='route' type='text' placeholder='ie: flurryfurry'>
+		</div>
+		<div>
+			<label>Do you want to share it with anyone?</label>
+			<input name='emails' type='text' placeholder='ie: email1@example.com, email2@example.com'>
+		</div>
+		<div style='display:none'>
+			<label>Share it with the World?</label>
+			<select name='share'>
+				<option>Yes</option>
+				<option>No</option>
+			</select>
+		</div>
+		<div>
+			<label>Description</label>
+			<textarea name='description' placeholder='ie. This project was built to help cats talk to you and each other...'></textarea>
+		</div>
+		<div>
+			<label>Keywords</label>
+			<input name='tags' type='text' placeholder='ie: game, productivity'>
+		</div>
+		<div style='display:none'>
+			<label>Project Icon</label>
+			<input name='icon' accept='image/*' type='file'>
+		</div>
+		<div style='display:none'>
+			<label>Screen Shots</label>
+			<input name='screenshots' accept='image/*' type='file' multiple>
+		</div>
+	</script>
+</div>
+<script type="text/javascript">
+	var $main = document.querySelector('#full > main');
+	var $table = document.querySelector('#full > main table');
+	var templates = restfull.getTemplates('#templates');
+	var toggleGrid = document.querySelector('.toggle-grid');
+	var toggleTable = document.querySelector('.toggle-table');
+	var view = 'table';
+	
+
+	$main.addEventListener('dataloaded', function(e) {
+
+		var $tbody = $main.querySelector('tbody');
+		var $gridFileContainer = $main.querySelector('.grid-file-container');
+		var $container = $main.querySelector('div');
+		var rows = '';
+		var gridFile = '';
+		var sortUp = document.querySelector('.fa-sort-up');
+		var sortDown = document.querySelector('.fa-sort-down');
+
+		
+		(files || []).forEach(function(f) {
+			var parts = f.name.split('.');
+			var isImage = ['png', 'jpeg', 'jpg', 'bmp', 'gif'].indexOf(parts[parts.length - 1]) > -1;
+			var editHTML = '';
+			var editIcon = '';
+			var backgroundImg = '';
+			if(isImage) editHTML = '<img src="/' + f.name + '">';
+
+			if(isImage) backgroundImg = '<img src="/' + f.name + '">';
+			if(f.encoding === 'utf8') editHTML =  '<a title="edit" href="/edit/' + f.name + '" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#494848" stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg></a>';
+			if(f.encoding !== 'utf8') editIcon = '';
+			if(f.encoding === 'utf8') editIcon = '<a title="edit" href="/edit/' + f.name + '" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#494848" stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg></a>';
+			if(!isImage) backgroundImg = '<img itemprop="image" class="TableObject-item avatar" src="https://mrlera.wisen.space/capture/load/ipmixbdik1vib6xf-kj2wjfn.png" width="80" height="80" alt="@wisenspace">';
+
+			var showPublish = (!f.app || ['notpublished', 'error'].includes(f.app.state)) && f.name.endsWith('.html')  ? 'block'  : 'hide';
+			var showUnpublish = f.app && f.app.state === 'published' && f.name.endsWith('.html')  ? 'block' : 'hide';
+			var showDelete = f.app && f.app.state !== 'notpublished' ? 'hide' : 'block';
+			var showPublishProgress = f.app && f.app.state === 'inprogress' ? 'block' : 'hide';
+
+			//https://iconsvg.xyz/
+			var loadingIcon = `<a title='inprogress' class='control ${showPublishProgress} inprogress' data-id='${f._id}'><svg class='inprogress' xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#696969" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3-3.2-5.2-6.2-5.6-3-.3-5.9 1.3-7.3 4-1.2 2.5-1 6.5.5 8.8m8.7-1.6"/>
+					<circle cx="7" cy="12" r="2" stroke="none" fill="#333">
+					  <animate attributeName="fill" attributeType="XML"
+					    values="#333; #DDD; #333" 
+					    begin="0s" dur="0.6s" repeatCount="indefinite" />
+					</circle>
+					<circle cx="12" cy="12" r="2" stroke="none" fill="#333">
+					  <animate attributeName="fill" attributeType="XML"
+					    values="#333; #DDD; #333" 
+					    begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+					</circle>
+					<circle cx="17" cy="12" r="2" stroke="none" fill="#333">
+					  <animate attributeName="fill" attributeType="XML"
+					    values="#333; #DDD; #333" 
+					    begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+					</circle>
+				</svg></a>`
+
+			var publishIcon = `<a title='publish' class='control ${showPublish} publish' data-id='${f._id}'>
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#696969" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3-3.2-5.2-6.2-5.6-3-.3-5.9 1.3-7.3 4-1.2 2.5-1 6.5.5 8.8m8.7-1.6V21"/><path d="M16 16l-4-4-4 4"/></svg>
+				</a>`
+
+			var deleteIcon = `<a title='delete' class='delete ${showDelete}' data-id='${f._id}'>
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#690000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+				</a>`
+
+			var unpublishIcon = `<a title='unpublish' class='control ${showUnpublish} unpublish' data-id='${f._id}'>
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#690000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3-3.2-5.2-6.2-5.6-3-.3-5.9 1.3-7.3 4-1.2 2.5-1 6.5.5 8.8m8.7-1.6"/>
+						<line x1="15" y1="12" x2="9" y2="18"></line>
+						<line x1="9" y1="12" x2="15" y2="18"></line>
+					</svg>
+				</a>`
+
+
+			function convertDateDiff(d){
+				var today = new Date();
+				var newDate = new Date(d);
+				var dateView = '';
+				var dateDiff = parseInt((today - newDate)/24/60/60/1000);
+				if (dateDiff < 30) {
+					if (dateDiff === 1) {
+						dateView = dateDiff.toFixed(0) + " day ago";
+					} else {
+						dateView = dateDiff.toFixed(0) + " days ago";
+					}
+				} else {
+					dateView = newDate.toLocaleDateString();
+				}
+
+				return dateView;
+			};
+			var dateCreatedView = convertDateDiff(f.dateCreated);
+			var dateUpdatedView = convertDateDiff(f.dateUpdated);
+
+
+
+			function hasOriginal(f){
+				if (f.origName) {
+					return f.origName;
+				} else {
+					return f.name;
+				};
+			};
+
+
+			rows += `
+			<tr>
+				<td class="table-file" title='${hasOriginal(f)}'><a id="${hasOriginal(f).split('.')[0]}" href="/${f.name}" target="_blank">${hasOriginal(f)}</a></td>
+				<td>${backgroundImg}</td>
+				<td>${dateCreatedView}</td>
+				<td>${dateUpdatedView}</td>
+				<td class='control'>
+					${editIcon}
+					${unpublishIcon}
+					${deleteIcon}
+					${publishIcon}
+					${loadingIcon}
+
+				</td>
+			</tr>`
+
+			gridFile += `
+			<div class="grid-file">
+				<h3><a id="${hasOriginal(f).split('.')[0]}" href="/${f.name}" target="_blank">${hasOriginal(f)}</a></h3>
+				${backgroundImg}
+				<div class="details">
+					<li>${dateCreatedView}</li>
+					<li>${dateUpdatedView}</li>
+					<div class="control-btns">
+						${editIcon}
+            ${unpublishIcon}
+            ${deleteIcon}
+            ${publishIcon}
+            ${loadingIcon}
+					</div>
+				</div>
+			</div>`
+		});
+
+		$tbody.innerHTML = rows;	
+		$container.style.display = 'block';
+		$gridFileContainer.innerHTML = gridFile;
+
+		Array.from(document.querySelectorAll('.delete')).forEach(($delete) => {
+			$delete.addEventListener('click', function(e) {
+				e.preventDefault();
+				swal({
+					buttons: {
+						cancel: 'cancel',
+						confirm: {text: 'Delete'}
+					}
+					, title: 'Delete. Are you sure?' 
+				})
+				.then((doit) => {
+					if(!doit) return;
+					var fileId = this.getAttribute('data-id');
+					var deleteIcons = document.querySelectorAll(`.delete[data-id="${fileId}"]`);
+					var $row = deleteIcons[1].parentNode.parentNode;
+					var $gridFile = deleteIcons[0].parentNode.parentNode.parentNode;
+					$tbody.removeChild($row);
+					$gridFileContainer.removeChild($gridFile);
+					files = files.filter(f => f._id !== fileId);
+					restfull.del({
+						path: '/explore/' + fileId
+						, loadDivs: document.querySelectorAll('main')
+					}, function(err) {
+						if(err) {
+							console.log(err);
+						}
+					})
+				});
+				
+				
+				
+			})
+		})
+
+		Array.from(document.querySelectorAll('.publish')).forEach(($publish) => {
+			$publish.addEventListener('click', function(e) {
+				e.preventDefault();
+				var file = files.find(file => file._id === this.getAttribute('data-id'));
+				if(!file) return;
+				showPublishModal(file);
+			});
+		});
+
+		Array.from(document.querySelectorAll('.unpublish')).forEach(($unpublish) => {
+			$unpublish.addEventListener('click', function(e) {
+				e.preventDefault();
+				var file = files.find(file => file._id === this.getAttribute('data-id'));
+				if(!file) return;
+				showUnPublishModal(file);
+			});
+		});
+
+		if((location.hash + '').length > 1) {
+			setTimeout(function() {
+				document.querySelector(location.hash).scrollIntoView();
+			}, 1);
+		}
+
+	});
+	
+	toggleGrid.addEventListener('click', function(e) {
+
+		toggleGrid.style.display = 'none';
+		toggleTable.style.display = 'block';
+		view = 'table';
+		//toggle main template from grid to table
+		document.querySelector('.grid-file-container').style.display = '';
+		document.querySelector('table').style.display = 'none';
+	});
+
+	toggleTable.addEventListener('click', function(e){
+		toggleTable.style.display = 'none';
+		toggleGrid.style.display = '';
+		view = 'grid';
+		//toggle main template from table to grid
+		document.querySelector('.grid-file-container').style.display = 'none';
+		document.querySelector('table').style.display = '';
+	});
+
+	
+
+	function searchFile() {
+		var input, filter, tr, td, tableA, gridA, tableTxtValue, gridTxtValue;
+		input = document.getElementById('searchInput');
+		filter = input.value.toUpperCase();
+		tr = document.querySelectorAll('tr');
+		td = document.querySelectorAll('.table-file');
+		div = document.querySelectorAll('.grid-file');
+		h3 = document.querySelectorAll('h3');
+		for (i = 0; i < td.length; i ++){
+			tableA = td[i].getElementsByTagName('a')[0];
+			gridA = h3[i].getElementsByTagName('a')[0];
+			tableTxtValue = tableA.textContent || tableA.innerText;
+			gridTxtValue = gridA.textContent || gridA.innerText;
+			if (tableTxtValue.toUpperCase().indexOf(filter) > -1) {
+				td[i].parentNode.style.display = '';
+			} else {
+				td[i].parentNode.style.display = 'none';
+			}
+			if (gridTxtValue.toUpperCase().indexOf(filter) > -1) {
+				h3[i].parentNode.style.display = '';
+			} else {
+				h3[i].parentNode.style.display = 'none';				
+			}
+		}
+	}
+
+
+
+</script>
+<script for='publishModal'>
+	function updateControls(id, show) {
+		const hide = ['publish', 'inprogress', 'unpublish', 'delete'].filter(i => !show.includes(i));
+		hide.forEach(title =>  {
+			const $as = document.querySelectorAll(`[title='${title}'][data-id='${id}']`);
+			$as.forEach($a => {
+				$a.classList.remove('block');
+				$a.classList.add('hide');
+			})
+
+		})
+
+		show.forEach(title => {
+			const $as = document.querySelectorAll(`[title='${title}'][data-id='${id}']`);
+			$as.forEach($a => {
+				$a.classList.remove('hide');
+				$a.classList.add('block');
+			})
+		})
+
+	}
+
+
+	function handleNotification(notification, socket) {
+
+		console.log(notification);
+	}
+
+	function publish(input) {
+		updateControls(input.id, ['inprogress', 'unpublish']);
+		restfull.post({ path: '/work', data: { input: input, name: 'publish_app' } } , function(err, response) {
+			if (err) {
+				console.log(err);
+				updateControls(input.id, ['publish', 'delete']);
+				return;
+			}
+			if(!response) {
+				console.log('no response');
+				updateControls(input.id, ['publish', 'delete']);
+				return;
+			}
+			try {
+				var socket = io('/work/' + response.socketId);
+				socket.on('workupdate', function(data) {
+					if(data.error) {
+						updateControls(input.id, ['publish', 'delete']);
+					}
+					handleNotification(data.error || data.message, socket);
+					if(data.message === 'DONE') {
+						updateControls(input.id, ['unpublish']);			
+					}
+				});
+			} catch (ex) {
+				updateControls(input.id, ['publish', 'delete']);
+			}
+		});
+	}
+
+	function unpublish(input) {
+		updateControls(input.id, ['inprogress']);
+		restfull.post({ path: '/work', data: { input: input, name: 'unpublish_app' } } , function(err, response) {
+				if (err) {
+					updateControls(input.id, ['unpublish']);
+					console.log(err);
+					return;
+				}
+				if(!response) {
+					updateControls(input.id, ['unpublish']);
+					console.log('no response');
+					return;
+				}
+				try {
+					var socket = io('/work/' + response.socketId);
+					socket.on('workupdate', function(data) {
+						if(data.error) {
+							updateControls(input.id, ['unpublish']);
+						}
+						handleNotification(data.error || data.message, socket);
+						if(data.message === 'DONE') {
+							updateControls(input.id, ['publish', 'delete']);		
+						}
+					});
+				} catch (ex) {
+					updateControls(input.id, ['unpublish']);
+					console.log(ex);
+				}
+			});
+	}
+
+	function showPublishModal(file) {
+
+		var $div = document.createElement('div');
+		$div.className = 'publish';
+		$div.innerHTML = restfull.bindData(
+			{templates, data: {}, template: 'publish'});
+		$div.querySelectorAll('input textarea select').forEach($input => {
+			$input.addEventListener('change', ()=>{
+				console.log($input.value)
+			})
+		})
+		swal({
+			content: $div
+			, buttons: {
+				cancel: 'cancel',
+				confirm: {text: 'Publish'}
+			}
+			, title: 'Awesome! Ready to Publish?' 
+		})
+		.then((doit) => {
+			if(!doit) return;
+			var data = {id: file._id};
+			$div.querySelectorAll('[name]')
+				.forEach(function($field) {
+					var name = $field.getAttribute('name');
+					data[name] = $field.value;
+				});
+
+			publish(data);
+		});
+	}
+
+	function showUnPublishModal(file) {
+
+		swal({
+			buttons: {
+				cancel: 'cancel',
+				confirm: {text: 'Unpublish'}
+			}
+			, title: 'Unpublish. Are you sure?' 
+		})
+		.then((doit) => {
+			if(!doit) return;
+			unpublish({id: file._id});
+		});
+	}
+
+
+</script>

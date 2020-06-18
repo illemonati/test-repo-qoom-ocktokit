@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../icons/icons.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+<body>
+	<button class="button-floating" onclick="openForm()"><i class="ic-feedback white"></i></button>
+	<div class="form-popup" id="feedbackForm">
+		<form class="form-container">
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+			<h1>How can we do better?</h1>
+			<p>Please share usability issues, ideas or any suggestions about how to improve Qoom experience</p>
+			<label for="applet"><b>Applet Name</b></label>
+    		<input type="text" placeholder="e.g. Explorer" name="applet" required></input>
+    		<label for="desc"><b>Description</b></label>
+    		<textarea placeholder="e.g. When refreshing, I want to stay in the same folder." name="desc" required></textarea>
+    		<button type="submit" class="btn">Submit</button>
+		</form>
+	</div>
+	<script>
+		function openForm() {
+			document.getElementById("feedbackForm").style.display = "block";
+		}
+		function closeForm() {
+			document.getElementById("feedbackForm").style.display = "none";
+		}
+	</script>
+</body>
+</html>
