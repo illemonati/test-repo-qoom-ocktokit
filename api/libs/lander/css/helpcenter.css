@@ -1,0 +1,56 @@
+/*Help Center PAGE STYLES*/
+.container {
+	max-width: 1200px;
+	padding: 80px 0 120px;
+}
+@media (max-width: 767px) {
+	.container {
+		padding: 40px 24px 80px;
+	}
+}
+.content-area {
+	margin: 40px 0;
+}
+.category {
+	margin: 24px 0;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+.category-header {
+	border-bottom: 1px solid var(--color-primary);
+	color: var(--color-primary);
+	font-size: 20px;
+	margin-bottom: 8px;
+	padding: 12px;
+}
+.category details > summary {
+	padding: 12px;
+}
+.category details > summary:focus {
+     outline: 0;
+}
+.category details > summary:hover{
+	text-decoration: underline;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-ms-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+	cursor: pointer;
+}
+.category details > p {
+	background-color: var(--color-gray-100);
+	font-weight: 300;
+	line-height: 1.5;
+	margin-bottom: 16px;
+	padding: 16px 32px 32px;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-ms-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+}
+
+.category details[open] > summary {
+	background-color: var(--color-gray-300);
+}

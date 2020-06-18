@@ -1,0 +1,68 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+.legal{
+	max-width: 1140px;
+	margin: 2rem auto 5rem;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.legal h1 {
+	text-transform: uppercase;
+}
+.legal h3 {
+	margin-top: 3rem;
+	text-transform: uppercase;
+}
+.legal h4 {
+	font-weight: 400;
+	margin-top: 2rem;
+}
+.legal p {
+	color: var(--text-dark-medium);
+	line-height: 1.25;
+	margin-top: 1rem;
+}
+.legal span {
+	font-weight: 600;
+}
+.legal div {
+	color: var(--text-dark-medium);
+	line-height: 1.25;
+	margin-top: 1rem;
+	margin-left: 3rem;
+}
+.legal ul {
+	color: var(--text-dark-medium);
+	list-style-type: square;
+	list-style-position: inside;
+}
+.legal ul li {
+	margin-top: 1rem;
+}
+.legal nav {
+	border-bottom: 1px solid var(--color-primary);
+	border-top: 1px solid var(--color-primary);
+	display: flex;
+	flex-flow: row wrap;
+	margin: 64px 0;
+	padding: 16px 0;
+}
+.legal nav > div {
+	color: var(--text-color-medium);
+	flex: 1 0 auto;
+	margin-left: 0;
+	text-align: center;
+	margin-top: 0;
+}
+
+.legal nav > div > a, .legal nav > div > a:visited {
+	color: var(--text-dark-medium);
+}
+.legal nav > div > a:hover {
+	color: var(--color-blue);
+}
+.legal nav > div > a.current {
+	color: var(--color-primary);
+	font-weight: 600;
+}

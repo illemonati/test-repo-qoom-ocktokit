@@ -1,0 +1,105 @@
+.navibar {
+	padding: 30px 10px;
+	background-color: #000;
+	color: #fff;
+}
+
+.navibar-cancel {
+	position: absolute;
+	left: 20px;
+	cursor: pointer;
+}
+
+.navibar-cancel-button {
+	margin-right: 5px;
+}
+
+.navibar-title {
+	width: 100%;
+	text-align: center;
+}
+
+.container {
+	max-width: 640px;
+}
+
+.header .row {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.header .row .page-title {
+	text-align: center;
+}
+
+/*SIGNIN AREA STYLE*/
+
+.signin-area {
+	padding-top: 20px;
+	background-color: #fff;
+}
+
+.signin-one .form-input .text, .signin-two .form-input .text {
+	font-size: 0.75rem;
+}
+
+.form-input .input-items input, .form-input .input-items textarea {
+	font-size: 0.75rem;
+}
+
+.club-name-input-container {
+	position: relative;
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 480px;
+}
+
+.club-name-input-container .error {
+	border-color: #fc3832;
+}
+
+.club-name-create-button {
+	position: relative;
+	padding-right: 15px;
+	width: 160px;
+}
+
+[type=button]:disabled, [type=reset]:disabled, [type=submit]:disabled, button:disabled {
+	cursor: default;
+	background-color: #666666;
+	border-color: #666666;
+	color: #fff;
+}
+[type=button]:disabled:hover, [type=reset]:disabled:hover, [type=submit]:disabled:hover, button:disabled:hover {
+	color: #fff;
+	background-color: #666666;
+	border-color: #666666;
+}
+
+@media (max-width: 767px) {
+	.navibar {
+		padding: 10px 5px;
+	}
+	
+	.navibar-cancel {
+		left: 10px;
+	}
+	
+	.container {
+		width: 100vw;
+	}
+	
+	.header .row .page-title {
+		font-size: 32px;
+		text-align: left;
+	}
+	
+	.club-name-create-button {
+		width: 100%;
+		padding: 0 15px;
+	}
+	
+	.club-name-input-container {
+		width: 100%;
+	}
+}

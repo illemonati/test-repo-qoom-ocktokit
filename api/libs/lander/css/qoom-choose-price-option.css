@@ -1,0 +1,255 @@
+.navibar {
+	padding: 30px 10px;
+	background-color: #000;
+	color: #fff;
+}
+
+.navibar-cancel {
+	position: absolute;
+	left: 20px;
+	cursor: pointer;
+}
+
+.navibar-cancel-button {
+	margin-right: 5px;
+}
+
+.navibar-title {
+	width: 100%;
+	text-align: center;
+}
+
+.container {
+	max-width: 640px;
+}
+
+.header .row {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.header .row .page-title {
+	text-align: center;
+}
+
+/*CLUB MEMBER AMOUNT INPUT AREA*/
+
+.signin-area {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #fff;
+}
+
+.signin-one .form-input .text, .signin-two .form-input .text {
+	font-size: 0.75rem;
+}
+
+.form-input .input-items input, .form-input .input-items textarea {
+	font-size: 0.75rem;
+}
+
+.club-member-amount-input-container {
+	position: relative;
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 480px;
+}
+
+.see-price-button {
+	position: relative;
+	padding-left: 15px;
+	width: 160px;
+}
+
+
+/* PRICE OPTION AREA*/
+
+.hide {
+	display: none;
+}
+
+.price-option-container {
+	border-top: 2px solid #cdced1;
+	padding-top: 40px;
+}
+
+.price-option-container .see-price-option-header-container {
+	position: relative;
+}
+
+.price-option-container .see-price-option-header-container h5 {
+	display: inline;
+}
+
+.price-option-container .see-price-option-header-container > span {
+	position: absolute;
+	right: 0;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.price-option-container .see-price-option-header-container .clubprice {
+	color: #0067f4;
+}
+
+.club-price-option-monthly
+, .club-price-option-biannual
+, .club-price-option-annual {
+	height: 96px;
+	border: 1px solid #cdced1;
+	display: flex;
+	align-items: center;
+}
+
+.club-price-option-annual {
+	border: 3px solid #0067f4;
+}
+
+.club-price-option-annual:before {
+	content: "BEST VALUE";
+	background-color: #0067f4;
+	color: #fff;
+	position: absolute;
+	left: -55px;
+	transform: rotate(-90deg);
+	height: 16px;
+	width: 96px;
+	font-size: 0.75rem;
+	text-align: center;
+}
+
+.club-price-option-monthly .club-price-option-header p
+, .club-price-option-biannual .club-price-option-header p
+, .club-price-option-annual .club-price-option-header p {
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+.club-price-option-monthly .club-price-option-header > span
+, .club-price-option-biannual .club-price-option-header > span
+, .club-price-option-annual .club-price-option-header > span {
+	font-size: 0.75rem;
+	font-weight: 400;
+} 
+
+.club-price-option-monthly .club-price-option-price p
+, .club-price-option-biannual .club-price-option-price p
+, .club-price-option-annual .club-price-option-price p {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.club-price-option-monthly .club-price-option-price span
+, .club-price-option-biannual .club-price-option-price span
+, .club-price-option-annual .club-price-option-price span {
+	font-size: 0.75rem;
+	font-weight: 400;
+}
+ 
+.club-price-option-monthly .select-button
+, .club-price-option-biannual .select-button
+, .club-price-option-annual .select-button {
+	text-align: right;
+}
+
+
+.club-price-option-monthly .select-button button
+, .club-price-option-biannual .select-button button
+, .club-price-option-annual .select-button  button {
+	width: 120px;
+	padding: 0 16px;
+}
+
+@media (max-width: 767px) {
+	.navibar {
+		padding: 10px 5px;
+	}
+	
+	.navibar-cancel {
+		left: 10px;
+	}
+	
+	.header .row .page-title {
+		font-size: 32px;
+		text-align: left;
+	}
+	
+	.club-member-amount-input-container {
+		width: 60%;
+		padding-right: 0;
+	}
+	
+	.club-member-amount-input-container .form-input .input-items input {
+		padding-right: 12px;
+	}
+	
+	.see-price-button {
+		width: 40%;
+		padding-right: 15px;
+	}
+	
+	.price-option-container .see-price-option-header-container > span { 
+		position: relative;
+		background-color: #deebfd;
+		border-radius: 5px;
+		width: 100%;
+		padding: 5px;
+		margin-bottom: 40px;
+	}
+	
+	.club-price-option-monthly
+	, .club-price-option-biannual
+	, .club-price-option-annual {
+		padding: 20px 0;
+		margin: 5px 0;
+		border-radius: 5px;
+		height: fit-content;
+	}
+	.club-price-option-monthly .club-price-option-header 
+	, .club-price-option-biannual .club-price-option-header 
+	, .club-price-option-annual .club-price-option-header {
+		width: 55%;
+	}
+	
+	.club-price-option-monthly .club-price-option-header {
+		height: 50px;
+	}
+	
+	.club-price-option-biannual .club-price-option-header span {
+		padding-right: 5px;
+	}
+
+	
+	.club-price-option-monthly .club-price-option-price
+	, .club-price-option-biannual .club-price-option-price
+	, .club-price-option-annual .club-price-option-price {
+		width: 45%;
+		text-align: right;
+	}
+	
+	.club-price-option-monthly .select-button button
+	, .club-price-option-biannual .select-button button
+	, .club-price-option-annual .select-button  button {
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	.club-price-option-monthly .select-button button
+	, .club-price-option-biannual .select-button button {
+		background-color: #fff;
+	}
+	
+	.club-price-option-annual:before {
+		transform: none;
+		left: 17px;
+		top: 450px;
+	}
+	
+	.club-price-option-monthly .club-price-option-price span
+	,.club-price-option-biannual .club-price-option-header span 
+	,.club-price-option-biannual .club-price-option-price span
+	,.club-price-option-annual .club-price-option-header span 
+	,.club-price-option-annual .club-price-option-price span {
+		color: #666666;
+	}
+}

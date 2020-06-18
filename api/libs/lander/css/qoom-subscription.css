@@ -1,0 +1,158 @@
+body {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	height: 100vh;
+	max-width: 1400px;
+	max-height: 100vh;
+	margin: auto;
+}
+/*LEFT SIDE*/
+.menubar {
+	height: 100vh;
+	width: 20vw;
+	max-width: 320px;
+	position: relative;
+	border-right: 1px solid #979797;
+	padding: 10px 40px;
+	overflow: auto;
+}
+
+.menubar .qoom-logo, 
+.menubar .user-name-container, 
+.menubar .my-account-container,
+.menubar .my-clubs-container,
+.menubar .contact-us,
+.menubar .log-out {
+	position: relative;
+	width: 100%;
+	padding: 10px 20px;
+}
+
+.menubar .qoom-logo {
+	height: 100px;
+}
+
+.menubar .qoom-logo img {
+	width: 170px;
+	color: #fff;
+	background: #0268F4;
+	position: absolute;
+	left: 10px;
+	top: 30px;
+	border-radius: 5px;
+}
+
+.menubar .user-name-container, 
+.menubar .my-account-container, 
+.menubar .contact-us {
+	border-bottom: 1px solid #979797;
+}
+
+.menubar .my-account-container .my-account-control-container,
+.menubar .my-account-container .my-account-control-container div,
+.menubar .my-clubs-container .my-clubs,
+.menubar .my-clubs-container .my-clubs .my-club {
+	margin: 10px 0;
+}
+
+
+.menubar .my-account-container .my-account-container-title,
+.menubar .my-clubs-container .my-clubs-container-title {
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	color: #666666;
+}
+
+.menubar .my-clubs-container {
+	height: 40vh;
+}
+
+.menubar .my-clubs-container .my-clubs .my-club-icon {
+	display: inline-block;
+	background-color: #FD7E14;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	color: #fff;
+	font-weight: 600;
+	text-align: center;
+	line-height: 24px;
+}
+
+.menubar .my-clubs-container .my-clubs .my-club {
+	white-space: nowrap;
+}
+
+.menubar .my-clubs-container .my-clubs .my-club-name {
+}
+
+.menubar .contact-us {
+	padding-bottom: 10px;
+}
+
+.menubar .log-out {
+	padding-top: 10px;
+}
+
+/*RIGHT SIDE*/
+.main-container {
+	height: 100vh;
+	width: 80vw;
+	position: relative;
+	padding: 40px;
+	overflow: auto;
+}
+
+.main-container .page-title {
+	width: 100%;
+	height: 64px;
+	font-size: 2.75rem;
+	margin-bottom: 56px;
+}
+
+.main-container .plan-details-container table,
+.main-container .payment-method-container table,
+.main-container .billing-history-container table {
+	width: 100%;
+	margin-bottom: 48px;
+}
+
+.main-container .plan-details-container table tr td,
+.main-container .payment-method-container table tr td,
+.main-container .billing-history-container table tr th,
+.main-container .billing-history-container table tr td {
+	min-width: 120px;
+	min-height: 40px;
+	padding: 16px 0;
+	vertical-align: top
+}
+
+.main-container .plan-details-container table .change-plan,
+.main-container .payment-method-container table .update-payment-info {
+	font-size: 0.75rem;
+	color: #0067F4;
+	margin-left: 16px;
+	cursor: pointer;
+}
+
+.main-container .plan-details-container table .plan-expiration-info {
+	font-size: 0.75rem;
+}
+
+.main-container .payment-method-container table .payment-card-info {
+	width: 250px;
+}
+
+.main-container .billing-history-container table tr th {
+	font-size: 0.75rem;
+	font-weight: 400;
+	color: #666666;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.main-container .billing-history-container table .billing-date {
+	color: #0067F4;
+}

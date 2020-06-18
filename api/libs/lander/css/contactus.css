@@ -1,0 +1,32 @@
+/*CONTACT US PAGE STYLES*/
+.container {
+	max-width: 640px;
+	padding: 80px 0 120px;
+}
+@media (max-width: 767px) {
+	.container {
+		padding: 40px 24px 80px;
+	}
+}
+.form-area {
+	padding-top: 16px;
+}
+.form-input label::after {
+	content: "*";
+}
+
+.acknowledgment {
+	margin-top: 8px;
+	text-align: center;
+	margin-bottom: 16px;
+}
+.acknowledgment a {
+	color: var(--color-primary);
+	text-tramsform: none;
+}
+.acknowledgment a:visited {
+	color: var(--color-primary);
+}
+.acknowledgment a:hover {
+	text-decoration: underline;
+}
