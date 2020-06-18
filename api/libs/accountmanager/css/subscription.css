@@ -1,0 +1,228 @@
+/* Subscription Page CSS */
+.text-alert {
+	color: var(--color-red);
+}
+.my-domain-submenu.subscription {
+	color: var(--color-primary);
+}
+.page-section {
+	margin: 16px 0 64px;
+}
+.page-section h5 {
+	font-weight: 500;
+	margin-bottom: 16px;
+}
+.page-section .section-details {
+	background-color: var(--color-gray-10);
+	border-radius: 8px;
+	margin-left: -4px;
+	padding: 4px 16px;
+}
+.page-section table {
+	width: 100%;
+	margin: 16px 0;
+}
+.page-section  table tr td {
+	min-width: 120px;
+	padding: 4px 0;
+	vertical-align: top;
+}
+.page-section table .toggle-container{
+	padding-bottom: 20px;
+}
+.page-section table .plan-item {
+	border-top: 0.5px solid var(--color-gray-100);
+}
+.page-section table .plan-item td {
+	padding-top: 20px;
+}
+
+.page-section table .domain-name {
+	color: var(--color-primary);
+}
+.page-section table .toggle-container span
+, .page-section table .plan-renew-info {
+	font-size: 16px;
+	font-weight: 300;
+}
+.page-section table .cancel-plan,
+.page-section table .update-payment-info {
+	border-radius: 4px;
+	color: var(--color-primary);
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 300;
+	margin-left: 16px;
+	padding: 4px 8px;
+	text-transform: uppercase;
+}
+.page-section table .cancel-plan:hover
+, .page-section table .update-payment-info:hover{
+	background-color: var(--color-gray-50);
+}
+.toggle-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: -8px;
+	padding-bottom: -8px;
+	vertical-align: top;
+}
+.domain-renew-info {
+	display: inline-block;
+	width: calc(100% - 52px);
+}
+.domain-renew-cancel {
+	width: calc(100% - 48px);
+	display: none;
+}
+.domain-renew-cancel.alarm-text {
+	width: 100%;
+	margin-top: 8px;
+}
+input[type=checkbox].toggle-switch {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--color-gray-100);
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 0.09s ease-in-out;
+    position: relative;
+}
+input[type=checkbox].toggle-switch:checked {
+    background-color: var(--color-primary);
+}
+input[type=checkbox].toggle-switch::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    transform: scale(0.7);
+    left: 0;
+    transition: left 0.09s ease-in-out;
+}
+input[type=checkbox].toggle-switch:checked::after {
+    left: 20px;
+}
+
+.page-section table.billing-history {
+	margin-top: 32px;
+}
+.page-section table.billing-history tr th {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--text-dark-medium);
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--color-gray-100);
+	text-align: left;
+}
+.page-section table.billing-history tr {
+	border-bottom: 1px solid var(--color-gray-100);	
+}
+.page-section table.billing-history tr td {
+	font-weight: 300;
+	padding: 16px 0;
+}
+.page-section table.billing-history .billing-date {
+	color: var(--color-primary);
+}
+
+#updatePaymentModal {
+	display: none;
+}
+
+#cancelPlanModal {
+	display: none;
+}
+
+#cancelPlanModal .modal-step-one ul {
+	list-style-type : none;
+}
+#cancelPlanModal .modal-step-one .checkbox input {
+	margin-right: 12px;
+}
+#cancelPlanModal .modal-step-one .modal-highlight {
+	color: var(--color-primary);
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 1.5;
+	margin-bottom: 32px;
+	margin-top: 16px;
+	text-align: center;
+}
+
+@media (max-width: 1024px) {
+	.page-section {
+		padding: 0 16px;
+	}
+	.page-section h5 {
+		font-size: 18px;
+	}
+	.page-section  table tr td {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-section {
+		margin-bottom: 40px;
+	}
+	.page-section h5 {
+		font-size: 16px;
+	}
+	.page-section table {
+		margin: 8px 0;
+	}
+	.page-section table tr td {
+		font-size: 14px;
+	}
+	.page-section table .toggle-container span
+	, .page-section table .plan-renew-info {
+		font-size: 14px;
+		line-height: 1.375;
+	}
+	.page-section table .cancel-plan {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	.page-section table.billing-history {
+		margin-top: 0;
+	}
+	.page-section table tr {
+		display: flex;
+		flex-direction: row;
+	}
+	.page-section table.billing-history tbody tr th {
+		display: none;
+	}
+	.page-section table.billing-history tbody tr {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.page-section table.billing-history tbody tr td {
+		padding: 4px 0;
+		width: 100%;
+	}
+	.page-section table.billing-history tbody tr td:first-child {
+		padding-top: 12px;
+	}
+	.page-section table.billing-history tbody tr td:last-child {
+		padding-bottom: 12px
+	}
+}
+
+@media (max-width: 577px) {
+	#cancelPlanModal .modal-step-one .modal-highlight {
+		font-size: 20px;
+		margin-bottom: 24px;
+		margin-top: 8px;
+	}
+}

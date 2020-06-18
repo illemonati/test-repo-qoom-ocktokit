@@ -1,0 +1,17 @@
+footer {
+	border-top: 1px solid var(--color-gray-100);
+}
+footer .container {
+	color: var(--text-dark-medium);
+	display: flex;
+	flex-flow: row nowrap;
+	max-width: 1140px;
+	margin: auto;
+	padding: 12px 16px;
+}
+
+footer .copyright {
+	flex: 1 1 auto;
+	line-height: 20px;
+	text-align: center;
+}

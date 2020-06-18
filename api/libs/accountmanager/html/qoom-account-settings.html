@@ -1,0 +1,129 @@
+<section class='main-container' id = 'account-settings-container'>
+	<div class="page-title">
+		<div class='hamburgerIconContainer'><div class="hamburgerIcon"><i class="ic-menu white"></i></div></div>
+		<h2>Account Settings</h2>
+	</div>
+	<div class='user-info-details-container'>
+		<table>
+			<tbody>
+				<tr>
+					<td>Name</td>
+					<td class='user-name'>{{firstName}} {{lastName}} <a class='change-name' onclick="openUpdateNameModal()">Update</a></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					 <td class='user-email'>{{email}} <a class='change-email' onclick="openUpdateEmailModal()">Update</a></td> 
+				</tr>
+				<tr>
+					<td>Password</td>
+					 <td class='user-password'><a class='change-password' onclick="openChangePasswordModal()">Change Password</a></td> 
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+<section id="updateNameModal">
+	<div class="modal-background" onclick="closeUpdateNameModal()"></div>
+	<div class="modal">
+		<div class="modal-title"><h1>Update Name</h1></div>
+		<div class="container">
+			<div class="col-lg-12">
+				<div class="form-input">
+                    <label>First Name</label>
+                    <div class="input-items default empty">
+                        <input type="text" value="{{firstName}}" id='first'>
+                    </div>
+                </div> <!-- form input -->
+            </div>
+            <div class="col-lg-12">
+                <div class="form-input">
+                    <label>Last Name</label>
+                    <div class="input-items default empty">
+                        <input type="text" value="{{lastName}}" id='last'>
+                    </div>
+                </div> <!-- form input -->
+            </div>
+            <div class="buttons-container">
+                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeUpdateNameModal()" >Cancel</button>
+                <button id="updateBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick='updateAccountSettings(["first", "last"])' >Update</button>
+            </div> <!-- form input -->
+        </div>
+    </div>
+</section>
+<section id="updateEmailModal">
+	<div class="modal-background" onclick="closeUpdateEmailModal()"></div>
+	<div id="updateEmailModal-verify" class="modal">
+		<div class="modal-title"><h1>Verify Your Password</h1></div>
+		<div class="container">
+			<span class="modal-description">Enter your password to continue</span>
+			<div class="col-lg-12 ">
+                <div class="form-input">
+                    <label>Password</label>
+                    <div class="input-items default empty">
+                        <input id='emailpwdcheck' type="password" placeholder="">
+                    </div>
+                </div> <!-- form input -->
+            </div>
+            <div class="buttons-container">
+                <button class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeUpdateEmailModal()" >Cancel</button>
+                <button class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick="verifyCurrentPassword('emailpwdcheck')">Continue</button>
+            </div> <!-- form input -->
+        </div>
+    </div>
+	<div id="updateEmailModal-change" class="modal">
+		<div class="modal-title"><h1>Update Email</h1></div>
+		<div class="container">
+			<span class="modal-description">Enter your new email address</span>
+			<div class="col-lg-12">
+                <div class="form-input">
+                    <label>Email</label>
+                    <div class="input-items default empty">
+                        <input type="text" value="{{email}}" id='email'>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeUpdateEmailModal()" >Cancel</button>
+                <button class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick='updateAccountSettings(["email"])'>Update</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="changePasswordModal">
+	<div class="modal-background" onclick="closeChangePasswordModal()"></div>
+	<div id="changePasswordModal-verify" class="modal">
+		<div class="modal-title"><h1>Verify Your Password</h1></div>
+		<div class="container">
+			<span class="modal-description">Enter your password to continue</span>
+			<div class="col-lg-12">
+                <div class="form-input">
+                    <label>Password</label>
+                    <div class="input-items default empty">
+                        <input id='changepwdcheck' type="password" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeChangePasswordModal()" >Cancel</button>
+                <button class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick="verifyCurrentPassword('changepwdcheck')">Continue</button>
+            </div>
+        </div>
+    </div>
+    <div id="changePasswordModal-change" class="modal">
+		<div class="modal-title"><h1>Change Password</h1></div>
+		<div class="container">
+			<div class="col-lg-12">
+                <div class="form-input">
+                    <label>Enter New Password</label>
+                    <div class="input-items default empty">
+                        <input type="password" placeholder="" id="password">
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick="closeChangePasswordModal()" >Cancel</button>
+                <button class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick='updateAccountSettings(["password"])'>Change</button>
+            </div> 
+        </div>
+    </div>
+</section>
