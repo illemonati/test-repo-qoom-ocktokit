@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Section</title>
+	<!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="/libs/lander/assets/images/favicon.png" type="image/png">
+	<style>
+		{{BASECSS}}
+		{{STYLES}}
+		{{SECTIONCSS}}
+	</style>
+</head>
+<body>
+	{{MENU}}
+	{{HEADER}}
+	<main>
+		<div>
+			<label>To Emails</label>
+			<select id='groups'>
+				<option value="" selected>-- Select Group --</option>
+			</select>
+			<textarea id='to' placeholder="email1@wisen.space,email2@wisen.space"></textarea>
+		</div>
+		<div>
+			<label>CC Emails</label>
+			<textarea id='cc' placeholder="email1@wisen.space,email2@wisen.space"></textarea>
+		</div>
+		<div>
+			<label>BCC Emails</label>
+			<textarea id='bcc' placeholder="email1@wisen.space,email2@wisen.space"></textarea>
+		</div>
+		<div>
+			<label>Subject</label>
+			<input id='subject' placeholder="Email Subject Text">
+		</div>
+		<div>
+			<label>Email Template</label>
+			<input id='template' placeholder="TEMPLATENAME.email">
+		</div>
+		<div>
+			<button>Submit</button>
+		</div>
+	</main>
+	{{FOOTER}}
+	<script>
+		{{BASEJS}}
+		{{SECTIONJS}}
+		{{SCRIPT}}
+	</script>
+</body>
+</html>

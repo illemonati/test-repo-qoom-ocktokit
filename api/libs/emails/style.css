@@ -1,0 +1,45 @@
+/* emails list index.html page style */
+.container {
+	font-family: 'Poppins', Sans-Serif;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+.page-title {
+	font-size: 3rem;
+	font-weight: 500;
+	padding: 3rem 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.emails table {
+	border-collapse: collapse;
+	border-bottom: 2px solid #cbced1; 
+	width: 100%;
+}
+.emails .table-thead tr {
+	border-top: 2px solid #6c6c6c;
+	border-bottom: 2px solid #6c6c6c; 
+}
+.emails .table-thead tr th {
+	border: 0;
+	color: #121212;
+	font-size: 1.25rem;
+	font-weight: 500;
+	min-width: 160px;
+	padding: 16px 8px 16px 32px;
+	text-align: left;
+}
+.emails .table-tbody tr td {
+	border: 0;
+	color: #121212;
+	font-size: 1rem;
+	font-weight: 300;
+	min-width: 160px;
+	padding: 16px 8px 16px 32px;
+	text-align: left;
+}
+.emails a {
+	color: #121212;
+}

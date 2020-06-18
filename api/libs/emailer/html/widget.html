@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email</title>
+	<style>{{BASECSS}}</style>
+	<style>
+		section#icon {
+			display: table;
+		}
+	</style>
+</head>
+<body>
+	<section id='icon'>
+		<a class='appicon'>
+			<div class='icon'>✉️</div>
+			<div class='title'>Email</div>
+		</a>
+	</section>
+	<script>
+		window.addEventListener("message", receiveMessage, false);
+
+		function receiveMessage(event) {
+			if(event.origin !== location.origin) return;
+			console.log('RECIEVED MESSAGE', event);
+		}
+		document.querySelectorAll('.appicon').forEach(function($appicon) {
+			$appicon.addEventListener('click', function() {
+				window.parent.postMessage({
+					name: 'appIconClicked'
+					, url: location.origin + '/news/section'
+				}, '*');
+			});
+		});
+	</script>
+</body>
+</html>

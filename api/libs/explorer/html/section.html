@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Explore Section</title>
+	<link rel="stylesheet" type="text/css" href="/libs/icons/icons.css">
+	<link rel="stylesheet" type="text/css" href="/libs/administrater/css/qoom.css">
+	<!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="/libs/lander/assets/images/favicon.png" type="image/png">
+	<style>
+		{{BASECSS}}
+		{{STYLES}}
+		{{SECTIONCSS}}
+	</style>
+</head> 
+<body>
+	<header>
+		{{MENU}}
+		{{HEADER}}
+	</header>
+	<main id='exploremain'>
+		<section class="features">
+			<div id="folderStructure">
+				<div id='breadcrumb'></div>
+			</div>
+			<div class="searching form-input">
+				<div class="input-items default"><input type="text" id="searchInput" onkeyup="updateFileList()" placeholder="Search"></div>
+				<i class="ic-cancel"></i>
+			</div>
+			<div class="button-upload">
+				<button class="qoom-main-btn qoom-button-full qoom-button-small" onclick="openUploadButtonSubmenus()"><i class="ic-add white"></i><span>New</span></button>
+				<div class="button-upload-submenus-background" onclick="closeUploadButtonSubmenus()"></div>
+				<ul class="button-upload-submenus">
+					<li class="button-upload-submenu" onclick="openCreateNewFileModal()"><i class="ic-new-file"></i>Create New File</li>
+					<li class="button-upload-submenu" onclick="openCreateNewFolderModal()"><i class="ic-new-folder"></i>Create New Folder</li>
+					<li><hr></li>
+					<li class="button-upload-submenu" id='newappletitem' onclick="openCreateNewAppletModal()" style='display:none;'><i class="ic-add"></i>Create New Applet</li>
+					<li style='display:none;'><hr></li>
+					<li id="" class="button-upload-submenu file-upload" onclick="showSelectFileDialog()" ><i class="ic-upload-file"></i>File Upload</li>
+				</ul>
+			</div>
+		</section>
+		<div style="display:flex; align-items: baseline;">
+		<section id="versioning" style="flex: 1 0 auto;">
+			<input value='{{CURRENTVERSION}}'>
+			<button style="display:inline-block">Save</button>
+		</section>
+		<section id='finders' style="flex: 1 0 auto;">
+			<div id="filterContainers">
+				<div class="filterContainer">
+					<span class="memberTxt">Member</span>
+					<i class="fas fa-sort-down"></i>
+					<div class="subFilterContainer member">
+						<div class="subFilterInputs">
+							{{MEMBERFILTERS}}
+						</div>				
+					</div>
+				</div>
+				<div class="filterContainer">
+					<span class="versionTxt">Version</span>
+					<i class="fas fa-sort-down"></i>
+					<div class="subFilterContainer version">
+						<div class="subFilterInputs">
+							{{VERSIONFILTERS}}
+						</div>				
+					</div>
+				</div>
+				{{DEPLOYER}}
+				{{UPDATER}}
+			</div>
+		</section>
+		</div>
+		<section id='full'>
+			<span class="search-result-count"></span>
+			<div id='main' class='scrollablecontainer'>
+				<!--<div class="grid-file-container" style="display:none;"></div>-->
+				<table>
+					<thead>
+						<tr>
+							<th width="40%" id="name" onclick="setSortingWay('name')">Name<i class="ic-chevron-up primary"></i><i class="ic-chevron-down primary"></i></th>
+							<th width="20%" id="kind" onclick="setSortingWay('kind')">Kind<i class="ic-chevron-up primary"></i><i class="ic-chevron-down primary"></i></th>
+							<th width="20%" id="dateUpdated" onclick="setSortingWay('dateUpdated')">Last Modified<i class="ic-chevron-up primary"></i><i class="ic-chevron-down primary"></i></th>
+							<th width="20%"></th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<div id='publishModal' class='modal'></div>
+			{{ROLLBACKER}}
+			{{MERGER}}
+			{{CAPTURER}}
+			<!--PUT CAPTURER-->
+		</section>
+		<button id='clone' style="width: 120px;">Clone</button>	
+		<section id="createNewFileModal">
+			<div class="modal-background" onclick="closeCreateNewFileModal()"></div>
+			<div class="modal">
+				<div class="modal-title"><h1>Create New File</h1></div>
+				<div class="container">
+					<div class="modal-description">
+		                <p>Enter a file name to create.</p>
+		            </div>
+		            <div class="col-lg-12">
+		                <div class="form-input filepath">
+		                    <div class="locationForNewFileContainer"></div>
+		                    <div id="newFileName" class="input-items default empty">
+		                        <input type="text" placeholder="fileName.extension" class='fileName' required>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="buttons-container">
+		                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick='closeCreateNewFileModal()' >Cancel</button>
+		                <button id="submitBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick="createNewFile()" disabled>Create</button>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+		<section id="createNewAppletModal" style="display: none;">
+			<div class="modal-background" onclick="closeCreateNewAppletModal()"></div>
+			<div class="modal">
+				<div class="modal-title"><h1>Create New Applet</h1></div>
+				<div class="container">
+					<div class="modal-description">
+		                <p>Enter an applet name to create.</p>
+		            </div>
+		            <div class="col-lg-12">
+		                <div class="form-input filepath">
+		                    <div id="newAppletName" class="input-items default empty">
+		                        <input type="text" placeholder="applet" class='fileName' required>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="buttons-container">
+		                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick='closeCreateNewAppletModal()' >Cancel</button>
+		                <button id="submitBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick="createNewApplet()" disabled>Create</button>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+		<section id="createNewFolderModal">
+			<div class="modal-background" onclick="closeCreateNewFolderModal()"></div>
+			<div class="modal">
+				<div class="modal-title"><h1>Create New Folder</h1></div>
+				<div class="container">
+					<div class="modal-description">
+		                <p>Enter a folder name to create.</p>
+		            </div>
+		            <div class="col-lg-12">
+		                <div class="form-input filepath">
+		                    <div class="locationForNewFolderContainer"></div>
+		                    <div id="newFolderName" class="input-items default empty">
+		                        <input type="text" placeholder="folderName" class='folderName' required>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="buttons-container">
+		                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" type="cancel" onclick='closeCreateNewFolderModal()' >Cancel</button>
+		                <button id="submitBtn" class="qoom-main-btn qoom-button-full qoom-button-small" type="submit" onclick="createNewFolder(locationForNewFolder)" disabled>Create</button>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+		<section id="searchActivatedImg">
+			<i class="img-search"></i>
+			<p class="text-search">Begin typing in Search</p>
+			<p class="subtext-search">Search for files and folders</p>
+		</section>
+		<section id="noSearchResultImg">
+			<i class="img-no-result"></i>
+			<p class="text-search">No Result Found</p>
+			<p class="subtext-search">Try different keywords</p>
+
+		</section>
+	</main>
+	<footer>{{FOOTER}}</footer>
+	<script src='/libs/alert.js'></script>
+	<script src='/libs/socketio.js'></script>	
+	<script>
+		{{BASEJS}}
+		{{SCRIPT}}
+		{{SECTIONJS}}		
+	</script>
+	<script type='module'>
+		import notify from '/libs/notifier/script.js';
+		notify('{{NOTIFICATION}}', {position: 'top'});
+	</script>
+	{{trialer}}
+</body>
+</html>
