@@ -761,7 +761,7 @@ function addRoutes(app) {
 
 				groupFileNames = [];
 				counter += 1;
-				await sleep(1000);
+				await sleep(10000);
 			}
 			
 			// console.log(prs);
