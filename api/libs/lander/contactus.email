@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		Contact Us Request
+		{{firstName}} {{lastName}}<br>{{email}}<br>{{comments}}
+		
+	</body>
+</html>

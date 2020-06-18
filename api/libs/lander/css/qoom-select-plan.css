@@ -1,0 +1,148 @@
+.navibar {
+	padding: 30px 10px;
+	background-color: #000;
+	color: #fff;
+}
+
+.navibar-cancel {
+	position: absolute;
+	left: 20px;
+	cursor: pointer;
+}
+
+.navibar-cancel-button {
+	margin-right: 5px;
+}
+
+.navibar-cancel-button svg {
+	padding-bottom: 1px;
+}
+
+.navibar-title {
+	width: 100%;
+	text-align: center;
+}
+
+.header .row {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.header .row {
+	text-align: center;
+}
+
+.header .row .page-subtitle {
+	color: #0067f4;
+}
+
+.header .row .page-title {
+	text-align: center;
+}
+
+/*PRICING COLUMNS : GENERAL*/
+
+.pricing-style-two {
+	min-height: 550px;
+}
+
+.pricing-style-two .pricing-header {
+	min-height: 173px;
+}
+
+.pricing-style-two .pricing-header .price {
+    display: inline-block;
+}
+
+.pricing-style-two .pricing-btn {
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	right: 0;
+}
+
+.pricing-style-two .pricing-btn .disabled {
+	pointer-events: none;
+}
+
+/*PRICING COLUMNS: INDIVIDUAL*/
+
+
+
+/*PRICING COLUMNS: CLUB*/
+.pricing-text-starting-at {
+	font-size: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: -40px;
+}
+
+.pricing-text-per-member {
+	font-size: 0.75rem;
+}
+
+
+/*PRICING COLUMNS: ORGANIZATION*/
+
+.pricing-organization {
+	font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 30px 90px 30px 0;
+}
+
+/*MEDIAQUERY*/
+@media (max-width: 576px) {
+	.pricing-organization {
+		margin: 30px 70px 30px 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.navibar {
+		padding: 10px 5px;
+	}
+	
+	.navibar-cancel {
+		left: 10px;
+	}
+	
+	.navibar-cancel-button {
+		margin-right: 0;
+	}
+	
+	.navibar-cancel-button svg {
+		width: 16px;
+		padding-bottom: 1px;
+	}
+	
+	.header .row .page-subtitle {
+		text-align: left;
+	}
+	
+	.header .row .page-title {
+		font-size: 32px;
+		text-align: left;
+	}
+	
+	.pricing-style-two {
+		min-height: 470px;
+	}
+	.pricing-style-two .pricing-header {
+		min-height: 123px;
+	}
+	.pricing-style-two .pricing-list {
+		margin-top: 0px;
+	}
+	
+	.pricing-style-two .pricing-btn {
+		bottom: 40px;
+	}
+	
+	.pricing-text-starting-at {
+		/*padding-bottom: 20px;*/
+	}
+	
+	.pricing-organization {
+		margin: 30px 30px 30px 0;
+	}
+}

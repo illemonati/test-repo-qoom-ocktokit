@@ -1,0 +1,138 @@
+/*NAVIBAR STYLE*/
+.navibar {
+	padding: 30px 10px;
+	background-color: #000;
+	color: #fff;
+}
+
+.navibar-cancel {
+	position: absolute;
+	left: 20px;
+	cursor: pointer;
+}
+
+.navibar-cancel-button {
+	margin-right: 5px;
+}
+
+.navibar-cancel-button svg {
+	padding-bottom: 1px;
+}
+
+.navibar-title {
+	width: 100%;
+	text-align: center;
+}
+
+/*CHECKOUT STYLE*/
+.container {
+	max-width: 480px;
+}
+
+.header .row {
+	max-width; 480px;
+	margin: 0 auto;
+}
+
+.header .row .page-title {
+	text-align: center;
+}
+
+
+/*ORDER SUMMARY STYLE*/
+.checkout-cart .checkout-cart-product {
+	border: none;
+	border-radius: 5px;
+	background-color: #DEEBFD;
+	padding: 16px;
+}
+
+.checkout-cart .checkout-cart-product ul li .single-product {
+	padding: 10px 0;
+}
+
+.checkout-cart .checkout-cart-product ul li {
+	border-bottom: none;
+}
+
+.checkout-cart .checkout-cart-product ul li:last-child {
+	border-top: 1px solid #666666;
+	border-bottom: none;
+}
+
+.checkout-cart .checkout-cart-product ul li .single-product .product-name .product
+, .checkout-cart .checkout-cart-product ul li .single-product .product-price span
+, .checkout-cart .checkout-cart-product ul li .single-product .product-name .total {
+	font-size: 1em; 
+	line-height: 1.5;
+	font-weight: 300;
+	color: #121212;
+}
+
+.checkout-cart .checkout-cart-product ul li .single-product .product-name p {
+	font-size: 0.75rem;
+	color: #666666;
+}
+
+.checkout-cart .checkout-cart-product ul li .single-product .product-price p {
+	font-size: 0.75rem;
+	color: #666666;
+	text-align: right;
+}
+
+/*PAYMENT SECTION STYLE*/
+.checkout-payment {
+	border-top: none;
+}
+
+.form-input .input-items input, .form-input .input-items textarea {
+	font-size: 0.75rem;
+}
+
+.checkout-btn {
+	border-top: none;
+}
+
+.extra-small-paragraph p{
+	font-size: 0.75rem;
+	/*KIAE: usual line-height was 1.5 but it looks like 1.25 on sketch*/
+	line-height: 1.25;
+}
+
+[type=button]:disabled, [type=reset]:disabled, [type=submit]:disabled, button:disabled {
+	cursor: default;
+	background-color: #666666;
+	border-color: #666666;
+	color: #fff;
+}
+
+[type=button]:disabled:hover, [type=reset]:disabled:hover, [type=submit]:disabled:hover, button:disabled:hover {
+	color: #fff;
+	background-color: #666666;
+	border-color: #666666;
+}
+
+
+@media (max-width: 767px) {
+	.navibar {
+		padding: 10px 5px;
+	}
+	
+	.navibar-cancel {
+		left: 10px;
+	}
+	
+	.navibar-cancel-button {
+		margin-right: 0;
+	}
+	
+	.navibar-cancel-button svg {
+		width: 16px;
+		padding-bottom: 1px;
+	}
+	
+	.header .row .page-title {
+		font-size: 32px;
+		text-align: left;
+	}
+}

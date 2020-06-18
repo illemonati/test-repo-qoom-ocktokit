@@ -1,0 +1,772 @@
+/*===========================
+    FONT
+===========================*/
+/* poppins-300 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Poppins Light'), local('Poppins-Light'),url('/libs/fonts/poppins-300.woff2') format('woff2');
+}
+/* poppins-400 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url('/libs/fonts/poppins-400.woff2') format('woff2');
+}
+/* poppins-500 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Poppins Medium'), local('Poppins-Medium'), url('/libs/fonts/poppins-500.woff2') format('woff2');
+}
+/* poppins-600 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url('/libs/fonts/poppins-600.woff2') format('woff2');
+}
+/* poppins-700 - latin_devanagari_latin-ext */
+  @font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Poppins Bold'), local('Poppins-Bold'), url('/libs/fonts/poppins-700.woff2') format('woff2');
+}
+/* Fira Code 300 */
+  @font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300;
+  src: local('FiraCode'), local('FiraCode-Light'), url('/libs/fonts/FiraCode-Light.woff2') format('woff2');
+}
+/* Fira Code 400 */
+  @font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 400;
+  src: local('FiraCode Regular'), local('FiraCode-Regular'), url('/libs/fonts/FiraCode-Regular.woff2') format('woff2');
+}
+/* Fira Code 500 */
+  @font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 500;
+  src: local('FiraCode Medium'), local('FiraCode-Medium'), url('/libs/fonts/FiraCode-Medium.woff2') format('woff2');
+}
+/* Fira Code 600 */
+  @font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  src: local('FiraCode Bold'), local('FiraCode-Bold'), url('/libs/fonts/FiraCode-Bold.woff2') format('woff2');
+}
+
+/* Use Fira Code to differenciate code-related text from normal text*/
+.code {
+	font-family: 'Fira Code';
+}
+
+/*===========================
+    COLOR css
+===========================*/
+:root {
+  --color-primary: #0067f4; /* qoom blue */
+  --color-navy: #111559;
+  --color-blue: #0067f4;
+  --color-orange: #F28729;
+  --color-red: #E84855;
+  --color-yellow: #F7C660;
+  --color-green: #4da422;
+  
+  --color-gray-400: #9e9e9e;
+  --color-gray-300: #d8d8d8;
+  --color-gray-200: #f2f2f2;
+  --color-gray-100: #f4f6f7;
+  
+  --color-blue-100: #99c2fa;
+  --color-blue-200: #66a3f8;
+  --color-blue-300: #3285f6;
+  --color-blue-500: #0052c3;
+  --color-blue-600: #003d92;
+  --color-blue-700: #002961;
+  
+  --color-primary-100: #99c2fa;
+  --color-primary-200: #66a3f8;
+  --color-primary-300: #3285f6;
+  --color-primary-500: #0052c3;
+  --color-primary-600: #003d92;
+  --color-primary-700: #002961;
+ 
+  --color-light-gray: #F4F6F7;
+  --color-light-blue: #D8E6F2;
+  
+  --color-dark-blue: #020873;
+  --color-dark-navy: #0C1440;
+  
+  --color-cloud-purple: #B175FF;
+
+  /* text colors for light background */
+  --text-dark-high: #212121;
+  --text-dark-medium: #666666;
+  --text-dark-disabled: #9E9E9E;
+
+  /* text colors for dark background */
+  --text-white-high: rgba(255,255,255,1);
+  --text-white-medium: rgba(255,255,255,0.6);
+  --text-white-disabled: rgba(255,255,255,0.38);
+}
+
+/*==============================
+	HTML TAGS css
+==============================*/
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--text-dark-high);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+i,
+span,
+a {
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 400;
+	margin: 0px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+ul, ol {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0;
+}
+@media (max-width: 767px) {
+	h1 {
+		font-size: 36px;
+	}
+	h2 {
+		font-size: 32px;
+	}
+	h3 {
+		font-size: 26px;
+	}
+	h4 {
+		font-size: 22px;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+	p {
+		font-size: 14px;
+	}
+}
+
+/*==========================
+	LAYOUT
+==========================*/
+.row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+.justify-content-center {
+	-ms-flex-pack: center!important;
+	justify-content: center!important;
+}
+.justify-content-right {
+	-ms-flex-pack: right!important;
+	justify-content: right!important;
+}
+.col-lg-12 {
+	position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+@media (min-width: 992px) {
+	.col-lg-12 {
+		-ms-flex: 0 0 100%;
+		flex:  0 0 100%;
+		max-width: 100%;
+	}
+}
+.col-lg-8 {
+	position: relative;
+	width: 67%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+@media (min-width: 992px) {
+	.col-lg-12 {
+		-ms-flex: 0 0 100%;
+		flex:  0 0 100%;
+		max-width: 100%;
+	}
+}
+.col-lg-6 {
+	position: relative;
+	width: 50%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+@media (max-width: 767px) {
+	.col-lg-6 {
+		-ms-flex: 0 0 100%;
+		flex:  0 0 100%;
+		max-width: 100%;
+	}
+}
+.col-lg-4 {
+	position: relative;
+	width: 33.3333%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+@media (max-width: 767px) {
+	.col-lg-4 {
+		-ms-flex: 0 0 100%;
+		flex:  0 0 100%;
+		max-width: 100%;
+	}
+}
+
+/* ========================
+	FORM ELEMENTS
+==========================*/
+.form-input label {
+	font-size: 12px;
+	line-height: 1.5;
+	color: var(--text-dark-medium);
+	margin-bottom: 8px;
+	display: block;
+	text-align: left !important;
+}
+.form-input {
+	margin-bottom: 16px;
+}
+.form-input .input-items {
+	position: relative;
+}
+.form-input .input-items input,
+.form-input .input-items-optional input,
+.form-input .input-items textarea,
+.form-input .input-items select {
+	width: 100%;
+	height: 48px;
+	border: 1px solid;
+	border-radius: 4px;
+	padding-left: 16px;
+	padding-right: 48px;
+	position: relative;
+	font-size: 1rem;
+}
+.form-input .input-items textarea {
+	padding-top: 8px;
+	height: 130px;
+	resize: none;
+}
+.form-input .input-items i {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    width: 24px;
+    z-index: 9;
+}
+.form-input .input-items.default input,
+.form-input .input-items-optional.default input, 
+.form-input .input-items.default textarea,
+.form-input .input-items.default select {
+	border-color: var(--text-dark-medium);
+	color: var(--text-dark-high);
+}
+.form-input .input-items.default input:focus,
+.form-input .input-items-optional.default input:focus,
+.form-input .input-items.default textarea:focus,
+.form-input .input-items.default select:focus {
+	border-color: var(--color-primary);
+}
+.form-input .input-items.default input::placeholder,
+.form-input .input-items-optional.default input::placeholder,
+.form-input .input-items.default textarea::placeholder,
+.form-input .input-items.default select::placeholder {
+	color: var(--text-dark-medium);
+	opacity: 1;
+}
+.form-input .input-items.default input::-moz-placeholder,
+.form-input .input-items-optional.default input::-moz-placeholder,
+.form-input .input-items.default textarea::-moz-placeholder,
+.form-input .input-items.default select::-moz-placeholder {
+	color: var(--text-dark-medium);
+	opacity: 1;
+}
+.form-input .input-items.default input::-webkit-input-placeholder,
+.form-input .input-items-optional.default input::-webkit-input-placeholder,
+.form-input .input-items.default textarea::-webkit-input-placeholder,
+.form-input .input-items.default select::-webkit-input-placeholder{
+ 	color: var(--text-dark-medium);
+ 	opacity: 1;
+}
+.form-input .input-items.default i {
+    color: var(--text-dark-medium)
+}
+.form-input .input-items.active input,
+.form-input .input-items.active textarea,
+.form-input .input-items.active select {
+	border-color: var(--color-primary);
+	color: var(--text-dark-high);
+} 
+.form-input .input-items.active input::placeholder,
+.form-input .input-items.active textarea::placeholder,
+.form-input .input-items.active select::placeholder {
+	color: var(--text-dark-high);
+	opacity: 1;
+}
+.form-input .input-items.active input::-moz-placeholder,
+.form-input .input-items.active textarea::-moz-placeholder,
+.form-input .input-items.active select::-moz-placeholder {
+	color: var(--text-dark-high);
+	opacity: 1;
+}
+.form-input .input-items.active input::-webkit-input-placeholder,
+.form-input .input-items.active textarea::-webkit-input-placeholder,
+.form-input .input-items.active select::-webkit-input-placeholder {
+	color: var(--text-dark-high);
+	opacity: 1;
+}
+.form-input .input-items.active i {
+	color: var(--color-primary);
+}
+.form-input .input-items.error input,
+.form-input .input-items.error textarea,
+.form-input .input-items.errror select {
+	border-color: var(--color-red);
+	color: var(--color-red);
+}
+.form-input .input-items.error input::placeholder,
+.form-input .input-items.error textarea::placeholder,
+.form-input .input-items.error select {
+	border-color: var(--color-red);
+	opacity: 1;
+}
+.form-input .input-items.error input::-moz-placeholder,
+.form-input .input-items.error textarea::-moz-placeholder,
+.form-input .input-items.error select::-moz-placeholder {
+	border-color: var(--color-red);
+	opacity: 1;
+}
+.form-input .input-items.error input::-moz-placeholder,
+.form-input .input-items.error textarea::-moz-placeholder,
+.form-input .input-items.error select::-moz-placeholder {
+	border-color: var(--color-red);
+	opacity: 1;
+}
+.form-input .input-items.error input::-webkit-input-placeholder,
+.form-input .input-items.error textarea::-webkit-input-placeholder,
+.form-input .input-items.error select::-webkit-input-placeholder {
+	border-color: var(--color-red);
+	opacity: 1;
+}
+.form-input .input-items.error i {
+	border-color: var(--color-red);
+}
+.form-input .input-items.success input,
+.form-input .input-items.success textarea,
+.form-input .input-items.success select {
+	border-color: var(--color-green);
+	color: var(--color-green);
+}
+.form-input .input-items.success input::placeholder,
+.form-input .input-items.success textarea::placeholder,
+.form-input .input-items.success select::placeholder {
+	color: var(--color-green);
+	opacity: 1; }
+.form-input .input-items.success input::-moz-placeholder,
+.form-input .input-items.success textarea::-moz-placeholder,
+.form-input .input-items.success select{
+	color: var(--color-green);
+	opacity: 1; }
+.form-input .input-items.success input::-moz-placeholder,
+.form-input .input-items.success textarea::-moz-placeholder {
+	color: var(--color-green);
+	opacity: 1; }
+.form-input .input-items.success input::-webkit-input-placeholder,
+.form-input .input-items.success textarea::-webkit-input-placeholder {
+	color: var(--color-green);
+	opacity: 1; }
+.form-input .input-items.success i {
+	color: var(--color-green);
+}
+.form-input .input-items.disabled input,
+.form-input .input-items.disabled textarea {
+	border-color: var(--text-dark-disabled);
+	color: var(--text-dark-disabled);
+	background: none;
+}
+.form-input .input-items.disabled input::placeholder,
+.form-input .input-items.disabled textarea::placeholder {
+	color: var(--text-dark-disabled);
+	opacity: 1;
+}
+.form-input .input-items.disabled input::-moz-placeholder,
+.form-input .input-items.disabled textarea::-moz-placeholder {
+	color: var(--text-dark-disabled);
+	opacity: 1;
+}
+.form-input .input-items.disabled input::-moz-placeholder,
+.form-input .input-items.disabled textarea::-moz-placeholder {
+	color: var(--text-dark-disabled);
+	opacity: 1;
+}
+.form-input .input-items.disabled input::-webkit-input-placeholder,
+.form-input .input-items.disabled textarea::-webkit-input-placeholder {
+	color: var(--text-dark-disabled);
+	opacity: 1;
+}
+.form-input .input-items.disabled i {
+	color:var(--text-dark-disabled);
+}
+.form-input .text {
+	font-size: 1rem;
+}
+.form-input .input-items input, .form-input .input-items textarea {
+	font-size: 1rem;
+}
+
+/*===========================
+    BUTTON css
+===========================*/
+.qoom-main-btn {
+	border: 2px solid transparent;
+	border-radius: 4px;
+	color: var(--color-primary);
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 44px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 0 32px;
+	position: relative;
+	white-space: nowrap;
+	width: 100%;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-ms-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+	z-index: 5;
+}
+@media (max-width: 767px) {
+  .qoom-main-btn {
+  	border: 1px solid transparent;
+    font-size: 14px;
+    padding: 0 16px;
+    line-height: 30px;
+  }
+}
+.qoom-main-btn > * {
+	vertical-align: middle;
+}
+.qoom-button-small {
+	font-size: 14px;
+	padding: 0 24px;
+	line-height: 36px;
+}
+@media (max-width: 767px) {
+  .qoom-button-small {
+  	font-size: 12px;
+    padding: 0 16px;
+    line-height: 30px;
+  }
+}
+.qoom-button-outline {
+	background-color: #fff;
+	border-color: var(--color-primary);
+}
+.qoom-button-outline:hover {
+	background-color: var(--color-primary-600);
+	border-color: var(--color-primary-600);
+	color: #fff;
+}
+
+.qoom-button-full {
+	background-color: var(--color-primary);
+	color: #fff;
+	
+}
+.qoom-button-full:hover {
+	background-color: var(--color-primary-600);
+	color: #fff;
+}
+.qoom-button-round {
+	border-radius: 24px;
+}
+
+.qoom-button-link {
+	color: var(--color-primary);
+	font-weight: 300;
+	text-decoration: none;
+}
+.qoom-button-link:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.qoom-button-link:visited {
+	text-decoration: none;
+}
+
+[type=button]:disabled, [type=reset]:disabled, [type=submit]:disabled, button:disabled {
+	cursor: default;
+	background-color: var(--color-gray-300);
+	border-color: var(--color-gray-300);
+	color: #fff;
+}
+[type=button]:disabled:hover, [type=reset]:disabled:hover, [type=submit]:disabled:hover, button:disabled:hover {
+	color: #fff;
+	background-color: var(--color-gray-300);
+	border-color:var(--color-gray-300);
+}
+
+/*===========================
+    Popup Dialog css
+===========================*/
+.modal-background {
+	background-color: rgba(0, 0, 0, 0.38);
+	height: 100vh;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 5;
+}
+.modal {
+	background-color: #fff;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	display: block;
+	left: 50%;
+	min-height: 12rem;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 32rem;
+	z-index: 6;
+}
+.modal .modal-title {
+	background-color: var(--color-primary);
+	height: 56px;
+	margin: 0;
+	padding: 8px 16px;
+	width: 100%;
+}
+.modal .modal-title h1 {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 40px;
+	text-align: left;
+}
+.modal .container {
+	padding: 24px 16px;
+}
+.modal .container .modal-description {
+	color: var(--text-dark-high);
+	font-weight: 300;
+	line-height: 1.5;
+	margin-bottom: 16px;
+}
+.modal .container .modal-description p {
+	margin-bottom: 8px;
+}
+.modal .col-lg-12
+,.modal .col-lg-6 {
+	padding: 0;
+}
+.modal .form-input label::after {
+	content: "";
+}
+.modal .form-input .input-items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.modal .form-input .input-items input {
+	height: 38px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.modal .form-input.url span:first-child{
+	margin-right: 8px;
+}
+.modal .form-input .description {
+	color: var(--color-primary);
+	font-size: 12px;
+}
+.modal .buttons-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	margin-top: 24px;
+}
+.modal .buttons-container button {
+	margin-left: 16px;
+	min-width: 120px;
+	width: fit-content;
+}
+.modal .form-input .input-items .domain-name {
+	line-height: 48px;
+	margin-left: 8px;
+}
+.modal .form-input.url .input-items input {
+	width: 240px;
+}
+
+@media (max-width: 577px) {
+	.modal {
+		font-size: 14px;
+		max-width: 480px;
+		width: calc(100% - 32px);
+	}
+	.modal .buttons-container {
+		justify-content: flex-start;
+	}
+	.modal .buttons-container button {
+		margin-left: 0;
+	}
+	.modal .buttons-container button:last-child {
+		flex: 1 0 auto;
+		margin-left: 8px;
+	}
+	.modal .form-input .input-items .domain-name {
+		line-height: 48px;
+		margin-left: 8px;
+	}
+	.modal .form-input.url .input-items input {
+		width: 120px;
+	}
+}
+
+/*===========================
+    Snackbar css
+===========================*/
+.snackbar {
+	background-color: var(--text-dark-high);
+	border-radius: 4px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	color: #fff;
+	display: flex;
+	flex-flow: row nowrap;
+	font-size: 14px;
+	justify-content: space-between;
+	left: 50%;
+	max-width: 720px;
+	padding: 14px 21px 14px 21px;
+	position: absolute;
+	top: 80px;
+	transform: translateX(-50%);
+}
+.snackbar.red {
+	background-color: var(--color-red);
+}
+.snackbar.blue {
+	background-color: var(--color-blue);
+}
+.snackbar .message {
+	flex-grow: 1;
+	font-weight: 300;
+	width: fit-content;
+}
+.snackbar .action {
+	margin-left: 14px;
+	width: fit-content;
+}
+.snackbar .action:hover {
+	color: var(--text-white-medium);
+	cursor: pointer;
+}
+
+@media (max-width: 577px) {
+	.snackbar {
+		top: initial;
+		bottom: 40px;
+		width: calc(100% - 32px);
+	}
+}

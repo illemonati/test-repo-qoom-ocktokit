@@ -1,0 +1,87 @@
+/*MAIN SECTION STYLE*/
+.body-container {
+	height: calc(100vh - 162px);
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;}
+  @media (max-width: 414px) {
+  	.body-container {
+  		height: calc(100vh - 90px);
+  	}
+  }
+
+section {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-bottom: 0;
+	padding-bottom: 48px;
+}
+
+section:last-child {
+	flex-grow: 1;
+}
+
+
+.container {
+	max-width: 640px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.header {
+	margin-top: 80px;
+}
+
+.header .row {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.header .row .page-title {
+	text-align: center;
+}
+
+.header .row .page-title-subtext {
+	width: 100%;
+	text-align: center;
+	margin-top: 16px;
+}
+
+.signin-area {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #fff;
+}
+
+.signin-area p {
+	line-height: 24px;
+	margin-bottom: 16px;
+}
+
+#back-home-btn {
+	margin-top: 48px;
+	text-transform: capitalize;
+}
+
+@media (max-width: 1023px) {
+	.header {
+		margin-top: 24px;
+		padding: 10px;
+	}
+	
+	.container {
+		width: 100%;
+		padding: 10px;
+		margin-top: 0;
+	}
+	
+	.signin-area {
+		padding-top: 0;
+	}
+	
+	.header .row .page-title {
+		font-size: 32px;
+		text-align: left;
+	}
+}
