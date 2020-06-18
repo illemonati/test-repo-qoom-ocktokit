@@ -1,0 +1,59 @@
+
+
+
+/*===========================
+    PAGE BANNER 
+===========================*/
+
+
+
+.page-banner{
+    background-color: #005ad5;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    & .page-banner-content{
+        
+        & .sub-title{
+            font-size: 38px;
+            font-weight: 400;
+            color: #fff;
+            opacity: 0.6;
+            line-height: 40px;
+            text-transform: uppercase;
+            
+            @media #{$md}{
+                font-size: 38px;
+                line-height: 45px;
+            }
+            @media #{$xs}{
+                font-size: 20px;
+                line-height: 25px;
+            }
+        }
+        & .page-title{
+            font-size: 60px;
+            line-height: 60px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 16px;
+            
+            @media #{$md}{
+                font-size: 56px;
+                line-height: 65px;
+            }
+            @media #{$xs}{
+                font-size: 40px;
+                line-height: 55px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

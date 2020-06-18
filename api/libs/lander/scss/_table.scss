@@ -1,0 +1,275 @@
+/*===========================
+        TABLES
+===========================*/
+
+
+
+
+.table-area {}
+
+.table-title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 45px;
+    color: $text-color-three;
+    
+    @media #{$xs}{
+        font-size: 24px;
+        line-height: 35px
+    }
+}
+
+
+
+.table-style {
+
+    & .table {
+        border-bottom: 2px solid $light-color-three;
+        
+        &.striped {
+            & .table-tbody {
+                & tr {
+                    &:nth-of-type(2n+2) {}
+                }
+            }
+        }
+
+        & .table-thead {
+            & tr {
+                & th {
+                    border: 0;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $white;
+                    font-weight: 700;
+                    padding: 13px 16px;
+                    min-width: 170px;
+                    
+                    @media #{$xs}{
+                        font-size: 14px;
+                        padding: 10px 13px;
+                        min-width: 140px;
+                    }
+                }
+            }
+        }
+
+        & .table-tbody {
+            & tr {
+                & td {
+                    border: 0;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $text-color-one;
+                    font-weight: 400;
+                    padding: 13px 16px;
+                    @media #{$xs}{
+                        font-size: 14px;
+                        padding: 10px 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-one {
+        & .table {
+            
+            &.striped {
+                & .table-tbody {
+                    & tr {
+                        &:nth-of-type(2n+2) {
+                            background-color: $light-color-two;
+                        }
+                    }
+                }
+            }
+
+            & .table-thead {
+                & tr {
+                    background: rgb(0,103,244);
+                    background: -webkit-linear-gradient(rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+                    background: -o-linear-gradient(rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+                    background: linear-gradient(rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+                    
+                    & th {}
+                }
+            }
+
+            & .table-tbody {
+                & tr {
+                    & td {}
+                }
+            }
+        }
+    }
+
+    &.style-two {
+        & .table {
+            
+            &.striped {
+                & .table-tbody {
+                    & tr {
+                        &:nth-of-type(2n+2) {
+                            background-color: $primary-two;
+                        }
+                    }
+                }
+            }
+
+            & .table-thead {
+                & tr {
+                    background-color: $primary-one;
+                    
+                    & th {
+                        border-left: 1px solid $light-color-three;
+                        border-right: 1px solid $light-color-three;
+                    }
+                }
+            }
+
+            & .table-tbody {
+                & tr {
+                    & td {
+                        border-left: 1px solid $light-color-three;
+                        border-right: 1px solid $light-color-three;
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-three {
+        & .table {
+            
+            &.striped {
+                & .table-tbody {
+                    & tr {
+                        &:nth-of-type(2n+2) {
+                            background-color: $light-color-two;
+                        }
+                    }
+                }
+            }
+
+            & .table-thead {
+                & tr {
+                    background-color: $primary-two;
+                    
+                    & th {
+                        color: $primary-one;
+                        border-left: 1px solid $light-color-three;
+                        border-right: 1px solid $light-color-three;
+                    }
+                }
+            }
+
+            & .table-tbody {
+                & tr {
+                    & td {
+                        border-left: 1px solid $light-color-three;
+                        border-right: 1px solid $light-color-three;
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-four {
+        & .table {
+            
+            &.striped {
+                & .table-tbody {
+                    & tr {
+                        &:nth-of-type(2n+2) {}
+                    }
+                }
+            }
+
+            & .table-thead {
+                & tr {
+                    border-top: 2px solid $text-color-three;
+                    border-bottom: 2px solid $text-color-three;
+                    
+                    & th {
+                        color: $text-color-one;
+                    }
+                }
+            }
+
+            & .table-tbody {
+                & tr {
+                    border-bottom: 1px solid $light-color-three;
+                    
+                    & td {
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    &.style-five {
+        & .table {
+            
+            &.striped {
+                & .table-tbody {
+                    & tr {
+                        &:nth-of-type(2n+2) {
+                            background-color: $light-color-two;
+                        }
+                    }
+                }
+            }
+
+            & .table-thead {
+                & tr {
+                    background: rgb(244,94,122);
+                    background: -webkit-linear-gradient(rgba(244,94,122,1) 0%, rgba(255,169,124,1) 100%);
+                    background: -o-linear-gradient(rgba(244,94,122,1) 0%, rgba(255,169,124,1) 100%);
+                    background: linear-gradient(rgba(244,94,122,1) 0%, rgba(255,169,124,1) 100%);
+                    
+                    & th {}
+                }
+            }
+
+            & .table-tbody {
+                & tr {
+                    & td {}
+                }
+            }
+        }
+    }
+    
+    &.style-six {
+        & .table {
+            
+            &.striped {
+                & .table-tbody {
+                    & tr {
+                        &:nth-of-type(2n+2) {
+                            background-color: $light-color-two;
+                        }
+                    }
+                }
+            }
+
+            & .table-thead {
+                & tr {
+                    background: rgb(145,102,254);
+                    background: -webkit-linear-gradient(rgba(145,102,254,1) 0%, rgba(201,122,237,1) 100%);
+                    background: -o-linear-gradient(rgba(145,102,254,1) 0%, rgba(201,122,237,1) 100%);
+                    background: linear-gradient(rgba(145,102,254,1) 0%, rgba(201,122,237,1) 100%);
+                    
+                    & th {}
+                }
+            }
+
+            & .table-tbody {
+                & tr {
+                    & td {}
+                }
+            }
+        }
+    }
+}

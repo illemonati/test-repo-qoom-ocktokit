@@ -1,0 +1,588 @@
+
+
+
+/*===========================
+         14.CARD CSS 
+===========================*/
+
+
+.single-card{
+    @include box-shadow (0 2px 4px 0 rgba(0, 0, 0, 0.16));        
+    border-radius: 8px;
+    overflow: hidden;
+    
+    & .card-image{
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & .card-content{
+        padding: 16px;
+                
+        & .card-title{
+            margin-bottom: 0;
+            
+            & a{
+                font-size: 24px;
+                line-height: 30px;
+                color: $text-color-one;
+                @include transition(0.3s);
+                
+                @media #{$lg}{
+                    font-size: 20px;
+                }
+                @media #{$xs}{
+                    font-size: 20px;
+                }
+                
+                &:hover{
+                    color: $primary-one;
+                }
+            }
+        }
+        
+        & .text{
+            color: $text-color-one;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 8px;
+            
+            @media #{$lg}{
+                font-size: 14px;
+            }
+            @media #{$xs}{
+                font-size: 14px;
+            }
+        }
+        
+        & .card-btn{
+            margin-top: 24px;
+            
+            & .main-btn{
+                line-height: 48px;
+            }
+        }
+    }
+}
+
+
+.card-style-one{
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+    }
+}
+
+
+
+.card-style-two{
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+        
+        & .card-btn{
+            & .main-btn{
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+
+.card-style-three{
+    
+    & .card-content{
+        background-color: $primary-one;
+        
+        & .card-title{            
+            & a{
+                color: $white;
+                
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+        & .text{
+            color: $white;
+        }
+    }
+}
+
+.card-style-four{
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+    }
+}
+
+
+.card-style-five{
+    @include box-shadow (none);
+    
+    & .card-content{
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+        
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+        
+        & .card-icon{
+            position: absolute;
+            top: -20px;
+            right: 8px;
+            
+            & i{
+                width: 40px;
+                line-height: 40px;
+                height: 40px;
+                text-align: center;
+                color: $white;
+                background-color: $primary-one;
+                border-radius: 50%;
+                font-size: 24px;
+                @include transition(0.3s);
+            }
+            &:hover{
+                & i{
+                    background-color: $white;
+                    color: $primary-one;
+                    @include box-shadow (0 2px 4px 0 rgba(0, 0, 0, 0.16));
+                }
+            }
+        }
+    }
+}
+
+
+.card-style-six{
+    background: -webkit-linear-gradient(left, rgba(10,207,254,1) 0%, rgba(73,90,255,1) 100%);
+    background: -o-linear-gradient(left, rgba(10,207,254,1) 0%, rgba(73,90,255,1) 100%);
+    background: linear-gradient(to right, rgba(10,207,254,1) 0%, rgba(73,90,255,1) 100%);
+    
+    & .card-content{
+                
+        & .card-title{            
+            & a{
+                color: $white;
+                
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+        & .text{
+            color: $white;
+        }
+        
+        & .card-btn{
+            & .main-btn{
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+.card-style-saven{
+    background: linear-gradient(90deg, rgba(145,102,254,1) 0%, rgba(201,122,237,1) 100%);
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                color: $white;
+                
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+        & .text{
+            color: $white;
+        }
+        
+        & .card-btn{            
+            & .main-btn{
+                border-color: $white;
+                background-color: $white;
+                
+                &:hover{
+                    background-color: transparent;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*===== CARD MINI =====*/
+
+.single-mini-card{
+    @include box-shadow (0 2px 4px 0 rgba(0, 0, 0, 0.16));        
+    border-radius: 8px;
+    overflow: hidden;
+    
+    & .card-image{
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    & .card-content{
+        padding: 16px;
+                
+        & .card-title{
+            margin-bottom: 0;
+            
+            & a{
+                font-size: 20px;
+                line-height: 30px;
+                color: $text-color-one;
+                @include transition(0.3s);
+                
+                @media #{$xs}{
+                    font-size: 18px;
+                }
+                
+                &:hover{
+                    color: $success-color-one;
+                }
+            }
+        }
+        
+        & .text{
+            color: $text-color-one;
+            font-size: 14px;
+            line-height: 24px;
+            margin-top: 8px;
+        }
+        
+        & .card-btn{
+            margin-top: 24px;
+            
+            & .main-btn{
+                border: 2px solid $primary-one;              
+                font-size: 14px;
+                line-height: 40px;
+                padding: 0 24px;
+            }
+        }
+    }
+}
+
+
+
+.mini-card-style-one{
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+    }
+}
+
+
+.mini-card-style-two{
+    background: -webkit-linear-gradient(left, rgba(255,88,88,1) 0%, rgba(240,152,25,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,88,88,1) 0%, rgba(240,152,25,1) 100%);
+    background: linear-gradient(to right, rgba(255,88,88,1) 0%, rgba(240,152,25,1) 100%);
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                color: $white;
+            }
+        }
+        & .text{
+            color: $white;
+        }
+    }
+}
+
+
+.mini-card-style-three{
+    
+    & .card-image{
+        & img{
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            
+            @media #{$xs}{
+                height: 210px;
+            }
+        }
+    }
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+        
+        & .card-btn{            
+            & .main-btn{
+                border: 0;
+                line-height: 42px;
+            }
+        }
+    }
+}
+
+
+
+.mini-card-style-four{
+    background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(156,9,219,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(156,9,219,1) 100%);
+    background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(156,9,219,1) 100%);
+    
+    & .card-image{
+        & img{
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            
+            @media #{$xs}{
+                height: 210px;
+            }
+        }
+    }
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                color: $white;
+                
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+        & .text{
+            color: $white;
+        }
+        & .card-btn{            
+            & .main-btn{
+                border: 0;
+                line-height: 42px;
+            }
+        }
+    }
+}
+
+
+
+
+.mini-card-style-five{
+    background: -webkit-linear-gradient(left, rgba(155,225,93,1) 0%, rgba(0,227,174,1) 100%);
+    background: -o-linear-gradient(left, rgba(155,225,93,1) 0%, rgba(0,227,174,1) 100%);
+    background: linear-gradient(to right, rgba(155,225,93,1) 0%, rgba(0,227,174,1) 100%);
+    
+    & .card-image{
+        & img{
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            
+            @media #{$xs}{
+                height: 210px;
+            }
+        }
+    }
+    
+    & .card-content{
+        & .card-title{            
+            & a{
+                color: $white;
+                
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+        & .text{
+            color: $white;
+        }
+        
+        & .card-btn{            
+            & .main-btn{
+                border-color: $white;
+                background-color: $white;
+                
+                &:hover{
+                    background-color: transparent;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+.mini-card-style-six{
+    @include box-shadow (none);
+    
+    & .card-content{
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+        
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+        
+        & .card-icon{
+            position: absolute;
+            top: -20px;
+            right: 8px;
+            
+            & i{
+                width: 40px;
+                line-height: 40px;
+                height: 40px;
+                text-align: center;
+                color: $white;
+                background-color: $primary-one;
+                border-radius: 50%;
+                font-size: 24px;
+                @include transition(0.3s);
+            }
+            
+            &:hover{
+                & i{
+                    background-color: $white;
+                    color: $primary-one;
+                    @include box-shadow (0 2px 4px 0 rgba(0, 0, 0, 0.16));
+                }
+            }
+        }
+    }
+}
+
+.mini-card-style-saven{
+    @include box-shadow (none);
+    
+    & .card-content{
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+        
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+        
+        & .card-icon{
+            position: absolute;
+            top: -20px;
+            right: 8px;
+            
+            & i{
+                width: 40px;
+                line-height: 40px;
+                height: 40px;
+                text-align: center;
+                color: $primary-one;
+                background-color: $white;
+                border-radius: 50%;
+                font-size: 24px;
+                @include box-shadow (0 2px 4px 0 rgba(0, 0, 0, 0.16));
+                @include transition(0.3s);
+            }
+            &:hover{
+                & i{
+                    background-color: $primary-one;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.mini-card-style-nine{
+    @include box-shadow (none);
+    
+    & .card-image{
+        & img{
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            
+            @media #{$xs}{
+                height: 210px;
+            }
+        }
+    }
+    
+    & .card-content{
+        
+        & .card-title{            
+            & a{
+                
+            }
+        }
+        & .text{
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

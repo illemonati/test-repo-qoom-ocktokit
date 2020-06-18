@@ -1,0 +1,284 @@
+/*===========================
+     25.COMING SOON CSS 
+===========================*/
+
+/*===== COMING SOON ONE =====*/
+
+.coming-soon-one {
+    height: 700px;
+    
+    & .coming-soon-content {
+        
+        & .coming-soon-countdown {
+            & .single-count-content {
+                padding: 0 45px;
+                text-align: center;
+
+                @media #{$xs} {
+                    padding: 0 10px;
+                }
+
+                @media #{$sm} {
+                    padding: 0 15px;
+                }
+
+                & .count {
+                    font-size: 72px;
+                    font-weight: 600;
+                    line-height: 60px;
+                    color: $white;
+
+                    @media #{$xs} {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+
+                    @media #{$sm} {
+                        font-size: 36px;
+                        line-height: 40px;
+                    }
+                }
+
+                & .text {
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-top: 10px;
+                    color: $white;
+
+                    @media #{$xs} {
+                        font-size: 14px;
+                        margin-top: 0;
+                    }
+
+                    @media #{$sm} {
+                        font-size: 18px;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        & .coming-soon-title {
+            font-size: 72px;
+            color: $white;
+            line-height: 85px;
+            text-transform: uppercase;
+            margin-top: 30px;
+            
+            @media #{$xs}{
+                font-size: 38px;
+                line-height: 45px;
+            }
+            @media #{$xs}{
+                font-size: 60px;
+                line-height: 70px;
+            }
+        }
+
+        & .coming-soon-btn {
+            padding-top: 20px;
+
+            & .main-btn {
+                &.rounded-one {
+                    background-color: $white;
+                    border-color: $white;
+
+                    &:hover {
+                        background-color: $primary-one;
+                        border-color: $primary-one;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== COMING SOON TWO =====*/
+
+.coming-soon-two{
+    background-color: $light-color-two;
+
+    & .coming-soon-content{
+        position: relative;
+        padding-top: 180px;
+        padding-bottom: 180px;
+
+        @media #{$xs}{
+            padding-top: 130px;
+            padding-bottom: 130px;
+        }
+
+        & .coming-soon-image{
+            position: absolute;
+
+            &.image-one{
+                width: 348px;
+                left: 0;
+
+                @media #{$lg}{
+                    width: 300px;
+                }
+                @media #{$md}{
+                    width: 120px;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+
+                }
+            }
+            &.image-two{
+                width: 280px;
+                left: 50%;
+                @include transform(translateX(-50%));
+                top: 58px;
+
+                @media #{$md}{
+                    width: 220px;
+                    top: 84px;
+                }
+                @media #{$xs}{
+                    width: 180px;
+                    top: 52px;
+                }
+            }
+            &.image-three{
+                width: 332px;
+                right: 0;
+
+                @media #{$lg}{
+                    width: 290px;
+                }
+                @media #{$md}{
+                    width: 120px;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                }
+            }
+        }
+        & .coming-soon-content-wrapper{
+            max-width: 730px;
+            margin: 0 auto;
+            border: 1px solid $light-color-three;
+            border-radius: 16px;
+            background-color: $white;
+            padding: 30px 140px 55px;
+
+            @media #{$xs}{
+                padding: 50px 30px;
+            }
+
+            & .coming-soon-title{
+                font-size: 44px;
+                line-height: 55px;
+                color: $text-color-one;
+                margin: 16px;
+
+                @media #{$xs} {
+                    font-size: 30px;
+                    line-height: 35px;
+                }
+
+                @media #{$sm} {
+                    font-size: 36px;
+                    line-height: 45px;
+                }
+            }
+            & .text {
+                font-size: 22px;
+                line-height: 35px;
+                color: $text-color-three;
+                margin-top: 8px;
+                font-weight: 500;
+                
+                @media #{$xs}{
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                @media #{$sm}{
+                    font-size: 22px;
+                    line-height: 35px;
+                }
+            }
+            
+            & .coming-soon-newslatter {
+                max-width: 410px;
+                position: relative;
+                margin: 0 auto;
+                margin-top: 40px;
+
+                & i {
+                    position: absolute;
+                    top: 12px;
+                    left: 20px;
+                    font-size: 24px;
+                    color: $primary-one;
+                }
+
+                & input {
+                    width: 100%;
+                    height: 48px;
+                    padding-left: 60px;
+                    padding-right: 30px;
+                    border-radius: 50px;
+                    border: 2px solid $light-color-three;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $text-color-three;
+                    
+                    &:focus{
+                       border-color: $primary-one;
+                    }
+                }
+
+                & .coming-soon-btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    
+                    @media #{$xs}{
+                        position: relative;
+                        margin-top: 10px;
+                    }
+                    @media #{$sm}{
+                        position: absolute;
+                        margin-top: 0;
+                    }
+                    
+                    & .main-btn{
+                        border: 0;
+                        line-height: 48px;
+                        border-radius: 50px;
+                        
+                        @media #{$xs}{
+                            width: 100%;
+                        }
+                        @media #{$sm}{
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            
+            & .subscribe-text{
+                font-size: 14px;
+                color: $primary-one;
+                line-height: 24px;
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

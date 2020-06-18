@@ -1,0 +1,399 @@
+
+
+
+/*===========================
+       15.ABOUT css 
+===========================*/
+
+
+
+.about-title{
+    & .title{
+        font-size: 44px;
+        line-height: 55px;
+        color: $text-color-one;
+        
+        @media #{$xs}{
+            font-size: 28px;
+            line-height: 35px
+        }
+    }
+}
+
+
+.about-one{
+    background-color: $light-color-two;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.single-about-items{
+    
+    & .items-icon{
+        & img{
+            width: 120px;
+            
+            @media #{$md}{
+                width: 90px;
+            }
+        }
+    }
+    & .items-content{
+        margin-top: 24px;
+        
+        & .items-title{
+            & a{
+                font-size: 20px;
+                color: $text-color-one;
+                line-height: 25px;
+                
+            }
+        }
+        & .text{
+            color: $text-color-one;
+            font-size: 14px;
+            line-height: 24px;
+            margin-top: 8px;
+        }
+    }
+}
+
+
+/*===== ABOUT TWO =====*/
+
+.about-two{
+    background-color: $light-color-two;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.single-features-one-items{
+    & .features-image{
+        & img{
+            width: 255px;
+        }
+    }
+    & .features-content{
+        margin-top: 32px;
+        
+        & .features-title{
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 45px;
+            color: $text-color-one;
+            
+            @media #{$xs}{
+                font-size: 24px;
+                line-height: 35px;
+            }
+        }
+        & .text{
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-one;
+            margin-top: 8px;
+        }
+    }
+}
+
+
+
+/*===== ABOUT THREE =====*/
+
+.about-three{
+    background-color: $light-color-two;
+    padding-top: 90px;
+    padding-bottom: 120px;
+}
+
+
+.about-feature-three{
+    & .about-feature-image{
+        & img{
+            width: 100%;
+        }
+    }
+    & .about-feature-content{
+        margin-top: 48px;
+        
+        & .feature-title{
+            font-size: 44px;
+            font-weight: 600;
+            line-height: 55px;
+            color: $text-color-one;
+            
+            @media #{$lg}{
+                font-size: 38px;
+                line-height: 45px;
+            }
+            @media #{$xs}{
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+        & .text{
+            font-size: 20px;
+            line-height: 25px;
+            color: $text-color-one;
+            margin-top: 8px;
+            
+            @media #{$lg}{
+                font-size: 18px;
+            }
+            @media #{$xs}{
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+
+
+.about-feature-items-three{
+    & .feature-items-icon{
+        & img{
+            width: 120px;
+            
+            @media #{$xs}{
+                width: 90px;
+            }
+            @media #{$sm}{
+                width: 120px;
+            }
+        }
+    }
+    & .feature-items-content{
+        padding-left: 30px;
+        
+        @media #{$xs}{
+            padding-left: 0;
+            padding-top: 25px;
+        }
+        
+        @media #{$sm}{
+            padding-left: 30px;
+            padding-top: 0;
+        }
+        
+        & .items-title{
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+            
+            @media #{$xs}{
+                font-size: 18px;
+            }
+        }
+        & .text{
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-one;
+            margin-top: 16px;
+            
+            @media #{$xs}{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+
+
+/*===== ABOUT FOUR =====*/
+
+.about-four{
+    background-color: $light-color-two;
+    padding-top: 90px;
+    padding-bottom: 120px;
+    position: relative;
+}
+
+.feature-image-four{
+    position: absolute;
+    width: 45%;
+    right: 0;
+    top: 50%;
+    @include transform(translateY(-50%));
+    
+    @media #{$md}{
+        position: relative;
+        width: 720px;
+        @include transform(translateY(0));
+        margin: 50px auto 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @media #{$xs}{
+        position: relative;
+        width: 100%;
+        @include transform(translateY(0));
+        margin: 50px auto 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @media #{$sm}{
+        width: 540px;
+    }
+    
+    & .image{
+        max-width: 720px;
+        
+        & img{
+            width: 100%;
+        }
+    }
+}
+
+
+.about-feature-four{
+    & .about-feature-image{
+        & img{
+            width: 100%;
+        }
+    }
+    & .about-feature-content{
+        margin-top: 48px;
+        
+        & .feature-title{
+            font-size: 44px;
+            font-weight: 600;
+            line-height: 55px;
+            color: $text-color-one;
+            
+            @media #{$lg}{
+                font-size: 38px;
+                line-height: 45px;
+            }
+            @media #{$xs}{
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+        & .text{
+            font-size: 20px;
+            line-height: 25px;
+            color: $text-color-one;
+            margin-top: 8px;
+            
+            @media #{$lg}{
+                font-size: 18px;
+            }
+            @media #{$xs}{
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+
+
+.about-feature-items-four{
+    & .feature-items-icon{
+        & img{
+            width: 120px;
+            border-radius: 50%;
+            background-color: $white;
+            @include box-shadow (0 3px 6px 0 rgba(0, 0, 0, 0.16));            
+            
+            @media #{$xs}{
+                width: 90px;
+            }
+            @media #{$sm}{
+                width: 120px;
+            }
+        }
+    }
+    & .feature-items-content{
+        padding-left: 30px;
+        
+        @media #{$xs}{
+            padding-left: 0;
+            padding-top: 25px;
+        }
+        
+        @media #{$sm}{
+            padding-left: 30px;
+            padding-top: 0;
+        }
+        
+        & .items-title{
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 25px;
+            color: $text-color-one;
+            
+            @media #{$xs}{
+                font-size: 18px;
+            }
+        }
+        & .text{
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-one;
+            margin-top: 16px;
+            
+            @media #{$xs}{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+
+/*===== ABOUT FIVE =====*/
+
+
+.about-five{
+    background-color: $light-color-two;
+    padding-top: 120px;
+}
+
+
+.about-content-five{
+    & .sub-title{
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        color: $text-color-one;
+        text-transform: uppercase;
+        
+        @media #{$xs}{
+            font-size: 20px;
+            
+        }
+    }
+    & .about-title{
+        font-size: 44px;
+        font-weight: 500;
+        line-height: 55px;
+        margin-top: 16px;
+        color: $text-color-one;
+        
+        @media #{$xs}{
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+}
+
+
+.about-image-five{
+    margin-top: 50px;
+    
+    & img{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+

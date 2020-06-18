@@ -1,0 +1,469 @@
+
+/*===========================
+    PROGRESS BARS 
+===========================*/
+
+
+.progress-bars-area{}
+
+.Standard-box{}
+
+.progress-title{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 45px;
+    color: $text-color-three;
+    
+    @media #{$xs}{
+        font-size: 24px;
+        line-height: 35px
+    }
+}
+
+.color-one{
+    background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+    background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+}
+
+.color-two{
+    background: -webkit-linear-gradient(left, rgba(77,164,34,1) 0%, rgba(105,224,46,1) 100%);
+    background: -o-linear-gradient(left, rgba(77,164,34,1) 0%, rgba(105,224,46,1) 100%);
+    background: linear-gradient(to right, rgba(77,164,34,1) 0%, rgba(105,224,46,1) 100%);
+}
+
+.color-three{
+    background: -webkit-linear-gradient(left, rgba(0,184,216,1) 0%, rgba(50,251,252,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,184,216,1) 0%, rgba(50,251,252,1) 100%);
+    background: linear-gradient(to right, rgba(0,184,216,1) 0%, rgba(50,251,252,1) 100%);
+}
+
+.color-four{
+    background: -webkit-linear-gradient(left, rgba(255,180,0,1) 0%, rgba(247,229,0,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,180,0,1) 0%, rgba(247,229,0,1) 100%);
+    background: linear-gradient(to right, rgba(255,180,0,1) 0%, rgba(247,229,0,1) 100%);
+}
+
+.color-five{
+    background: -webkit-linear-gradient(left, rgba(252,56,50,1) 0%, rgba(220,49,43,1) 100%);
+    background: -o-linear-gradient(left, rgba(252,56,50,1) 0%, rgba(220,49,43,1) 100%);
+    background: linear-gradient(to right, rgba(252,56,50,1) 0%, rgba(220,49,43,1) 100%);
+}
+
+
+.progress-style{
+    
+    & .single-progress-bar{
+        margin-top: 30px;
+        
+        & .progress-outter{
+            width: 100%;
+            background-color: $light-color-one;
+            height: 32px;
+            border-radius: 50px;
+            position: relative;
+            
+            & .progress-content{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 32px;
+                border-radius: 50px;
+                width: 0;
+                @include transition(2s);                
+            }
+        }
+    }
+    
+    &.style-two{
+        & .single-progress-bar{
+            & .progress-outter{
+                & .progress-content{
+                    
+                }
+            }
+            & .progress-text{
+                color: $white;
+                padding: 0 25px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                line-height: 32px;
+            }
+        }
+    }
+    
+    &.style-three{
+        & .single-progress-bar{
+            margin-top: 68px;
+            
+            & .progress-outter{
+                height: 16px;
+                
+                & .progress-content{
+                    height: 16px;
+                }
+            }
+        }
+    }
+    
+    &.style-four{
+        & .single-progress-bar{
+            margin-top: 35px;
+            
+            & .progress-title-holder{
+                margin-bottom: 8px;
+                
+                & .holder-title{
+                    & p{
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: $text-color-one;
+                    }
+                }
+                & .holder-percent{
+                    & span{
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: 24px;
+                        color: $text-color-one;
+                    }
+                }
+            }
+            
+            & .progress-outter{
+                height: 16px;
+                
+                & .progress-content{
+                    height: 16px;
+                }
+            }
+        }
+    }
+    
+    &.style-five{
+        & .single-progress-bar{
+            margin-top: 70px;
+            
+            & .progress-title-holder{
+                margin-top: 8px;
+                
+                & .holder-percent{
+                    & span{
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: 24px;
+                        color: $text-color-one;
+                    }
+                }
+            }
+            
+            & .progress-outter{
+                height: 16px;
+                
+                & .progress-content{
+                    height: 16px;
+                    
+                    & .holder-title{
+                        width: 120px;
+                        text-align: center;
+                        height: 30px;
+                        border-radius: 50px;
+                        position: absolute;
+                        top: -45px;
+                        right: -60px;
+                                                
+                        & p{
+                            font-size: 16px;
+                            line-height: 30px;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.counter-style{
+    & .counter-icon{
+        & i{}
+    }
+    & .counter-content{
+        & .count{}
+        & .text{}
+    }
+    
+    & .counter-one{
+        @include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.16));
+        padding-top: 55px;
+        padding-bottom: 40px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        
+        &::before{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 4px;
+            top: 0;
+            left: 0;
+            background: rgb(0,103,244);
+            background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+            background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        }
+        
+        & .counter-icon{
+            margin-bottom: 5px;
+            
+            & i{
+                font-size: 80px;
+                line-height: 60px;
+                color: $primary-one;
+            }
+        }
+        & .counter-content{
+            & .count{
+                font-size: 44px;
+                font-weight: 600;
+                line-height: 55px;
+                color: $text-color-one;
+                margin-bottom: 4px;
+            }
+            & .text{
+                font-size: 24px;
+                color: $text-color-three;
+            }
+        }
+    }
+    
+    & .counter-two{
+        @include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.16));
+        padding: 23px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        
+        &::before{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 4px;
+            top: 0;
+            left: 0;
+            background: rgb(252,56,50);
+            background: -webkit-linear-gradient(left, rgba(252,56,50,1) 0%, rgba(220,49,43,1) 100%);
+            background: -o-linear-gradient(left, rgba(252,56,50,1) 0%, rgba(220,49,43,1) 100%);
+            background: linear-gradient(to right, rgba(252,56,50,1) 0%, rgba(220,49,43,1) 100%);
+        }
+        
+        & .counter-icon{
+            margin-bottom: 5px;
+            
+            & i{
+                font-size: 66px;
+                line-height: 60px;
+                color: $danger-color-one;
+            }
+        }
+        & .counter-content{
+            padding-left: 11px;
+            & .count{
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 45px;
+                color: $text-color-one;
+                margin-bottom: 4px;
+            }
+            & .text{
+                font-size: 16px;
+                color: $text-color-three;
+            }
+        }
+    }
+    
+    & .counter-three{
+        @include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.16));
+        padding: 23px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        background: rgb(77,164,34);
+        background: -webkit-linear-gradient(left, rgba(77,164,34,1) 0%, rgba(105,224,46,1) 100%);
+        background: -o-linear-gradient(left, rgba(77,164,34,1) 0%, rgba(105,224,46,1) 100%);
+        background: linear-gradient(to right, rgba(77,164,34,1) 0%, rgba(105,224,46,1) 100%);
+        
+        & .counter-icon{
+            margin-bottom: 5px;
+            
+            & i{
+                font-size: 66px;
+                line-height: 60px;
+                color: $white;
+            }
+        }
+        & .counter-content{
+            padding-left: 11px;
+            & .count{
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 45px;
+                color: $white;
+                margin-bottom: 4px;
+            }
+            & .text{
+                font-size: 16px;
+                color: $white;
+            }
+        }
+    }
+    
+    & .counter-four{
+        @include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.16));
+        padding: 23px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        
+        &::before{
+            position: absolute;
+            content: '';
+            width: 4px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: -webkit-linear-gradient(rgba(43,219,220,1) 0%, rgba(0,103,244,1) 100%);
+            background: -o-linear-gradient(rgba(43,219,220,1) 0%, rgba(0,103,244,1) 100%);
+            background: linear-gradient(rgba(43,219,220,1) 0%, rgba(0,103,244,1) 100%);
+        }
+        
+        & .counter-icon{
+            margin-bottom: 5px;
+            
+            & i{
+                font-size: 66px;
+                line-height: 60px;
+                color: $primary-one;
+            }
+        }
+        & .counter-content{
+            padding-left: 11px;
+            & .count{
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 45px;
+                color: $text-color-one;
+                margin-bottom: 4px;
+            }
+            & .text{
+                font-size: 16px;
+                color: $text-color-three;
+            }
+        }
+    }
+    
+    & .counter-five{
+        @include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.16));
+        padding: 23px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        
+        & .counter-icon{
+            margin-bottom: 5px;
+            
+            & i{
+                font-size: 66px;
+                line-height: 60px;
+                color: $white;
+            }
+        }
+        & .counter-content{
+            padding-left: 11px;
+            & .count{
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 45px;
+                color: $white;
+                margin-bottom: 4px;
+            }
+            & .text{
+                font-size: 16px;
+                color: $white;
+            }
+        }
+    }
+    
+    & .counter-six{
+        @include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.16));
+        padding-top: 55px;
+        padding-bottom: 40px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        background: -webkit-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        background: -o-linear-gradient(left, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+        background: linear-gradient(to right, rgba(0,103,244,1) 0%, rgba(43,219,220,1) 100%);
+                
+        & .counter-icon{
+            margin-bottom: 5px;
+            
+            & i{
+                font-size: 80px;
+                line-height: 60px;
+                color: $white;
+            }
+        }
+        & .counter-content{
+            & .count{
+                font-size: 44px;
+                font-weight: 600;
+                line-height: 55px;
+                color: $white;
+                margin-bottom: 4px;
+            }
+            & .text{
+                font-size: 24px;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

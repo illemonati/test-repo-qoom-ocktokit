@@ -1,0 +1,325 @@
+
+
+
+
+/*===========================
+      26.CHECKOUT CSS 
+===========================*/
+
+
+
+.checkout-area{
+    & .section-title{
+        & .title{
+            font-size: 44px;
+            font-weight: 500;
+            color: $text-color-one;
+            line-height: 55px;
+            
+            @media #{$xs} {
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+
+
+.checkout-title{
+    & .title{
+        font-size: 20px;
+        font-weight: 500;
+        color: $text-color-one;
+    }
+}
+
+
+
+.checkout-form{
+    
+}
+
+.single-checkout-form{
+    
+    & label{
+        font-size: 14px;
+        color: $text-color-one;
+        margin-bottom: 8px !important;
+    }
+    
+    & .input-items{
+                
+        & .nice-select{
+            width: 100%;
+            height: 44px;
+            border: 2px solid;
+            border-color: $text-color-two;
+            color: $text-color-three;
+            
+            &::after{
+                width: 8px;
+                height: 8px;
+            }
+            
+
+            & .current{
+                font-size: 16px;
+            }
+            & .list{
+                width: 100%;
+                
+                & .option{
+                    min-height: 30px;
+                    line-height: 30px;
+                    
+                    &.selected{}
+                }
+            }
+        }
+    }
+}
+
+.checkout-checkbox{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid $light-color-three;
+    
+    & .checkbox_common{
+        & li{
+            & label{
+                color: $text-color-one;
+                font-size: 14px;
+                cursor: pointer;
+                font-weight: 400;
+                margin-bottom: 0;
+            }
+            
+            & input[type="checkbox"]{
+                 display: none;
+                
+                &+label {
+                    span{
+                        display: inline-block;
+                        width: 16px;
+                        height: 16px;
+                        margin: -1px 8px 0 0;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        position: relative;
+                        @include transition(0.3s);
+                        background-color: $light-color-three;
+
+                        &::before{
+                            color: $white;
+                            content: "";
+                            font-size: 11px;
+                            position: absolute;
+                            text-align: center;
+                            left: 3px;
+                            top: -4px;
+                            @include transform(scale(0));
+                            @include transition(0.3s);
+                        }
+                    }
+                }
+                
+                &:checked+label{
+                    span{
+                        background-color: $primary-one;
+                        @include transition(0.3s);
+
+                        &::before{
+                            @include transform(scale(1));
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
+
+
+.checkout-payment{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid $light-color-three;
+}
+
+
+
+.checkout-radio{
+    & .pay-top{
+        
+        & label{
+            color: $text-color-one;
+            font-size: 14px;
+            margin-bottom: 0;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        
+        & input[type="radio"]{
+            display: none;
+            
+            & + label{
+                & span{
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    margin: -1px 8px 0 0;
+                    vertical-align: middle;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    position: relative;
+                    border-radius: 50%;
+                    @include transition(0.3s);
+                    background-color: $light-color-three;
+                    
+                    &::before{
+                        background-color: $primary-one;
+                        border-radius: 100%;
+                        content: "";
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        @include transform(scale(0));
+                        @include transition(0.3s);
+                    }
+                }
+            }
+            
+            &:checked{
+                & + label{
+                    & span{
+                        @include transition(0.3s);
+                        
+                        &::before{
+                            @include transform(scale(1));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    & .payment-box{
+        display: none;
+        padding-bottom: 10px;
+    }
+}
+
+
+.checkout-btn{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid $light-color-three;
+    
+    & .main-btn{
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+
+.checkout-cart{
+    & .checkout-cart-product{
+        border: 2px solid $light-color-three;
+        border-radius: 5px;
+        
+        & ul{
+            & li{
+                border-bottom: 2px solid $light-color-three;
+                
+                &:last-child{
+                    border-bottom: 0;
+                }
+                
+                & .single-product{
+                    padding: 12px 20px;
+                    
+                    & .product-name{
+                        & .product{
+                            font-size: 20px;
+                            color: $text-color-one;
+                            line-height: 24px;
+                            font-weight: 500;
+                        }
+                        & p{
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $text-color-two;
+                        }
+                    }
+                    & .product-price{
+                        & span{
+                            font-size: 18px;
+                            color: $text-color-two;
+                            font-weight: 500;
+                        }
+                    }
+                    
+                    &.promo{
+                        & .product-name{
+                            & .product{
+                                color: $success-color-one;
+                            }
+                            & p{
+                                color: $success-color-one;
+                            }
+                        }
+                        & .product-price{
+                            & span{
+                                color: $success-color-one;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.checkout-promo-code{
+    border: 2px solid $light-color-three;
+    border-radius: 5px;
+    padding: 8px;
+    
+    & .promo-code{
+        position: relative;
+        
+        & input{
+            width: 100%;
+        }
+        
+        & .main-btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 44px;
+            line-height: 42px;
+            border-radius: 5px;
+            padding: 0 16px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

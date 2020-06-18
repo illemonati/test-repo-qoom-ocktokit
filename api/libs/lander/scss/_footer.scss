@@ -1,0 +1,822 @@
+/*===========================
+    FOOTER CSS 
+===========================*/
+
+
+/*===== FOOTER ONE =====*/
+
+.footer-one {
+    background-color: $light-color-two;
+
+    & .footer-widget {
+        padding-top: 90px;
+        padding-bottom: 120px;
+
+        @media #{$md} {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        @media #{$xs} {
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+
+        & .footer-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            color: $text-color-three;
+        }
+
+        & .footer-support {
+            padding-top: 21px;
+
+            & span {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                font-weight: 600;
+                margin-top: 9px;
+                display: block;
+
+                @media #{$xs} {
+                    display: block;
+                }
+            }
+        }
+
+        & .footer-app-store {
+            padding-top: 27px;
+
+            & ul {
+                & li {
+                    display: inline-block;
+                    margin-right: 8px;
+
+                    @media #{$lg} {
+                        margin-right: 6px;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    @media #{$xs} {
+                        width: 120px;
+                    }
+
+                    @media #{$sm} {
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        & .footer-link {
+            margin-top: 32px;
+
+            & ul {
+                margin-top: 8px;
+
+                & li {
+                    & a {
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: $text-color-one;
+                        margin-top: 16px;
+                        font-weight: 500;
+                        @include transition(0.3s);
+
+                        &:hover {
+                            color: $primary-one;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-copyright {
+
+        & .copyright {
+            padding-bottom: 23px;
+            padding-top: 13px;
+
+            & .text {
+                color: $text-color-three;
+                margin-top: 10px;
+            }
+
+            & .social {
+                margin-top: 10px;
+
+                & li {
+                    display: inline-block;
+                    margin-right: 10px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    & a {
+                        font-size: 24px;
+                        color: $text-color-three;
+                        @include transition(0.3s);
+
+                        &:hover {
+                            color: $primary-one;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.footer-dark-one {
+        background-color: $text-color-one;
+
+        & .footer-widget {
+
+            & .footer-title {
+                color: $white;
+            }
+
+            & .footer-support {
+
+                & span {
+                    color: $white;
+                }
+            }
+
+            & .footer-app-store {
+
+                & ul {
+                    & li {
+                        color: $white;
+                    }
+                }
+            }
+
+            & .footer-link {
+
+                & ul {
+
+                    & li {
+                        & a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .footer-copyright {
+
+            & .copyright {
+
+                & .text {
+                    color: $white;
+                }
+
+                & .social {
+
+                    & li {
+
+                        & a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== FOOTER TWO =====*/
+
+.footer-two {
+    background-color: $light-color-two;
+
+    & .footer-widget {
+        padding-top: 90px;
+        padding-bottom: 120px;
+
+        @media #{$md} {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        @media #{$xs} {
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+
+        & .footer-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            color: $text-color-three;
+        }
+
+        & .footer-support {
+            padding-top: 21px;
+
+            & span {
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-color-one;
+                font-weight: 600;
+                margin-top: 9px;
+                display: block;
+
+                @media #{$xs} {
+                    display: block;
+                }
+            }
+        }
+
+        & .social {
+            padding-top: 27px;
+
+            & li {
+                display: inline-block;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                & a {
+                    font-size: 24px;
+                    color: $text-color-three;
+                    @include transition(0.3s);
+
+                    &:hover {
+                        color: $primary-one;
+                    }
+                }
+            }
+        }
+
+        & .footer-link {
+            margin-top: 32px;
+
+            & ul {
+                margin-top: 8px;
+
+                & li {
+                    & a {
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: $text-color-one;
+                        margin-top: 16px;
+                        font-weight: 500;
+                        @include transition(0.3s);
+
+                        &:hover {
+                            color: $primary-one;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-copyright {
+
+        & .copyright {
+            padding-bottom: 23px;
+            padding-top: 13px;
+
+            & .text {
+                color: $text-color-three;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &.footer-dark-two {
+        background-color: $text-color-one;
+
+        & .footer-widget {
+
+            & .footer-title {
+                color: $white;
+            }
+
+            & .footer-support {
+
+                & span {
+                    color: $white;
+                }
+            }
+
+            & .social {
+
+                & li {
+
+                    & a {
+                        color: $white;
+                    }
+                }
+            }
+
+            & .footer-link {
+
+                & ul {
+
+                    & li {
+                        & a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .footer-copyright {
+
+            & .copyright {
+
+                & .text {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== FOOTER THREE =====*/
+
+.footer-three {
+    background-color: $light-color-two;
+
+    & .footer-widget {
+        padding-top: 90px;
+        padding-bottom: 120px;
+
+        @media #{$md} {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        @media #{$xs} {
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+
+        & .footer-logo-support {
+            & .footer-logo {
+                & .social {
+                    margin-left: 35px;
+
+                    & li {
+                        display: inline-block;
+                        margin-right: 10px;
+
+                        & a {
+                            font-size: 24px;
+                            color: $text-color-three;
+                            @include transition(0.3s);
+
+                            &:hover {
+                                color: $primary-one;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .footer-support {
+                & span {
+                    font-size: 20px;
+                    line-height: 25px;
+                    color: $text-color-three;
+                    font-weight: 600;
+
+                    @media #{$xs} {
+                        display: block;
+                    }
+
+                    &.number {}
+
+                    &.mail {
+                        margin-left: 32px;
+
+                        @media #{$xs} {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .footer-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            color: $text-color-three;
+        }
+
+        & .footer-link {
+            margin-top: 32px;
+
+            & ul {
+                margin-top: 8px;
+
+                & li {
+                    & a {
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: $text-color-one;
+                        margin-top: 16px;
+                        font-weight: 500;
+                        @include transition(0.3s);
+
+                        &:hover {
+                            color: $primary-one;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .footer-newsletter {
+            margin-top: 32px;
+
+            & .newsletter {
+                margin-top: 24px;
+                position: relative;
+
+                & input {
+                    width: 100%;
+                    height: 44px;
+                    border-radius: 50px;
+                    padding: 0 24px;
+                    border: 0;
+                    background-color: rgba(33, 33, 33, 0.12);
+                    font-weight: 500;
+
+                    @include placeholder {
+                        opacity: 1;
+                        color: $text-color-three;
+                    }
+                }
+
+                & button {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 44px;
+                    width: 44px;
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                    border: 0;
+                    font-size: 20px;
+                    color: $text-color-one;
+                    cursor: pointer;
+                    background: none;
+                }
+            }
+
+            & .text {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    & .footer-copyright {
+
+        & .copyright {
+            padding: 23px 0;
+
+            & .text {
+                color: $text-color-one;
+            }
+        }
+    }
+
+    &.footer-bark-three {
+        background-color: $text-color-one;
+
+        & .footer-widget {
+
+            & .footer-logo-support {
+                & .footer-logo {
+                    & .social {
+
+                        & li {
+                            & a {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                & .footer-support {
+                    & span {
+
+                        &.number {
+                            color: $white;
+                        }
+
+                        &.mail {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            & .footer-title {
+                color: $white;
+            }
+
+            & .footer-link {
+
+                & ul {
+
+                    & li {
+                        & a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            & .footer-newsletter {
+
+                & .newsletter {
+
+                    & input {
+                        color: $white;
+                        background-color: rgba(233, 236, 239, 0.12);
+
+                        @include placeholder {
+                            opacity: 1;
+                            color: $white;
+                        }
+                    }
+
+                    & button {
+                        color: $white;
+                    }
+                }
+
+                & .text {
+                    color: $white;
+                }
+            }
+        }
+
+        & .footer-copyright {
+            & .copyright {
+                padding: 23px 0;
+
+                & .text {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== FOOTER FOUR =====*/
+
+.footer-four {
+    background-color: $light-color-two;
+
+    & .footer-widget {
+        padding-top: 90px;
+        padding-bottom: 120px;
+
+        @media #{$md} {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        @media #{$xs} {
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+
+        & .footer-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            color: $text-color-three;
+        }
+
+        & .footer-link {
+            margin-top: 32px;
+
+            & ul {
+                margin-top: 8px;
+
+                & li {
+                    & a {
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: $text-color-one;
+                        margin-top: 16px;
+                        font-weight: 500;
+                        @include transition(0.3s);
+
+                        &:hover {
+                            color: $primary-one;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-copyright {
+        padding-top: 13px;
+        padding-bottom: 23px;
+
+        & .copyright {
+            & .text {
+                color: $text-color-one;
+            }
+        }
+
+        & .social {
+            & li {
+                display: inline-block;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                & a {
+                    font-size: 24px;
+                    color: $text-color-three;
+                    @include transition(0.3s);
+
+                    &:hover {
+                        color: $primary-one;
+                    }
+                }
+            }
+        }
+    }
+
+    &.footer-bark-four {
+        background-color: $text-color-one;
+
+        & .footer-widget {
+
+            & .footer-title {
+                color: $white;
+            }
+
+            & .footer-link {
+                & ul {
+                    & li {
+                        & a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .footer-copyright {
+            & .copyright {
+                & .text {
+                    color: $white;
+                }
+            }
+
+            & .social {
+                & li {
+                    & a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/*===== FOOTER FIVE =====*/
+
+.footer-five {
+    background-color: $light-color-two;
+    padding-top: 90px;
+    padding-bottom: 120px;
+
+    & .social {
+        & li {
+            display: inline-block;
+            margin: 0 5px;
+
+            & a {
+                font-size: 24px;
+                color: $text-color-three;
+                @include transition(0.3s);
+
+                &:hover {
+                    color: $primary-one;
+                }
+            }
+        }
+    }
+
+    & .footer-support {
+        padding-top: 21px;
+
+        & span {
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color-one;
+            font-weight: 600;
+            margin-top: 9px;
+            display: block;
+
+            @media #{$xs} {
+                display: block;
+            }
+        }
+    }
+
+    & .footer-app-store {
+        padding-top: 27px;
+
+        & ul {
+            & li {
+                display: inline-block;
+                margin-right: 8px;
+
+                @media #{$lg} {
+                    margin-right: 6px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                @media #{$xs} {
+                    width: 120px;
+                }
+
+                @media #{$sm} {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    & .copyright {
+        & .text {
+            color: $text-color-one;
+        }
+    }
+
+
+    &.footer-bark-five {
+        background-color: $text-color-one;
+        
+        & .social {
+            & li {
+                & a {
+                    color: $white;
+                }
+            }
+        }
+
+        & .footer-support {
+            padding-top: 21px;
+
+            & span {
+                color: $white;
+            }
+        }
+
+        & .footer-app-store {
+            padding-top: 27px;
+
+            & ul {
+                & li {
+                    color: $white;
+                }
+            }
+        }
+        
+        & .copyright {
+            & .text {
+                color: $white;
+            }
+        }
+    }
+}
