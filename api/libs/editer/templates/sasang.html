@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <title>||TITLE||</title>
+    <script type="text/javascript" src="/libs/restfull.js"></script>
+    <style type="text/css">
+    body, #editor {
+        background-color: #232323;
+        color:#efefef;
+    }
+    #editor {
+        font-size: 200%;
+        position:fixed;
+        top:0.5em;
+        left:0.5em;
+        right:0.5em;
+        bottom:0.5em;
+        width:calc(100% - 1em);  
+        height:100%;
+        border:0;
+    }
+    #editor:active, #editor:focus {
+        outline:0;
+    }
+    </style>
+</head>
+
+<body style="height:100%; width:100%;">
+    <textarea id='editor' style=''>||DATA||</textarea>
+    <script id='script' type="text/javascript">
+    var $container = document.getElementsByTagName("body")[0];
+    $container.onkeyup = keyUpHandler;
+    $container.onkeydown = keyDownHandler;
+
+    var $editor = document.getElementById("editor");
+    var lastSaveData = $editor.value.trim();
+    var isEditing = false;
+    var timeOut = 0;
+    var isSaving = false;
+
+    function keyUpHandler(e) {
+        if (isEditing) return;
+        isEditing = true;
+        setTimeout(function() {
+            isEditing = false
+        }, 2000);
+        if (e.ctrlKey && e.keyCode === 83) return saveContents();
+    }
+
+    function keyDownHandler(e) {
+        if (e.keyCode == 9) return autoCompleteOnTab();
+        //Ctrl+w -> Word Count
+        if(e.ctrlKey && e.keyCode == 87) return countWords();
+    }
+
+    function countWords(){
+        var wordCt = $editor.value.match(/\S+/g).length;
+        alert("Word Count:" + wordCt);
+    }
+
+    function autoCompleteOnTab() {
+        var val = $editor.value;
+
+        $editor.value += "\t";
+        return false;
+    }
+
+    function saveContents() {
+        var val = $editor.value.trim();
+        if (isSaving || val === lastSaveData || isEditing) return;
+        isSaving = true;
+        post(val, function() {
+            lastSaveData = val;
+            isSaving = false;
+        });
+        return false;
+    }
+
+    function post(data, callback) {
+        var options = {
+                path: "/save",
+                data: {
+                    text: data
+                }
+            }
+        ;
+
+        if(localStorage && localStorage.passcode) {
+            options.headers = {secret: localStorage.passcode}
+        }
+
+        restfull.post(options, function(err, response) {
+            if(err === undefined) {
+                console.log("saved");
+            }
+            callback();
+        });
+    }
+    
+    window.onbeforeunload = function() {
+        var val = $editor.value.trim();
+        if (val === lastSaveData) return;
+    	return 'Are you sure you want to exit?';
+    }
+    
+    timeOut = setInterval(saveContents, 2000);
+    </script>
+</body>
+
+</html>
