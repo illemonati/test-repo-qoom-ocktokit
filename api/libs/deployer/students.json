@@ -1,0 +1,422 @@
+[
+	{
+		"student": "valerian",
+		"subdomain": "valerian",
+		"domain": "wisen.space",
+		"passcode": "w!ndyF@rm",
+		"name": "Valerian Chan",
+      	"email": "Valerianchan@gmail.com",
+      	"passcode": "w!ndyF@rm",
+      	"parentEmail": "Byronamylo@hotmail.com",
+      	"experience": "No"
+	},
+	{
+		"student": "selina",
+		"subdomain": "selina",
+		"domain": "wisen.space",
+		"passcode": "sunsh!n3",
+      "name": "Selina Sun",
+      "email": "selinasun9966@gmail.com",
+      "passcode": "sunsh!n3",
+      "parentEmail": "Lovedbsjy@yahoo.com",
+      "experience": "Selina has HTML at school and likes to play coding games."
+	},
+	{
+		"student": "eric",
+		"subdomain": "eric",
+		"domain": "wisen.space",
+		"passcode": "gar@g3Cy",
+		"name": "Eric",
+      "email": "2504198616@qq.com",
+      "passcode": "gar@g3Cy",
+      "parentEmail": "2504198616TT@gmail.com",
+      "experience": ""
+	},
+	{
+		"student": "julian",
+		"subdomain": "julian",
+		"domain": "wisen.space",
+		"passcode": "Z!llyC@r",
+      "name": "Julian Hong",
+      "email": "julianhong88@icloud.com",
+      "passcode": "Z!llyC@r",
+      "parentEmail": "oli_chen@yahoo.com",
+      "experience": "lego robotics"
+	},
+	{
+		"student": "cecilia",
+		"subdomain": "cecilia",
+		"domain": "wisen.space",
+		"passcode": "f@c3marS",
+		"name": "Cecilia Quan",
+      "email": "Ceciq951@gmail.com",
+      "passcode": "f@c3marS",
+      "parentEmail": "Jennyzhangquan@yahoo.com",
+      "experience": "Have taken a few coding classes."
+	},
+	{
+		"student": "olina",
+		"subdomain": "olina",
+		"domain": "wisen.space",
+		"passcode": "t!m3F!rm",
+		"name": "Olina Du",
+      "email": "Olina.du@yahoo.com",
+      "passcode": "t!m3F!rm",
+      "parentEmail": "Yjudy999@gmail.com",
+      "experience": "Girls who code club last year"
+	},
+	{
+		"student": "justin",
+		"subdomain": "justin",
+		"domain": "wisen.space",
+		"passcode": "B#ngQu@rk",
+		 "name": "Justin Hou",
+      "email": "sfdudejustin@gmail.com",
+      "passcode": "B#ngQu@rk",
+      "parentEmail": "peiliuhou@yahoo.com",
+      "experience": "Python"
+	},
+	{
+		"student": "yoonjung",
+		"subdomain": "yoonjung",
+		"domain": "wisen.space",
+		"passcode": "K!mch3e",
+ 		"name": "Yoonjung Lera",
+      	"email": "yoonjunglera@gmail.com",
+      	"parentEmail": "yoonjunglera@gmail.com",
+      	"experience": "None"
+	},
+	{
+		"student": "olivia",
+		"subdomain": "olivia",
+		"domain": "wisen.space",
+		"passcode": "K!mch3e",
+ 		"name": "Olivia Chen",
+      	"email": "unknown1@wisen.space",
+      	"parentEmail": "unknown1@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "stacey",
+		"subdomain": "stacey",
+		"domain": "wisen.space",
+ 		"name": "Stacey Xu",
+      "email": "Xu.stacey@gmail.com",
+      "passcode": "gr3@tn3ss",
+      "parentEmail": "Lisa.mu999@gmail.com",
+      "experience": "Basic C and Java at school coding club"
+	},
+	{
+		"student": "crystal",
+		"subdomain": "crystal",
+		"domain": "wisen.space",
+      "name": "Crystal Lin",
+      "email": "unknown123@wisen.space",
+      "passcode": "br!ll!@nc3",
+      "parentEmail": "h_t_lin@yahoo.com",
+      "experience": ""
+	},
+	{
+		"student": "rachael",
+		"subdomain": "rachael",
+		"domain": "wisen.space",
+	      "name": "Rachael",
+	      "email": "unknown124@wisen.space",
+	      "passcode": "funW!dget",
+	      "parentEmail": "fu_linda@hotmail.com",
+	      "experience": ""
+	},
+	{
+		"student": "guest1",
+		"subdomain": "guest1",
+		"domain": "wisen.space",
+		"passcode": "VgRWsVs!mM",
+ 		"name": "Guest One",
+      	"email": "guest1@wisen.space",
+      	"parentEmail": "guest1@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "guest2",
+		"subdomain": "guest2",
+		"domain": "wisen.space",
+		"passcode": "2gRAsVs!mM",
+ 		"name": "Guest Two",
+      	"email": "guest2@wisen.space",
+      	"parentEmail": "guest2@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "guest3",
+		"subdomain": "guest3",
+		"domain": "wisen.space",
+		"passcode": "VgR@sVs!mM",
+ 		"name": "Guest Three",
+      	"email": "guest3@wisen.space",
+      	"parentEmail": "guest3@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "guest4",
+		"subdomain": "guest4",
+		"domain": "wisen.space",
+		"passcode": "1gRXsVs!mM",
+ 		"name": "Guest Four",
+      	"email": "guest4@wisen.space",
+      	"parentEmail": "guest4@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "guest5",
+		"subdomain": "guest5",
+		"domain": "wisen.space",
+		"passcode": "9gRXsVsimM",
+ 		"name": "Guest Five",
+      	"email": "guest5@wisen.space",
+      	"parentEmail": "guest5@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "cynthia",
+		"subdomain": "cynthia",
+		"domain": "wisen.space",
+      "name": "Cynthia Shi",
+      "email": "Cynthia.shi.home@gmail.com",
+      "passcode": "fru!tJu!c3",
+      "parentEmail": "Yang933@gmail.com",
+      "experience": "Basic with HTML"
+	},
+	{
+		"student": "jenny",
+		"subdomain": "jenny",
+		"domain": "wisen.space",
+      "name": "Jenny",
+      "email": "yajingjenny@gmail.com",
+      "passcode": "launChH!gH",
+      "parentEmail": "unknown125@wisen.space",
+      "experience": "none"
+	},
+	{
+		"student": "kaitlyn",
+		"subdomain": "kaitlyn",
+		"domain": "wisen.space",
+		"name": "Kaitlyn Ha",
+      "email": "kkomji.ha@gmail.com",
+      "passcode": "d!gB!gger",
+      "parentEmail": "savannah.kim@gmail.com",
+      "experience": "Some scratch, java script, python and java"
+    },
+	{
+		"student": "matthew",
+		"subdomain": "matthew",
+		"domain": "wisen.space",
+		"name": "Matthew Ding",
+      "email": "mattyding2015@gmail.com",
+      "passcode": "ch4ngeCup",
+      "passcode": ",][Pn5'",
+      "parentEmail": "weifeng2012@gmail.com",
+      "experience": "none"
+	},
+	{
+		"student": "william",
+		"subdomain": "william",
+		"domain": "wisen.space",
+		"name": "William Ding",
+      "email": "williamding2015@gmail.com",
+      "passcode": "sc@nW!de",
+      "parentEmail": "weifeng2012@gmail.com",
+      "experience": "Good with Python, learning Java now, at silver level of USACO"
+	},
+	{
+		"student": "emily",
+		"subdomain": "emily",
+		"domain": "wisen.space",
+		"name": "Emily Peng",
+      "email": "ep18118938@gmail.com",
+      "passcode": "Wh!stl3",
+      "parentEmail": "yongliansun2003@yahoo.com",
+      "experience": "None"
+	},
+	{
+		"student": "max",
+		"subdomain": "max",
+		"domain": "wisen.space",
+		"name": "Max Gan",
+      "email": "maxyiangan@gmail.com",
+      "passcode": "p!ctUr3",
+      "parentEmail": "gxu9003@yahoo.com",
+      "experience": "No previous experience"
+	},
+	{
+		"student": "amandalee",
+		"subdomain": "amandalee",
+		"domain": "wisen.space",
+		"name": "Amanda Lee",
+      "email": "Pandadog1202@gmail.com",
+      "passcode": "fuNR@!n",
+      "parentEmail": "Saiylee@comcast.net",
+      "experience": "No prior experience on coding"
+	},
+	{
+		"student": "eugene",
+		"subdomain": "eugene",
+		"domain": "wisen.space",
+		 "name": "Eugene Leung",
+      "email": "ruoxi0806@hotmail.com",
+      "passcode": "d3term!nE",
+      "parentEmail": "ruoxi0806@hotmail.com",
+      "experience": "N/A"
+	},
+	{
+		"student": "owen",
+		"subdomain": "owen",
+		"domain": "wisen.space",
+		"name": "Owen hua",
+      "email": "weiyueweiyue@hotmail.com",
+      "passcode": "g@th3R",
+      "parentEmail": "weiyueweiyue@hotmail.com",
+      "experience": ""
+	},
+	{
+		"student": "patrick",
+		"subdomain": "patrick",
+		"domain": "wisen.space",
+		"name": "Patrick Zhang",
+      "email": "patkuanz@gmail.com",
+      "passcode": "f#nc3r",
+      "parentEmail": "Yunming@gmail.com",
+      "experience": "No experience in coding"
+	},
+	{
+		"student": "lillian",
+		"subdomain": "lillian",
+		"domain": "wisen.space",
+		"passcode": "gr@b!T",
+		"name": "Lillian",
+      	"email": "unknown2@wisen.space",
+      	"parentEmail": "unknown2@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "gio",
+		"subdomain": "gio",
+		"domain": "wisen.space",
+		"passcode": "+9;IDT9n%",
+		"name": "Gio",
+      	"email": "unknown3@wisen.space",
+      	"parentEmail": "unknown3@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "wilson",
+		"subdomain": "wilson",
+		"domain": "wisen.space",
+		"passcode": ",lE}ZlWA%",
+		"name": "Wilson Duan",
+      "email": "wilsonduan10@gmail.com",
+      "passcode": ",lE}ZlWA%",
+      "parentEmail": "smduan@yahoo.com",
+      "experience": "Used codeacademy and completed the courses Python, Javascript, HTML and CSS on it. However, this was 2 years ago and some of it was forgotten."
+	},
+	{
+		"student": "jessica",
+		"subdomain": "jessica",
+		"domain": "wisen.space",
+		"name": "Jessica li",
+      "email": "Lixuepeng@yahoo.com",
+      "passcode": "k&DZF+&",
+      "parentEmail": "Lixuepeng@yahoo.com",
+      "experience": "HTML"
+	},
+	{
+		"student": "sara",
+		"subdomain": "sara",
+		"domain": "wisen.space",
+		"passcode": "=X.sq>mH",
+		"name": "Sara",
+      	"email": "unknown4@wisen.space",
+      	"parentEmail": "unknown4@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "leia",
+		"subdomain": "leia",
+		"domain": "wisen.space",
+		"passcode": "Ltqko?E?%",
+		"name": "Leia",
+      	"email": "unknown5@wisen.space",
+      	"parentEmail": "unknown5@wisen.space",
+      	"experience": "None"
+
+	},
+	{
+		"student": "melinda",
+		"subdomain": "melinda",
+		"domain": "wisen.space",
+		"name": "melinda zhang",
+      "email": "melinda.zhang18@gmail.com",
+      "passcode": "3[/&8qf#",
+      "parentEmail": "hs_cwrucsf@hotmail.com",
+      "experience": "limited"
+	},
+	{
+		"student": "noah",
+		"subdomain": "noah",
+		"domain": "wisen.space",
+		"passcode": ".L\\]-Xku\"",
+		"name": "Noah",
+      	"email": "unknown6@wisen.space",
+      	"parentEmail": "unknown6@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "autumn",
+		"subdomain": "autumn",
+		"domain": "wisen.space",
+		"passcode": "~E{;z'Qs",
+		"name": "Autumn",
+      	"email": "unknown7@wisen.space",
+      	"parentEmail": "unknown7@wisen.space",
+      	"experience": "None"
+	},
+	{
+		"student": "landon",
+		"subdomain": "landon",
+		"domain": "wisen.space",
+		"passcode": "OpK=Gjq",
+		"name": "Landon Pu",
+      "email": "chuanpu1@hotmail.com",
+      "parentEmail": "chuanpu@hotmail.com",
+      "experience": "Can produce simple videos with Scratch; very basic java knowledge"
+	},
+	{
+		"student": "dylan",
+		"subdomain": "dylan",
+		"domain": "wisen.space",
+		"passcode": "-JNY(!6#",
+		"name": "Dylan Pu",
+      "email": "chuanpu2@hotmail.com",
+      "parentEmail": "chuanpu@hotmail.com",
+      "experience": "Can produce simple videos with Scratch; very basic java knowledge"
+	},
+	{
+		"student": "thomas",
+		"subdomain": "thomas",
+		"domain": "wisen.space",
+		"passcode": "+/!Mi0OH#",
+		"name": "Thomas Nie",
+      "email": "tom1001cr@gmail.com",
+      "parentEmail": "jessie266@gmail.com",
+      "experience": "No experience"
+	},
+	{
+		"student": "alexander",
+		"subdomain": "alexander",
+		"domain": "wisen.space",
+		"passcode": "SM](#>8'",
+		"name": "Alexander",
+      	"email": "unknown8@wisen.space",
+      	"parentEmail": "unknown8@wisen.space",
+      	"experience": "None"
+	}
+]

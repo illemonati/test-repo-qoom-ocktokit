@@ -1,0 +1,219 @@
+#previewerToggleBtn {
+	display: block;
+	width: 40px;
+	height: 32px;
+	position: absolute;
+	right: 24px;
+	bottom: 24px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 4px;
+    color: rgba(0,0,0,0.5);
+    border: none;
+}
+#previewerToggleBtn i {
+	height: 29px;
+	width: 24px;
+}
+.onRight #previewerToggleBtn {
+	display: none;
+}
+.onLeft #previewerToggleBtn {
+	display: none;
+}
+.onBottom #previewerToggleBtn {
+	display: none;
+}
+#previewerContainer {
+	background-color: #fff;
+	border: transparent;
+	display: block;
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: absolute;
+	z-index: 3;	
+}
+#previewerController {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	background-color: var(--color-gray-10);
+	border-bottom: 1px solid var(--color-gray-100);
+	min-height: 32px;
+	padding: 0 8px 0 0;
+	position: sticky;
+	position: -webkit-sticky;
+	overflow: auto;
+}
+#previewerControllerFirstRow {
+	align-items: center;
+	display: flex;
+	width: 45%;
+}
+#positionController {
+	width: 55%;
+	display: flex;
+	flex-direction: column;
+}
+#positionOptions > input {
+	vertical-align: middle;
+}
+#overflowIcon {
+	display: none;
+}
+#previewer {
+	border: none;
+	height: calc(100% - 32px);
+	overflow: auto;
+	/*top: var(--controller-height);*/
+	/*position: absolute;*/
+}
+#customUrlModalContainer{
+	z-index: 9;
+}
+.onRight #previewerContainer {
+	border-left: 1px solid var(--color-gray-100);
+	height: 100%;
+	left: 60%;
+	width: 40%;
+	top: 0;
+}
+.onRight #previewerController {
+	/*left:60%;*/
+	/*width: 40%;*/
+	top: 0;
+}
+.onRight #editor {
+	height: 100%;
+	right: 40%;
+	width: 60%;
+}
+.onLeft #previewerContainer {
+	border-right: 1px solid var(--color-gray-100);
+	height: 100%;
+	left: 0;
+	width: 40%;
+	top: 0;
+}
+.onLeft #previewerController {
+	/*left: 0;*/
+	/*width: 40%;*/
+}
+.onLeft #editor {
+	right: 0;
+	left: 40%;
+	width: 60%;
+}
+.onBottom #previewerContainer {
+	bottom: 0;
+	display: block;
+	height: 40%;
+	left: 0;
+	width: 100%;
+}
+.onBottom #previewerController {
+	/*top: 60%;*/
+	width: 100%;
+}
+.onBottom #editor {
+	width: 100%;
+	height: 60%;
+	left: 0;
+	right: 0;
+}
+.onBottom #previewer {
+	width: 100%;
+}
+
+#previewerController button {
+	border: 0 solid transparent;
+	background-color: transparent;
+	padding: 0 8px;
+}
+#previewerController button i {
+	filter: --filter-gray;
+	height: 18px;
+	margin-top: -2px;
+	vertical-align: middle;
+	width: 18px;
+}
+#previewerController button i.ic-overflow {
+	transform: rotate(90deg);
+}
+#previewerController button i.ic-cancel {
+	margin-top: 0px;
+}
+#previewerController button i.ic-preview-new {
+	width: 14px;
+	height: 14px;
+}
+#previewerController span {
+	font-family: 'Fira Code', monospace;
+	font-size: 12px;
+	width: unset;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: left;
+	direction: rtl;
+	display: inline-block;
+}
+#previewerController #customUrlBtn {
+	border-radius: 4px;
+	border: 1px solid var(--color-gray-100);
+	background-color: #fff;
+	height: 21px;
+	line-height: 1;
+	margin: 4px 0px 4px 8px;
+	padding: 0 4px;	
+}
+#positionOptions {
+	display: block;
+	float: right;
+	text-align: right;
+}
+#positionOptions label {
+	font-size: 12px;
+	line-height: 32px;
+	margin-left: 4px;
+	margin-right: 16px;
+	margin-top: -4px;
+}
+
+#customUrlModalContainer .container .form-input {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	font-family: 'Fira Code', monospace;
+}
+#customUrlModalContainer .container .form-input div:last-child {
+	flex-grow: 1;
+	margin-left: 4px;
+}
+
+@media only screen and (max-width: 1279px) {
+	#previewerController {
+		overflow: visible;
+	}
+	#previewerControllerFirstRow {
+		width: 90%;
+	}
+	#positionController {
+		width: 10%;
+	}
+	#overflowIcon {
+		display: block;
+		/*position: absolute;*/
+		/*right: 0;*/
+	}
+	#positionOptions {
+		display: none;
+		position: absolute;
+		right: 5px;
+		top: 35px;
+		background-color: #fff;
+		padding-left: 8px;
+		border-radius: 5px;
+		border: 1px solid var(--color-gray-100);
+		box-shadow: 0 2px 4px 0 var(--color-gray-50);
+	}
+}

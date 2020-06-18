@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capture</title>
+	<style>{{BASECSS}}</style>
+	<style>
+		section#icon {
+			display: table;
+		}
+	</style>
+</head>
+<body>
+	<section id='icon'>
+		<a class='appicon'>
+			<div class='icon'><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+			<div  class='title'>Capture</div>
+		</a>
+	</section>
+	<script>
+		window.addEventListener("message", receiveMessage, false);
+
+		function receiveMessage(event) {
+			if(event.origin !== location.origin) return;
+			console.log('RECIEVED MESSAGE', event);
+		}
+		document.querySelectorAll('.appicon').forEach(function($appicon) {
+			$appicon.addEventListener('click', function() {
+				window.parent.postMessage({
+					name: 'appIconClicked'
+					, url: location.origin + '/capture/section'
+				}, '*');
+			});
+		});
+	</script>
+</body>
+</html>

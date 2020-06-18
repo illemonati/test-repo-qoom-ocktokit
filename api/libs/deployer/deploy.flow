@@ -1,0 +1,62 @@
+{
+    "name" : "deploy_latest_version",
+    "flow" : [
+        {
+            "step" : "get_all_files" 
+        },
+        {
+            "step" : "create_version"
+        },
+        {
+            "step" : "get_all_files_to_deploy"
+        },
+        {
+            "step" : "deploy_version"
+        }
+    ],
+    "steps" : [
+        {
+            "name" : "get_source_version",
+            "description" : "Get version from source",
+            "app" : "versioner",
+            "method" : "getLatestVersion",
+            "input": {
+            	"fieldsFromRequestToUse": {
+            		"requestDomain": "domain"
+            	}
+            },
+            "output": "sourceVersion"
+        },
+        {
+            "name" : "get_destination_version",
+            "description" : "Get version from destination",
+            "app" : "versioner",
+            "method" : "getLatestVersion",
+            "input": {
+            	"fieldsFromRequestToUse": {
+            		"destination": "domain"
+            		, "destinationDb": "dbName"
+            	}
+            },
+            "output": "destinationVersion"
+        },
+        {
+            "name" : "deploy_version",
+            "description" : "Deploys the files in the version to the appropriate database",
+            "app" : "deployer",
+            "method" : "deployVersion",
+            "input": {
+            	"fieldsFromRequestToUse": {
+            		"version": "version"
+            		, "files": "filesToDeploy"
+            		, "dbUri": "db"
+            		, "planet": "planet"
+            		, "dyno": "dyno"
+            		, "ignore": "ignore"
+            		, "cleanup": "cleanup"
+            		, "requestDomain": "domain"
+            	}
+            }
+        }
+    ]
+}

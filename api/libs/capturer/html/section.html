@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capture Section</title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" type="text/css" href="/libs/icons/icons.css">
+	<link rel="stylesheet" type="text/css" href="/libs/administrater/css/qoom.css">
+	<style>
+		{{BASECSS}}
+		{{STYLES}}
+		{{SECTIONCSS}}
+		header > a {
+			color: #fff;
+			display: flex;
+			flex: 0 0 auto;
+			font-weight: 300;
+			margin: 0;
+			padding: 15px 16px;
+			width: 144px;
+			text-decoration: none;
+			z-index: 99;
+		}
+		header > a:hover {
+			background-color: rgba(255,255,255,0.38);
+		}
+		header > a > div {
+			height: 24px;
+			line-height: 24px;
+		}
+		header > a > div:first-child {
+			margin-right:8px;
+		}
+		header > a  i {
+			width: 24px;
+			height: 24px;
+		}
+		header > div {
+			margin-left: -144px;
+		}
+		.container {
+			padding-top: 40px;
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.container input {
+			width: 100%;
+			font-size: 16px;
+		}
+		.container button {
+			margin-top: 16px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<header>
+			<!-- {{MENU}} -->
+			<a class="back" href="/explore/section">
+				<div><i class="ic-cancel white"></i></div>
+				<div>CANCEL</div>
+			</a>
+			{{HEADER}}
+		</header>
+		<main>
+			<section class="container form-input">
+				<p>Enter a folder path. If you want to save it to the root folder, leave it empty.</p>
+				<div class="input-items"><input type='text' placeholder='e.g. /firstproject/' id='capture_folder_path'></div>
+				<div style="display: none;"> <!-- option is not needed. always keep file names-->
+					<input type='checkbox' id='checkbox_keep_file' checked>
+					<label>Keep File Names</label>
+				</div>
+					<button class="qoom-main-btn qoom-button-full" id="resourceButton">Choose File</button>
+			</section>
+			<!-- belows are not needed-->
+			<div style="display: none;">
+				<section>
+					{{PICTURE}}
+				</section>
+				<section>
+					{{RESOURCE}}
+				</section>
+				<section>
+					{{CAMERA}}
+			</section>
+			</div>
+		</main>
+		<footer>
+			{{FOOTER}}
+		</footer>
+	</div>
+	<script>
+		{{BASEJS}}
+		{{SCRIPT}}
+		{{SECTIONJS}}
+	</script>
+</body>
+</html>

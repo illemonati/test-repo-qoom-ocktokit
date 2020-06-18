@@ -1,0 +1,14 @@
+<select id='deployer_dyno'>
+	<option>-- Choose a Planet --</option>
+	{{PLANETS}}    
+</select>
+<button id='deployer_push'>Push</button>
+
+<div id='deployer_modal' class='modal' style='display:none;'>
+	<div id='deployer_log' style='max-height:40vh; overflow:auto;'>
+		<pre></pre>
+	</div>
+	<button id='deployer_modal_close'>
+		Close
+	</button>
+</div>
