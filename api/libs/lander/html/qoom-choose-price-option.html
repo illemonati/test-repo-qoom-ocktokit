@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Choose Price Option</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!--====== Bootstrap css ======-->
+	    <link rel="stylesheet" href="../css/bootstrap.min.css">
+	    <!--====== Line Icons css ======-->
+	    <link rel="stylesheet" href="../css/LineIcons.css">
+	    <!--====== Magnific Popup css ======-->
+	    <link rel="stylesheet" href="../css/magnific-popup.css">
+	    <!--====== Slick css ======-->
+	    <link rel="stylesheet" href="../css/slick.css">
+	    <!--====== Nice Select css ======-->
+	    <link rel="stylesheet" href="../css/nice-select.css">
+	    <!--====== Default css ======-->
+	    <link rel="stylesheet" href="../css/default.css">
+	    <!--====== Style css ======-->
+	    <link rel="stylesheet" href="../css/style.css">
+	    <!--====== Qoom css to adjust to our style ======-->
+	    <link rel="stylesheet" href="../css/qoom-choose-price-option.css">
+	</head>
+	<body>
+		<!--NAVIBAR-->
+		<div class='navibar'>
+			<div class="navibar-cancel">
+				<span class="navibar-cancel-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6M12 5l-7 7 7 7"/></svg></span>
+				<span class="navibar-cancel-text">Back</span>
+			</div>
+			<div class="navibar-title">
+				<span>Create Club 2 / 3</span>
+			</div>
+		</div>
+		<section class="mt-80">
+	        <div class="header">
+	            <div class="row">
+	                <div class="col-lg-12">
+	                    <div class="">
+	                       <h1 class="page-title">Choose Price Option</h1>
+	                    </div> <!-- page-banner-content -->
+	                </div>
+	            </div> <!-- row -->
+	        </div> <!--  -->
+	    </section>
+		<section class="signin-area signin-one mt-20 mb-20">
+	        <div class="container">
+	            <div class="row justify-content-center">
+	                <div class="col-lg-12">
+	                	<h5>How many members are in your club?</h5>
+                        <div class="signin-form form-style-two light-rounded-buttons">
+                            <div class="row">
+                                <div class="club-member-amount-input-container">
+                                    <div class="form-input mt-20">
+                                        <div class="input-items default">
+                                        	<!--KIAE: how can we show max-number of members ??-->
+                                            <input type="text" min="1" max="30" placeholder="# of members (max. 30)">
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="see-price-button">
+                                    <div class="form-input mt-20">
+                                        <button class="main-btn light-rounded-two sm-btn" type="submit">SEE PRICE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+	                </div>
+	            </div> <!-- row -->
+	        </div> <!-- container -->
+	    </section>
+	    <section class="hide">
+	    	<div class="container price-option-container mb-80">
+	    		<div class="row justify-content-center">
+	    			<div class="col-lg-12">
+	    				<div class="see-price-option-header-container mb-15">
+	    					<span>Your club plan is <span class="clubprice" data='clubprice'>89</span> / club / month</span>
+	    					<h5>Select price option</h5>
+	    				</div>
+	    				<div class="row club-price-option-monthly">
+	    					<div class="col-md-6 club-price-option-header">
+	    						<p>Monthly</p>
+	    					</div>
+	    					<div class="col-md-3 club-price-option-price">
+	    						<p data='monthlyPerMember'>17.80</p>
+	    						<span>/ member / month</span>
+	    					</div>
+	    					<div class="col-md-3 light-rounded-buttons select-button">
+	    						<button class="main-btn light-rounded-one sm-btn" type="submit">SELECT</button>
+	    					</div>
+	    				</div>
+	    				<div class="row club-price-option-biannual">
+	    					<div class="col-md-6 club-price-option-header">
+	    						<p>Bi-Annual</p>
+	    						<span>Billed as one payment of $ <span data='biannual'>101.46</span></span>
+	    					</div>
+	    					<div class="col-md-3 club-price-option-price">
+	    						<p data='biannualPerMember'>16.91</p>
+	    						<span>/ member / month</span>
+	    					</div>
+	    					<div class="col-md-3 light-rounded-buttons select-button">
+	    						<button class="main-btn light-rounded-one sm-btn" type="submit">SELECT</button>
+	    					</div>
+	    				</div>
+	    				<div class="row club-price-option-annual">
+	    					<div class="col-md-6 club-price-option-header">
+	    						<p>Annual</p>
+	    						<span>Billed as one payment of $ <span data='annual'>192.24</span></span>
+	    					</div>
+	    					<div class="col-md-3 club-price-option-price">
+	    						<p data='annualPerMember'>$17.02</p>
+	    						<span>/ member / month</span>
+	    					</div>
+	    					<div class="col-md-3 light-rounded-buttons select-button">
+	    						<button class="main-btn light-rounded-two sm-btn" type="submit">SELECT</button>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </section>
+	    <script src='/libs/alert.js'></script>
+		<script>
+			var $priceOptionContainer = document.querySelector('.hide');
+			var $seePriceBtn = document.querySelector('.see-price-button button');
+			var prices = [
+				{ min: 1, max: 5, price: 89, biannual: 0.05, annual: 0.10},
+				{ min: 6, max: 10, price: 139, biannual: 0.05, annual: 0.10},
+				{ min: 11, max: 15, price: 189, biannual: 0.05, annual: 0.10},
+				{ min: 16, max: 30, price: 239, biannual: 0.05, annual: 0.10}
+				];
+		
+			$seePriceBtn.addEventListener('click', show);
+			
+			function show() {
+				var clubprice = document.querySelector('[data="clubprice"]');
+				var monthlyPerMember = document.querySelector('[data="monthlyPerMember"]');
+				var biannual = document.querySelector('[data="biannual"]');
+				var biannualPerMember = document.querySelector('[data="biannualPerMember"]');
+				var annual = document.querySelector('[data="annual"]')
+				var annualPerMember = document.querySelector('[data="annualPerMember"]');
+				var memberInput = parseInt(document.querySelector('.club-member-amount-input-container input').value);
+				var price = prices.find(p => p.min <= memberInput && p.max >= memberInput);
+				if(!price) swal('Enter something better');
+				clubprice.innerHTML = '$' + price.price;
+				monthlyPerMember.innerHTML = '$' + (price.price/memberInput).toFixed(2);
+				biannual.innerHTML = (price.price*(1-price.biannual)).toFixed(2);
+				biannualPerMember.innerHTML = '$' + (price.price*(1-price.biannual)/memberInput).toFixed(2);
+				annual.innerHTML = (price.price*(1-price.annual)).toFixed(2);
+				annualPerMember.innerHTML = '$' + (price.price*(1-price.annual)/memberInput).toFixed(2);
+				$priceOptionContainer.classList.remove('hide');  
+			}
+			
+		</script>
+	</body>
+</html>
