@@ -1,0 +1,15 @@
+{
+  "name": "image-hsv-change",
+  "collaborators": [
+    "illemonati <tonymiaotong@tioft.tech>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "image_hsv_change_bg.wasm",
+    "image_hsv_change.js",
+    "image_hsv_change.d.ts"
+  ],
+  "module": "image_hsv_change.js",
+  "types": "image_hsv_change.d.ts",
+  "sideEffects": false
+}

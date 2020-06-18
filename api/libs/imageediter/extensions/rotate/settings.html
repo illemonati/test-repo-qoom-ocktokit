@@ -1,0 +1,31 @@
+<style>
+	#rotate-controls {
+		display:grid;
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
+		width:150px;
+		height:200px;
+		margin:auto;
+	}
+	
+	#rotate-controls button, #rotate-controls input {
+		width:50px;
+		text-align: center;
+	}
+	
+</style>
+
+<div id='rotate-controls'>
+	<button>-135</button>
+	<button>-90</button>
+	<button>-45</button>
+	<button>180</button>
+	<input type='text' placeholder='0'>
+	<button>0</button>
+	<button>45</button>
+	<button>90</button>
+	<button>135</button>
+	<button>⇄</button>
+	<button style='visibility:hidden;'></button>
+	<button>⇅</button>
+</div>

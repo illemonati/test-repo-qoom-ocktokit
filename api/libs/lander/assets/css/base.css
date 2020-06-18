@@ -1,0 +1,149 @@
+/*===========================
+    FONT
+===========================*/
+
+/* poppins-300 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Poppins Light'), local('Poppins-Light'),url('/libs/fonts/poppins-300.woff2') format('woff2');
+}
+/* poppins-400 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url('/libs/fonts/poppins-400.woff2') format('woff2');
+}
+/* poppins-500 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Poppins Medium'), local('Poppins-Medium'), url('/libs/fonts/poppins-500.woff2') format('woff2');
+}
+/* poppins-600 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url('/libs/fonts/poppins-600.woff2') format('woff2');
+}
+/* poppins-700 - latin_devanagari_latin-ext */
+  @font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Poppins Bold'), local('Poppins-Bold'), url('/libs/fonts/poppins-700.woff2') format('woff2');
+}
+
+/*===========================
+    COLOR css
+===========================*/
+:root {
+  --color-primary: #0067f4; /* qoom blue */
+  --color-navy: #111559;
+  --color-blue: #0067f4;
+  --color-orange: #F28729;
+  --color-red: #ED6A5A;
+  --color-light-pink: #F2B4AE;
+  --color-yellow: #F7C660;
+  --color-light-gray: #F4F6F7;
+  --color-light-blue: #D8E6F2;
+  --color-dark-blue: #020873;
+  --color-dark-navy: #0C1440;
+  --color-blue-black: #010626;
+  --color-cloud-purple-1: #B175FF;
+  --color-cloud-purple-2: #B982FE;
+  --color-cloud-purple-3: #F3E4F1;
+  --color-cloud-purple-4: #FBF1EF;
+
+  /* text colors for light background */
+  --text-dark-high: #212121;
+  --text-dark-medium: #666666;
+  --text-dark-disabled: #9E9E9E;
+
+  /* text colors for dark background */
+  --text-white-high: rgba(255,255,255,1);
+  --text-white-medium: rgba(255,255,255,0.6);
+  --text-white-disabled: rgba(255,255,255,0.38);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--text-dark-high);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+i,
+span,
+a {
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+ul, ol {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				box-sizing:border-box;
+				overflow:hidden;
+			}
+			body {
+				background-color:#232323;
+				width:100vw;
+				height:100vh;
+				margin:0;
+			}
+			
+			#panel {
+				position:absolute;
+				top:0;
+				left:0;
+				bottom:0;
+				width:30vw;
+				min-width:100px;
+				max-width:200px;
+				background-color:#464646;
+			}
+			
+			.hist {
+				width:90%;
+				height:15%;
+				background-color:transparent;
+				position:absolute;
+				opacity:0.5;
+				top:2%;
+				left:5%;
+				transform:rotate(-90deg);
+			}
+			
+			.hist:first-child {
+				background-color:#969696;
+			}
+			
+			#hsvControls {
+				position:absolute;
+				bottom:0;
+				width:100%;
+				color:white;
+			}
+			
+			nav {
+				position:absolute;
+				z-index: 1000000;
+			}
+		
+		</style>
+	</head>
+	<body>
+		
+		<nav></nav>
+		<div id='panel'>
+			<div class='hist red'></div>
+			<div class='hist green'></div>
+			<div class='hist blue'></div>
+			<div id='hsvControls'></div>
+		</div>
+		<canvas></canvas>
+		<script type='module'>
+			import { Dial } from '/libs/imageedit/dial.js';
+			import { Slide } from '/libs/imageedit/slide.js'
+			
+			var image = new Image()
+				, hasHist = false
+				, X, Y, W, H
+				, canvas = document.querySelector('canvas')
+				, tools = canvas.getContext('2d')
+				, holder
+			;
+			
+			const hueDial = new Slide(360, 180, -180, 1, 0, adjustHue)
+				, satSlide = new Slide(200, 100, -100, 1, 0, adjustSaturation)
+				, brightSlide = new Slide(200, 100, -100, 1, 0, adjustBrightness)
+				, hsvControls = document.getElementById('hsvControls')
+			;
+			const pointsFilled = new Set();
+			
+			function selectPixels(e) {
+				const p = {x: e.x, y:e.y};
+				const imgData = tools.getImageData(0,0,canvas.width, canvas.height);
+				const pointsToFill = new Set();
+				
+				const tolerance = 100**2;
+				const initialPt = {
+					x: p.x, y: p.y, color: getColor(p)
+				}
+				const fillColor = { r: 14, g: 0, b: 18 }
+				
+				function withinTolerance(pt) {
+					const s= JSON.stringify(pt)
+					if(pointsFilled.has(s)) return;
+					const dr = pt.color.r - initialPt.color.r
+					const dg = pt.color.g - initialPt.color.g
+					const db = pt.color.b - initialPt.color.b
+					const dist = dr*dr + dg*dg + db*db
+						, fill = dist < tolerance
+					;
+					if(fill) {
+						
+						pointsToFill.add(s);
+					}
+					return fill;
+				}
+				
+				function getColor(p) {
+					const i = (imgData.width*p.y + p.x)*4
+					const r = imgData.data[i];
+					const g = imgData.data[i+1];
+					const b = imgData.data[i+2];
+					return {r,g,b}
+				}
+				
+				function setColor(p) {
+					const i = (imgData.width*p.y + p.x)*4
+					imgData.data[i] += fillColor.r;
+					imgData.data[i+1] += fillColor.g;
+					imgData.data[i+2] += fillColor.b;
+				}
+				
+				function point(p, dx, dy) {
+					const pt = {x: p.x + dx, y: p.y + dy}
+					pt.color = getColor(pt);
+					pt.fill = withinTolerance(pt);
+					return pt;
+				}
+				
+				function getNeighbors(p) {
+					const n00 = point(p, -1, -1);
+					const n01 = point(p,  0, -1);
+					const n02 = point(p,  1, -1);
+
+					const n10 = point(p, -1,  0);
+					//const n11 = point(p,  0,  0);
+					const n12 = point(p,  1,  0);
+					
+					const n20 = point(p, -1,  1);
+					const n21 = point(p,  0,  1);
+					const n22 = point(p,  1,  1);
+					/*
+					return [  [n00, n01, n02]
+							, [n10, n11, n12]
+							, [n20, n21, n22] ]
+					*/
+				}
+				
+				/*
+				1. Got the neighbors
+				2. Make a list of all the points we have already found that satisfy the tolerance
+				3. Find the neighbors of the those
+				*/
+				getNeighbors(p);
+				let opct = 0;
+				while(pointsToFill.size) {
+					// 1. Remove a point to fill
+					const pt = pointsToFill.values().next().value;
+					pointsToFill.delete(pt);
+					
+					// 2. We replace that point to fill with the color we want to fill it
+					const npt = JSON.parse(pt)
+					pointsFilled.add(pt);
+					setColor(npt);
+					
+					// 3. Get Neighbors of that points => add more points to fill
+					getNeighbors(npt);
+				
+					
+				}
+				tools.putImageData(imgData, 0,0);
+				createHistogram(X,Y,W,H);
+				
+				
+			}
+			
+			function rgbTohsv(r, g, b) {
+
+				const 
+					// Input Values
+					R = r/255
+					, G = g/255
+					, B = b/255
+					
+					// Intermediary Values
+					, Xmax = Math.max(R,G,B)
+					, Xmin = Math.min(R,G,B)
+					, C =  Xmax - Xmin
+					, L = C/2
+					, V = Xmax
+					, H = C === 0 ? 0
+						: R === V ? 60*(0 + (G-B)/C)
+						: G === V ? 60*(2 + (B-R)/C)
+						: B === V ? 60*(4 + (R-G)/C)
+						: 0
+					, S = V === 0 ? 0
+						: C/V
+	
+					// Output Values
+					, h = H < 0 ? 360 + H : H
+					, s = S*100
+					, v = V*100
+				;
+				return [h,s,v];
+			} 
+			
+			function applyVTransform(v, multiplier) {
+				const V = v + multiplier;
+				return V > 100 ? 100 
+						: V < 0 ? 0
+						: V;
+			}
+			
+			function applySTransform(s, multiplier) {
+				const S = s + multiplier;
+				return S > 100 ? 100 
+						: S < 0 ? 0
+						: s;
+			}
+			
+			function applyHTransform(h, multiplier) {
+				const H = h + multiplier;
+				return H > 360 ? H - 360 
+						: H < 0 ? H + 360
+						: H;
+			}
+			
+			function hsvTorgb(h,s,v) {
+				const 
+					H = h
+					, S = s/100
+					, V = v/100
+					, C = S*V
+					, Hc = H/60
+					, X = C*(1 - Math.abs(Hc % 2 -1))
+					, m = V - C
+				;
+				
+				if(isNaN(H)) {
+					return [0,0,0];
+				}
+				if(0 <= Hc && Hc <= 1) {
+					return [C+m,X+m,m];
+				}
+				if(1<Hc && Hc<=2) {
+					return [X+m,C+m,m];
+				}
+				if(2<Hc && Hc<=3) {
+					return [m,C+m,X+m];
+				}
+				if(3<Hc && Hc<=4) {
+					return [m,X+m,C+m];
+				}
+				if(4<Hc && Hc<=5) {
+					return [X,m,C+m];
+				}
+				if(5<Hc && Hc<=6) {
+					return [C+m,m,X+m];
+				}
+				
+				return [0,0,0];
+				
+			}
+			
+			function adjustHue(multiplier) {
+				// Get actual brightness
+				const actualBrightness = multiplier;
+				
+				// Get RGB value
+				const pixelData = tools.getImageData(X,Y,W,H);
+				for(var p = 0; p < holder.data.length; p += 4) {
+					const r = holder.data[p];
+					const g = holder.data[p+1];
+					const b = holder.data[p+2];
+					
+					const [h,s,v] = rgbTohsv(r, g, b);
+					const hnew = applyHTransform(h, multiplier);
+					const [rnew, gnew, bnew] = hsvTorgb(hnew,s,v);
+					
+					pixelData.data[p] = parseInt(rnew*255);
+					pixelData.data[p+1] = parseInt(gnew*255);
+					pixelData.data[p+2] = parseInt(bnew*255);
+				}
+				tools.putImageData(pixelData, X,Y);
+				createHistogram(X,Y,W,H);
+			}
+			
+			function adjustSaturation(multiplier) {
+				// Get actual brightness
+				const actualBrightness = multiplier;
+				
+				// Get RGB value
+				const pixelData = tools.getImageData(X,Y,W,H);
+				for(var p = 0; p < holder.data.length; p += 4) {
+					const r = holder.data[p];
+					const g = holder.data[p+1];
+					const b = holder.data[p+2];
+					
+					const [h,s,v] = rgbTohsv(r, g, b);
+					const snew = applySTransform(s, multiplier);
+					const [rnew, gnew, bnew] = hsvTorgb(h,snew,v);
+					
+					pixelData.data[p] = parseInt(rnew*255);
+					pixelData.data[p+1] = parseInt(gnew*255);
+					pixelData.data[p+2] = parseInt(bnew*255);
+				}
+				tools.putImageData(pixelData, X,Y);
+				createHistogram(X,Y,W,H)
+			}
+			
+			function adjustBrightness(multiplier) {
+				// Get actual brightness
+				const actualBrightness = multiplier;
+				
+				// Get RGB value
+				const pixelData = tools.getImageData(X,Y,W,H);
+				for(var p = 0; p < holder.data.length; p += 4) {
+					const r = holder.data[p];
+					const g = holder.data[p+1];
+					const b = holder.data[p+2];
+					
+					const [h,s,v] = rgbTohsv(r, g, b);
+					const vnew = applyVTransform(v, multiplier);
+					const [rnew, gnew, bnew] = hsvTorgb(h,s,vnew);
+					
+					pixelData.data[p] = parseInt(rnew*255);
+					pixelData.data[p+1] = parseInt(gnew*255);
+					pixelData.data[p+2] = parseInt(bnew*255);
+				}
+				tools.putImageData(pixelData, X,Y);
+				createHistogram(X,Y,W,H);
+			}
+			
+			function drawImage() {
+				var canvas = document.querySelector('canvas');
+				var tools = canvas.getContext('2d');
+				
+				var screenRect = document.body.getBoundingClientRect();
+				var panel = document.querySelector('#panel').getBoundingClientRect();
+				
+				var w = image.width;
+				var h = image.height;
+				
+				canvas.width = screenRect.width;
+				canvas.height = screenRect.height;
+				
+				//  WHAT IS X, Y, W, H?
+				var imageRatio = w/h;
+				var canvasRatio = (canvas.width - panel.width)/canvas.height;
+				if(imageRatio > canvasRatio) {
+					//Black bars on top and bottom
+					X = panel.width;
+					W = canvas.width - panel.width;
+					H = W/imageRatio;
+					Y = (canvas.height - H) / 2;
+				} else {
+					//Black bars on left and right
+					Y = 0
+					H = canvas.height;
+					W = H*imageRatio;
+					X = panel.width + (canvas.width - W - panel.width)/2;
+				}
+				X = Math.floor(X);
+				Y = Math.floor(Y);
+				W = Math.ceil(W)+1;
+				H = Math.ceil(H)+1;
+				tools.imageSmoothingEnabled = true;
+				tools.drawImage(image, X, Y, W, H);
+				holder = tools.getImageData(X,Y,W,H);
+				if(!hasHist) {
+					hasHist = true;
+					createHistogram(X,Y,W,H);
+				}
+			}
+			
+			function createHistogram(X,Y,W,H) {
+				// Extract Pixels
+				const canvas = document.querySelector('canvas')
+					, tools = canvas.getContext('2d')
+					, pixelData = tools.getImageData(X,Y,W,H)
+				;
+				
+				X = X || 0;
+				Y = Y || 0;
+				W = W || canvas.width;
+				H = H || canvas.height;
+				
+				// Create Histogram
+				const red_hist = new Array(256).fill(0);
+				const green_hist = new Array(256).fill(0);
+				const blue_hist = new Array(256).fill(0);
+				
+				for(var i = 0; i < pixelData.data.length; i+=4) {
+					const r = pixelData.data[i+0]
+						, g = pixelData.data[i+1]
+						, b = pixelData.data[i+2]
+						, a = pixelData.data[i+3]
+					;
+					red_hist[r] += 1;
+					green_hist[g] += 1;
+					blue_hist[b] += 1;
+					
+				}
+				drawHistogram(red_hist, 'red' , '#ff0000');
+				drawHistogram(green_hist, 'green', '#00ff00');
+				drawHistogram(blue_hist, 'blue', '#0000ff');
+			}
+			
+			function drawHistogram(hist, s, c) {
+				// Loop through each color and create a div
+				const histContainer = document.querySelector(`.hist.${s}`);
+				histContainer.innerHTML ='';
+				const histContainerSize = histContainer.getBoundingClientRect();
+				const max = Math.max(...hist);
+				const ht = histContainerSize.width/255;
+				hist.forEach((val, i) => {
+					const div = document.createElement('div');
+					div.style.backgroundColor = c;
+					div.style.height = ht + 'px';
+					div.style.width = val/max*100 + '%';
+					histContainer.appendChild(div);
+				})
+				
+				// Add Axis
+			}
+			
+			//Color Space Algorithms - Color Theory
+			hueDial.draw(hsvControls);
+			satSlide.draw(hsvControls);
+			brightSlide.draw(hsvControls);
+			
+			image.onload = drawImage;
+		//	image.src = 'https://mrlera.wisen.space/xvldcvaolk1vqwrieh603gl5.jpeg'
+			image.src = location.pathname.replace('/imageedit', '')
+			window.addEventListener('resize', drawImage);
+			canvas.onclick = selectPixels;
+		</script>
+		<script type='module'>
+			// FILTER LOADER
+			/*
+			1. Import our extensions
+			2. Inject the buttons
+			*/
+			
+			import rotate from '../libs/imageediter/extensions/rotate/extension.js';
+			
+			const $container = document.querySelector('nav');
+			rotate.onload($container);
+			
+		</script>
+	</body>
+</html>

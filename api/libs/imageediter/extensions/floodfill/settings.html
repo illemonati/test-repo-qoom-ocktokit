@@ -1,0 +1,147 @@
+<div>
+    <style>
+        #floodFillSettingsDiv {
+            text-align: center;
+            width: 95%;
+            max-width: 100%;
+            max-height: 90vh;
+            overflow: scroll;
+            margin: 2.5%;
+            background-color: inherit;
+            color: inherit;
+            font: inherit;
+            font-family: inherit;
+            font-style: inherit;
+            display: none;
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            scrollbar-width: none; /* Firefox */
+            border: 0;
+            margin: 0;
+            background-repeat: 0;
+        }
+        #floodFillSettingsDiv::-webkit-scrollbar {
+            display: none;
+        }
+        #floodFillPastSettingName {
+            text-align: left;
+        }
+        #floodFillPastSettingValue {
+            text-align: right;
+        }
+        .floodFillInputTextField {
+            max-width: 85% !important;
+        }
+    </style>
+
+    <v-app id="floodFillSettingsDiv" :style="{ display: display }">
+        <v-container>
+            <v-row justify="center">
+                <h4>Flood Fill Settings</h4>
+            </v-row>
+            <br />
+            <br />
+            <v-card>
+                <v-container d-inline-block mx-auto>
+                    <v-row
+                        justify="center"
+                        v-for="(setting, i) in Object.keys(floodFillSettings)"
+                        :key="i"
+                    >
+                        <v-text-field
+                            type="number"
+                            v-model="floodFillSettings[setting]"
+                            :label="capitalizeFirstLetter(setting)"
+                            :color="getColor(setting)"
+                            :rules="getValidationRules(setting)"
+                            @blur="saveFloodFillSettings()"
+                            class="floodFillInputTextField"
+                        ></v-text-field>
+                    </v-row>
+                    <v-row justify="center">
+                        <v-switch
+                            v-model="otherFloodFillSettings.variance"
+                            label="variance"
+                        ></v-switch>
+                    </v-row>
+                </v-container>
+            </v-card>
+            <br />
+            <br />
+            <v-card d-inline-block mx-auto>
+                <v-container>
+                    <v-row justify="center">
+                        <h5>
+                            <span :style="rColor">{{floodFillSettings.r}}</span
+                            >,
+                            <span :style="gColor">{{floodFillSettings.g}}</span
+                            >,
+                            <span :style="bColor">{{floodFillSettings.b}}</span>
+                        </h5>
+                    </v-row>
+                    <br />
+                    <br />
+                    <v-row justify="center">
+                        <v-icon :color="allColor.color" large>mdi-brush</v-icon>
+                    </v-row>
+                </v-container>
+            </v-card>
+            <br />
+            <br />
+            <v-card d-inline-block mx-auto>
+                <v-container>
+                    <v-row justify="center">
+                        <v-subheader>Past Settings</v-subheader>
+                    </v-row>
+                    <br />
+                    <br />
+                    <div v-for="(settings, i) in pastSettings" :key="i">
+                        <v-divider></v-divider>
+                        <v-list-item
+                            ripple
+                            @click="changeFloodFillSettings(settings)"
+                        >
+                            <v-list-item-content>
+                                <v-container>
+                                    <v-row
+                                        v-for="(setting, i) in Object.keys(settings)"
+                                        :key="i"
+                                        :style="{ color: getHexColor(setting) }"
+                                    >
+                                        <v-col
+                                            align-self="start"
+                                            class="floodFillPastSettingName"
+                                            cols="6"
+                                        >
+                                            {{setting[0]}}:
+                                        </v-col>
+                                        <v-col
+                                            align-self="end"
+                                            class="floodFillPastSettingValue"
+                                            cols="6"
+                                        >
+                                            {{settings[setting]}}
+                                        </v-col>
+                                    </v-row>
+
+                                    <v-row
+                                        :style="{ color: `rgb(${settings.r}, ${settings.g}, ${settings.b})` }"
+                                        class="floodFillPastSettingName"
+                                    >
+                                        <v-col
+                                            align-self="end"
+                                            class="floodFillPastSettingValue"
+                                            cols="12"
+                                        >
+                                            {{rgbToHex(settings.r, settings.g,
+                                            settings.b)}}
+                                        </v-col>
+                                    </v-row>
+                                </v-container>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </div>
+                </v-container>
+            </v-card>
+        </v-container>
+    </v-app>
+</div>

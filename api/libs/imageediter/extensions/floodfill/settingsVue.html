@@ -1,0 +1,53 @@
+<div>
+    <style>
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #configTable {
+            width: 90%;
+        }
+    </style>
+    <div id="floodFillSettingsDiv">
+        <p id="floodFillTitle">Flood Fill Configs</p>
+        <br />
+        <table id="floodFillconfigTable">
+            <tr>
+                <th>Config</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>
+                    <input type="number" v-model="floodFillSettings.r" />
+                </td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>
+                    <input type="number" v-model="floodFillSettings.g" />
+                </td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>
+                    <input type="number" v-model="floodFillSettings.b" />
+                </td>
+            </tr>
+            <tr>
+                <td>Tolarence</td>
+                <td>
+                    <input
+                        type="number"
+                        v-model="floodFillSettings.tolarence"
+                    />
+                </td>
+            </tr>
+        </table>
+        <br />
+    </div>
+</div>
