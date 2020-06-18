@@ -1,0 +1,390 @@
+/* poppins-300 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Poppins Light'), local('Poppins-Light'),url('/libs/fonts/poppins-300.woff2') format('woff2');
+}
+/* poppins-regular - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url('/libs/fonts/poppins-400.woff2') format('woff2');
+}
+/* poppins-500 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Poppins Medium'), local('Poppins-Medium'), url('/libs/fonts/poppins-500.woff2') format('woff2');
+}
+/* poppins-600 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url('/libs/fonts/poppins-600.woff2') format('woff2');
+}
+/* poppins-700 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Poppins Bold'), local('Poppins-Bold'), url('/libs/fonts/poppins-700.woff2') format('woff2');
+}
+
+:root {
+	/* color variables */
+  --color-primary: #0067f4; /* qoom blue */
+  --color-navy: #111559;
+  --color-blue: #0067f4;
+  --color-orange: #F28729;
+  --color-red: #E84855;
+  --color-yellow: #F7C660;
+  --color-green: #4da422;
+  --color-purple: #9c3ce9;
+  
+  --color-gray-10: #f4f6f7;
+  --color-gray-50: #ebebeb;
+  --color-gray-100: #d7d7d7;
+  --color-gray-200: #c2c3c4;
+  --color-gray-300: #aeafb0;
+  --color-gray-400: #9a9b9c;
+  
+  --color-blue-10: #e6f0fe;
+  --color-blue-50: #cce1fd;
+  --color-blue-100: #99c2fa;
+  --color-blue-200: #66a3f8;
+  --color-blue-300: #3285f6;
+  --color-blue-500: #0052c3;
+  --color-blue-600: #003d92;
+  --color-blue-700: #002961;
+  
+  --color-primary-10: #e6f0fe;
+  --color-primary-50: #cce1fd;
+  --color-primary-100: #99c2fa;
+  --color-primary-200: #66a3f8;
+  --color-primary-300: #3285f6;
+  --color-primary-500: #0052c3;
+  --color-primary-600: #003d92;
+  --color-primary-700: #002961;
+  
+  --color-red-10: #fdedee;
+  --color-red-50: #fadadd;
+  --color-red-100: #f6b6bb;
+  --color-red-200: #f19199;
+  --color-red-300: #ed6d77;
+  
+  --color-purple-10: #f5ecfd;
+  --color-purple-50: #ebd8fb;
+  --color-purple-100: #d7b1f6;
+  --color-purple-200: #c48af2;
+  --color-purple-300: #b063ed;
+  --color-purple-500: #7d30ba;
+  --color-purple-600: #5e248c;
+  --color-purple-700: #3e185d;
+  
+  --color-light-gray: #F4F6F7;
+  --color-light-blue: #D8E6F2;
+  
+  --color-dark-blue: #020873;
+  --color-dark-navy: #0C1440;
+  
+  /* text colors for light background */
+  --text-dark-high: #212121;
+  --text-dark-medium: #666666;
+  --text-dark-disabled: #9E9E9E;
+
+  /* text colors for dark background */
+  --text-white-high: rgba(255,255,255,1);
+  --text-white-medium: rgba(255,255,255,0.6);
+  --text-white-disabled: rgba(255,255,255,0.38);
+
+	box-sizing:border-box;
+}
+
+body {
+	background-color: var(--color-primary-10);
+	color: var(--text-dark-high);
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	margin:0;
+	padding:0;
+	text-rendering: optimizelegibility;
+	width: 100%;
+}
+
+main {
+	background-color: #fff;
+	border-top: 32px solid #0067f4;
+	border-bottom-right-radius: 32px;
+	border-bottom-left-radius: 32px;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0 auto 80px;
+	max-width: 760px;
+	padding: 0 64px 40px;
+}
+
+h2,h3,h4,h5,h6 {
+	font-family: 'Poppins', Sans-Serif;
+	margin-block-start: 2em;
+	margin-block-end: 16px;
+}
+
+/* title */
+h1 {
+	border-bottom: 1px solid var(--text-dark-high);
+	font-family: 'Poppins', Sans-Serif;
+	font-size: 36px; 
+	font-weight: 500;
+	margin-block-start: 0;
+	margin-block-end: 1.5em;
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+h1::before {
+	display: block;
+	content:' ';
+	background: url("https://kiae.qoom.io/libs/icons/qoom.svg");
+	filter: invert(22%) sepia(72%) saturate(3462%) hue-rotate(205deg) brightness(100%) contrast(108%);
+	width: 120px;
+	height: 20px;
+	margin-bottom: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* subheading */
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+a {
+	text-decoration: underline;
+}
+a, a:visited {
+    color: var(--color-primary);
+}
+
+p {
+	font-weight: normal;
+	hyphens: auto;
+	line-height: 1.5;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+}
+strong {
+	font-weight: 500;
+}
+li {
+	margin: 8px 0;
+}
+strong {
+	font-weight: bold;
+}
+blockquote {
+	background: var(--color-gray-10);
+	border-left: 8px solid var(--text-dark-high);
+	margin: 24px 0;
+	padding: 8px 24px 16px;
+	
+}
+hr {
+	border: 0.5px solid var(--color-gray-400);
+}
+pre {
+	background-color: var(--text-dark-high);
+	border-radius: 8px;
+	color: #fff;
+	font-family: monospace;
+	line-height: 1.5;
+	overflow: auto;
+	padding: 16px 24px;
+}
+code {
+	background-color: var(--color-primary-10);
+	border-radius: 4px;
+	color: var(--color-primary);
+	font-family: monospace;
+	line-height: 20px;
+	margin: 0;
+	padding: 2px 6px;
+	word-wrap: break-word;
+}
+pre > code {;
+	background: transparent;
+	color: #fff;
+	line-height: 1.5;
+	padding: 0;
+}
+table {
+	border-collapse: collapse;
+	padding: 0;
+}
+table tr {
+	border-top: 1px solid var(--color-gray-100);
+	margin: 0;
+	padding: 0;
+}
+table tr:last-child {
+	border-bottom: 1px solid var(--color-gray-100);
+}
+table thead tr {
+	border-bottom: 2px solid var(--color-gray-100);
+}
+table tr th {
+	font-weight: 500;
+	margin: 0;
+	padding: 12px 16px;
+	text-align: left;
+}
+table tbody tr:nth-child(odd) {
+	background-color: var(--color-gray-10);
+}
+table tr td {
+	margin: 0;
+	padding: 8px 16px;
+	text-align: left;
+}
+img {
+	display: block;
+	margin: 32px 0;
+	max-width: 100%;
+}
+
+form {
+	width: calc(100% - 32px);
+	padding: 0 16px;
+	margin: 0 auto;
+	min-width: 300px;
+}
+
+input {
+	background-color: var(--color-gray-10);
+	display: block;
+	border: none;
+    border-bottom: 1px solid var(--color-gray-400);
+    border-radius:0;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 1.5em 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0.5em 1em;
+    width: calc(100% - 32px);
+}
+
+input:focus {
+	border-bottom-color: var(--color-primary)
+}
+
+textarea {
+	background-color: var(--color-gray-10);
+	border: none;
+	display: block;
+    border-bottom: 1px solid var(--color-gray-400);
+    border-radius:0;
+    font-size: 16px;
+    height: 10em;
+    line-height: 1.5;
+    margin: 1.5em 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0.5em 1em;
+    width: calc(100% - 32px);
+}
+textarea:focus {
+	border-bottom: 1px solid var(--color-primary);
+}
+
+input[type='checkbox' i] {
+	display: inline-block;
+	margin-right: 8px;
+	width: fit-content;
+}
+
+label {
+	display: inline-block;
+}
+
+input[type='submit'] {
+	-webkit-appearance: none;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 4px !important;
+    color:white !important;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    height: auto;
+    outline: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+input[type='submit']:hover {
+	background: var(--color-primary-500);
+}
+
+/* Stripe Form Style */
+.StripeElement {
+	background-color: var(--color-gray-10);;
+	padding: 16px 12px;
+	border-radius: 4px;
+	margin-bottom: 8px;
+}
+#cardErrors {
+	color: #E84855;
+}
+.stripe-text {
+	font-size: 12px;
+	text-align: right;
+}
+
+label.cost {
+	text-align:right;
+	font-weight: bold;
+	padding-right:1em;
+	display:block;
+}
+
+@media only screen and (max-width: 576px) {
+	main {
+		line-height: 1.35;
+		max-width: 480px;
+		padding: 0 8px 40px;
+	}
+	form {
+		width: calc(100% - 16px);
+		padding: 0;
+		min-width: 240px;
+	}
+	h1 {
+		font-size: 32px;
+	}
+	input[type='checkbox'] {
+		background-color: #fff;
+		border: 1px solid var(--color-gray-400);
+		border-radius: 2px;
+	}
+	
+	label {
+		font-size: 14px;
+		max-width: calc(100% - 48px);
+		vertical-align: middle;
+	}
+}

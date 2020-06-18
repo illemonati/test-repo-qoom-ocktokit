@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			{{QOOMCSS}}
+			{{CSVCSS}}
+		</style>
+		<script>
+			const csvData = `{{CSVDATA}}`.trim();
+			window.onload = function() {
+				{{CSVJS}}
+			}
+		</script>
+	</head>
+	<body>
+		<div id='filter'>
+			<label>Filter</label>
+			<input>
+		</div>
+		<div id='download'>
+			<a>Click to download</a>
+		</div>
+		<div id='table'></div>
+	</body>
+</html>

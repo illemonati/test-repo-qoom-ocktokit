@@ -1,0 +1,75 @@
+{
+    "name" : "deploy_latest_version",
+    "flow" : [
+        {
+            "step" : "get_source_version" 
+        },
+        {
+            "step" : "get_destination_version"
+        },
+        {
+            "step" : "get_planets"
+        },
+        {
+            "step" : "push_version"
+        }
+    ],
+    "steps" : [
+        {
+            "name" : "get_source_version",
+            "description" : "Get version from source",
+            "app" : "versioner",
+            "method" : "getLatestShipVersion",
+            "input": {
+            	"fieldsFromRequestToUse": {
+            		"requestDomain": "domain"
+            	}, "stepInput": {
+            		"dbName": "MONGODB_URI"
+            	}
+            },
+            "output": "sourceVersion"
+        },
+        {
+            "name" : "get_destination_version",
+            "description" : "Get version from destination",
+            "app" : "versioner",
+            "method" : "getLatestShipVersion",
+            "input": {
+            	"fieldsFromRequestToUse": {
+            		"planet": "domain"
+            		, "dbUri": "dbName"
+            	}
+            },
+            "output": "destinationVersion"
+        },
+        {
+            "name" : "get_planets",
+            "description" : "Get planet from source",
+            "app" : "deployer",
+            "method" : "getPlanets",
+            "input": {
+            	"fieldsFromRequestToUse": {
+					"requestDomain": "domain"
+            	}
+            },
+            "output": "planets"
+        },
+        {
+            "name" : "push_version",
+            "description" : "Deploys the files in the version to the appropriate database",
+            "app" : "deployer",
+            "method" : "pushVersion",
+            "input": {
+            	"fieldsFromRequestToUse": {
+            		"sourceVersion": "sourceVersion"
+            		, "destinationVersion": "destinationVersion"
+            		, "planets": "planets"
+            		, "dbUri": "dbName"
+            		, "dyno": "dyno"
+            		, "ignore": "ignore"
+            		, "cleanup": "cleanup"
+            	}
+            }
+        }
+    ]
+}

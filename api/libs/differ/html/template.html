@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="/apps/editer/src/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/libs/differ/js/ace-diff.js"></script>
+
+		<!-- optionally include CSS, or use your own -->
+		<link href="/libs/differ/css/diff.css" rel="stylesheet">
+		
+		<!-- optionally there is also a dark mode CSS -->
+		<link href="/libs/differ/css/darkmode.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="acediff"></div>
+		<script>
+			var diffOptions = ||DIFFOPTIONS||;
+			var differ = new AceDiff(diffOptions);
+			setTimeout(function() {
+				differ.editors.right.ace.setValue(differ.editors.right.ace.getValue().replace(/scri\\pt>/g, 'script>'), 1);
+				differ.editors.left.ace.setValue(differ.editors.left.ace.getValue().replace(/scri\\pt>/g, 'script>'), 1);
+			}, 0)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,240 @@
+/* poppins-300 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Poppins Light'), local('Poppins-Light'),url('/libs/fonts/poppins-300.woff2') format('woff2');
+}
+/* poppins-regular - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url('/libs/fonts/poppins-400.woff2') format('woff2');
+}
+/* poppins-500 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Poppins Medium'), local('Poppins-Medium'), url('/libs/fonts/poppins-500.woff2') format('woff2');
+}
+/* poppins-600 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url('../fonts/poppins-600.woff2') format('woff2');
+}
+/* poppins-700 - latin_devanagari_latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Poppins Bold'), local('Poppins-Bold'), url('/libs/fonts/poppins-700.woff2') format('woff2');
+}
+/* color variables */
+:root {
+  --color-primary: #0067f4; /* qoom blue */
+  --color-navy: #111559;
+  --color-blue: #0067f4;
+  --color-orange: #F28729;
+  --color-red: #E84855;
+  --color-yellow: #F7C660;
+  --color-green: #4da422;
+  --color-purple: #9c3ce9;
+  
+  --color-gray-10: #f4f6f7;
+  --color-gray-50: #ebebeb;
+  --color-gray-100: #d7d7d7;
+  --color-gray-200: #c2c3c4;
+  --color-gray-300: #aeafb0;
+  --color-gray-400: #9a9b9c;
+  
+  --color-blue-10: #e6f0fe;
+  --color-blue-50: #cce1fd;
+  --color-blue-100: #99c2fa;
+  --color-blue-200: #66a3f8;
+  --color-blue-300: #3285f6;
+  --color-blue-500: #0052c3;
+  --color-blue-600: #003d92;
+  --color-blue-700: #002961;
+  
+  --color-primary-10: #e6f0fe;
+  --color-primary-50: #cce1fd;
+  --color-primary-100: #99c2fa;
+  --color-primary-200: #66a3f8;
+  --color-primary-300: #3285f6;
+  --color-primary-500: #0052c3;
+  --color-primary-600: #003d92;
+  --color-primary-700: #002961;
+  
+  --color-red-10: #fdedee;
+  --color-red-50: #fadadd;
+  --color-red-100: #f6b6bb;
+  --color-red-200: #f19199;
+  --color-red-300: #ed6d77;
+  
+  --color-purple-10: #f5ecfd;
+  --color-purple-50: #ebd8fb;
+  --color-purple-100: #d7b1f6;
+  --color-purple-200: #c48af2;
+  --color-purple-300: #b063ed;
+  --color-purple-500: #7d30ba;
+  --color-purple-600: #5e248c;
+  --color-purple-700: #3e185d;
+  
+  --color-light-gray: #F4F6F7;
+  --color-light-blue: #D8E6F2;
+  
+  --color-dark-blue: #020873;
+  --color-dark-navy: #0C1440;
+  
+  /* text colors for light background */
+  --text-dark-high: #212121;
+  --text-dark-medium: #666666;
+  --text-dark-disabled: #9E9E9E;
+
+  /* text colors for dark background */
+  --text-white-high: rgba(255,255,255,1);
+  --text-white-medium: rgba(255,255,255,0.6);
+  --text-white-disabled: rgba(255,255,255,0.38);
+}
+
+body {
+	color: var(--text-dark-high);
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	margin:0;
+	padding:0;
+	text-rendering: optimizelegibility;
+	width: 100%;
+}
+
+main {
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0 auto 80px;
+	max-width: 712px;
+	padding: 0 16px;
+}
+h1,h2,h3,h4,h5,h6 {
+	margin-block-start: 2em;
+	margin-block-end: 1em;
+}
+/* title */
+h1 {
+  font-size: 36px; 
+  font-weight: 500;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--text-dark-high);
+}
+/* subheading */
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+a {
+	color: var(--color-blue);
+}
+
+p {
+	hyphens: auto;
+	line-height: 1.5;
+	margin-block-start: 1.5em;
+}
+li {
+	margin: 8px 0;
+	line-height: 1.5;
+}
+strong {
+	font-weight: 500;
+}
+
+blockquote {
+	background: var(--color-gray-10);
+	border-left: 8px solid var(--text-dark-high);
+	margin: 24px 0;
+	padding: 8px 24px 16px;
+	
+}
+
+hr {
+	border: 0.5px solid var(--color-gray-400);
+}
+
+pre {
+	background-color: var(--text-dark-high);
+	border-radius: 8px;
+	color: #fff;
+	font-family: monospace;
+	line-height: 1.5;
+	overflow: auto;
+	padding: 16px 24px;
+}
+
+code {
+	background-color: var(--color-primary-10);
+	border-radius: 4px;
+	color: var(--color-primary);
+	font-family: monospace;
+	line-height: 20px;
+	margin: 0;
+	padding: 2px 6px;
+	word-wrap: break-word;
+}
+
+pre > code {;
+	background: transparent;
+	color: #fff;
+	line-height: 1.5;
+	padding:0;
+}
+
+table {
+	border-collapse: collapse;
+	padding: 0;
+}
+table tr {
+	border-top: 1px solid var(--color-gray-100);
+	margin: 0;
+	padding: 0;
+}
+table tr:last-child {
+	border-bottom: 1px solid var(--color-gray-100);
+}
+table thead tr {
+	border-bottom: 2px solid var(--color-gray-100);
+}
+table tr th {
+	font-weight: 500;
+	margin: 0;
+	padding: 12px 16px;
+	text-align: left;
+}
+table tbody tr:nth-child(odd) {
+	background-color: var(--color-gray-10);
+}
+table tr td {
+	margin: 0;
+	padding: 8px 16px;
+	text-align: left;
+}
+
+img {
+	display: block;
+	margin: 32px 0;
+	max-width: 100%;
+}

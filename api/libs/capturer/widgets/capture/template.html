@@ -1,0 +1,21 @@
+<div id="captureModal" style="display: none;">
+	<div class="modal-background"></div>
+	<div class="modal">
+		<div class="modal-title"><h1>Set Upload Location</h1></div>
+		<div class="container">
+			<div class="modal-description">
+                <p>If you leave it blank, files will be uploaded to root.</p>
+            </div>
+            <div class="form-input filepath">
+            	<div id="rootLocation"></div>
+            	<div class="input-items default empty"><input type='text' placeholder='' id='capture_folder_path' value=""></div>
+        	</div>
+            <form id="resourceForm" action="/capture/save/resource" enctype="multipart/form-data" method="post" class="capturer">
+            </form>
+            <div class="buttons-container">
+                <button id="cancelBtn" class="qoom-main-btn qoom-button-outline qoom-button-small" >Cancel</button>
+                <button id="submitBtn" class="qoom-main-btn qoom-button-full qoom-button-small">Choose File</button>
+            </div>
+        </div>
+    </div>
+</div>

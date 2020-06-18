@@ -1,0 +1,63 @@
+.capturer input[type='submit'] {
+    /*display:none; */
+}
+
+#capturer_control, #resourcer_control {
+	
+}
+
+h2 {
+	font-size: 20px;
+}
+
+p {
+	font-size: 16px;
+	margin: 20px 0px;
+}
+
+
+#funcbody{
+	width: 90vw;
+	margin: auto;
+	background-color:#EEEEEE;
+}
+
+#funcbody div {
+	margin: 5px;
+	padding: 20px 20px;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+.button {
+	font-size: 1.5em;
+	position:relative;
+	height:50px;
+	width: 200px;
+	margin: auto;
+	padding: 7px 20px;
+	border-radius: 10px;
+	color: #360E46;
+	border: 5px solid transparent;
+	border-bottom-color: rgba(0,0,0,0.35);
+	background-color:white;
+	cursor: pointer;
+	text-align:bottom;
+}
+
+.button:active {
+  background-color: rgba(0,0,0,0.35);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+input[type="hidden" i], input[type="image" i], input[type="file" i] {
+	margin-top:2em;
+}
+
+img {
+	width:100px;
+}
+
+body > div > main > section {
+	padding:2em;
+}
